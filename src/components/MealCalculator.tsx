@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export function MealCalculator() {
   const [workers, setWorkers] = useState<number>(350);
-  const [pricePerMeal, setPricePerMeal] = useState<number>(32000);
+  const [pricePerMeal, setPricePerMeal] = useState<number>(35000);
   const [shifts, setShifts] = useState<number>(1);
   const [workingDays, setWorkingDays] = useState<number>(26);
 
@@ -18,21 +18,20 @@ export function MealCalculator() {
   };
 
   return (
-    <section id="calculator" className="py-24 bg-[#f5ece4] border-b border-black/10">
+    <section id="calculator" className="py-24 bg-[#fbf7ef] border-b border-black/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="max-w-2xl mb-16">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] font-bold text-[#e94222] mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#e94222]"></span>
-            <span>Công cụ hoạch định B2B · 予算計画</span>
+          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] font-bold text-[#75182d] mb-3 bg-[#f1e2c8]/60 px-3.5 py-1.5 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#75182d]"></span>
+            <span>Công cụ hoạch định B2B · Shinsei Food</span>
           </div>
-          <h2 className="font-title text-4xl sm:text-5xl font-light text-[#0d1717] tracking-tight leading-[1.05]">
+          <h2 className="font-title text-4xl sm:text-5xl font-light text-[#222222] tracking-tight leading-[1.05]">
             Ước tính ngân sách suất ăn theo quy mô nhà máy.
           </h2>
-          <p className="text-sm sm:text-base text-[#3a3a3a]/80 mt-4 leading-relaxed font-normal">
-            Hỗ trợ phòng Nhân sự và bộ phận Mua hàng dự trù chi phí chính xác, 
-            tối ưu hóa khẩu phần mà vẫn đảm bảo phúc lợi sức khỏe tốt nhất cho người lao động.
+          <p className="text-sm sm:text-base text-[#222222]/80 mt-4 leading-relaxed font-normal">
+            Hỗ trợ phòng Nhân sự và bộ phận Mua hàng dự trù chi phí chính xác, tối ưu hóa khẩu phần mà vẫn đảm bảo phúc lợi sức khỏe tốt nhất cho người lao động.
           </p>
         </div>
 
@@ -40,16 +39,16 @@ export function MealCalculator() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
           {/* Controls (7 cols) */}
-          <div className="lg:col-span-7 bg-[#fff9f3] p-8 sm:p-10 border border-black/10 space-y-8">
+          <div className="lg:col-span-7 bg-[#ffffff] p-8 sm:p-10 border border-black/10 space-y-8 shadow-sm">
             
             {/* Workers Slider */}
             <div>
               <div className="flex items-baseline justify-between mb-3">
-                <label className="text-xs font-mono uppercase tracking-wider font-bold text-[#0d1717]">
+                <label className="text-xs font-mono uppercase tracking-wider font-bold text-[#222222]">
                   Số lượng người ăn mỗi ca
                 </label>
-                <span className="font-title text-3xl font-light text-[#e94222]">
-                  {workers.toLocaleString("vi-VN")} <span className="text-xs font-sans text-[#3a3a3a]">người</span>
+                <span className="font-title text-3xl font-light text-[#75182d]">
+                  {workers.toLocaleString("vi-VN")} <span className="text-xs font-sans text-[#222222]">người</span>
                 </span>
               </div>
               <input
@@ -59,9 +58,9 @@ export function MealCalculator() {
                 step="50"
                 value={workers}
                 onChange={(e) => setWorkers(Number(e.target.value))}
-                className="w-full h-1.5 bg-black/15 appearance-none cursor-pointer accent-[#e94222]"
+                className="w-full h-1.5 bg-black/15 appearance-none cursor-pointer accent-[#75182d]"
               />
-              <div className="flex justify-between text-[11px] font-mono text-[#0d1717]/50 mt-2">
+              <div className="flex justify-between text-[11px] font-mono text-[#222222]/50 mt-2">
                 <span>50</span>
                 <span>500</span>
                 <span>1.500</span>
@@ -69,21 +68,21 @@ export function MealCalculator() {
               </div>
             </div>
 
-            {/* Price Tiers */}
+            {/* Price Tiers based on Shinsei options */}
             <div>
-              <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#0d1717] mb-3">
-                Mức đơn giá dự kiến / suất
+              <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-3">
+                Mức đơn giá dự kiến / suất (30k – 35k – 40k – 45k – 50k – 80k)
               </label>
-              <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
-                {[28000, 32000, 38000, 45000, 60000].map((tier) => (
+              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+                {[30000, 35000, 40000, 45000, 50000, 80000].map((tier) => (
                   <button
                     key={tier}
                     type="button"
                     onClick={() => setPricePerMeal(tier)}
                     className={`py-3 px-2 text-center text-xs font-mono font-bold tracking-wider transition-all cursor-pointer border ${
                       pricePerMeal === tier
-                        ? "bg-[#0d1717] text-white border-[#0d1717]"
-                        : "bg-white text-[#0d1717] border-black/15 hover:border-black/50"
+                        ? "bg-[#75182d] text-white border-[#75182d]"
+                        : "bg-white text-[#222222] border-black/15 hover:border-[#75182d]"
                     }`}
                   >
                     {tier / 1000}k
@@ -95,7 +94,7 @@ export function MealCalculator() {
             {/* Shifts and Days */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#0d1717] mb-2">
+                <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-2">
                   Số ca phục vụ trong ngày
                 </label>
                 <div className="grid grid-cols-3 gap-2">
@@ -106,8 +105,8 @@ export function MealCalculator() {
                       onClick={() => setShifts(s)}
                       className={`py-2.5 text-xs font-mono font-bold border transition-all cursor-pointer ${
                         shifts === s
-                          ? "bg-[#e94222] text-white border-[#e94222]"
-                          : "bg-white text-[#0d1717] border-black/15 hover:bg-stone-50"
+                          ? "bg-[#75182d] text-white border-[#75182d]"
+                          : "bg-white text-[#222222] border-black/15 hover:bg-stone-50"
                       }`}
                     >
                       {s} ca
@@ -117,7 +116,7 @@ export function MealCalculator() {
               </div>
 
               <div>
-                <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#0d1717] mb-2">
+                <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-2">
                   Số ngày làm việc / tháng
                 </label>
                 <div className="grid grid-cols-3 gap-2">
@@ -128,8 +127,8 @@ export function MealCalculator() {
                       onClick={() => setWorkingDays(d)}
                       className={`py-2.5 text-xs font-mono font-bold border transition-all cursor-pointer ${
                         workingDays === d
-                          ? "bg-[#e94222] text-white border-[#e94222]"
-                          : "bg-white text-[#0d1717] border-black/15 hover:bg-stone-50"
+                          ? "bg-[#75182d] text-white border-[#75182d]"
+                          : "bg-white text-[#222222] border-black/15 hover:bg-stone-50"
                       }`}
                     >
                       {d} ngày
@@ -139,48 +138,48 @@ export function MealCalculator() {
               </div>
             </div>
 
-            <div className="pt-4 border-t border-black/10 text-xs text-[#3a3a3a]/75 space-y-1">
-              <div className="font-semibold text-[#0d1717]">Đã bao gồm trong chi phí trọn gói:</div>
-              <div>Khay inox SUS 304, thùng bảo ôn giữ nhiệt, phí vận chuyển và nhân viên phục vụ chia phần tại chỗ.</div>
+            <div className="pt-4 border-t border-black/10 text-xs text-[#222222]/75 space-y-1">
+              <div className="font-semibold text-[#222222]">Đã bao gồm trong chi phí trọn gói của Shinsei:</div>
+              <div>Khay inox SUS 304, thùng bảo ôn giữ nhiệt trên 65°C, nhân sự phục vụ tại chỗ và bảo hiểm an toàn thực phẩm.</div>
             </div>
 
           </div>
 
-          {/* Result Card: Dark Shushi FZ style (5 cols) */}
-          <div className="lg:col-span-5 bg-[#0d1717] text-white p-8 sm:p-10 border border-black/20 flex flex-col justify-between">
+          {/* Result Card: Wine / Beige Tone (5 cols) */}
+          <div className="lg:col-span-5 bg-[#75182d] text-white p-8 sm:p-10 border border-black/20 flex flex-col justify-between shadow-xl">
             <div className="space-y-6">
               
-              <div className="flex items-center justify-between pb-4 border-b border-white/10">
-                <span className="text-xs font-mono uppercase tracking-widest text-stone-400">
+              <div className="flex items-center justify-between pb-4 border-b border-white/15">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#f1e2c8]">
                   Dự trù ngân sách tháng
                 </span>
-                <span className="text-[11px] font-mono px-2 py-0.5 bg-white/10 text-emerald-300">
+                <span className="text-[11px] font-mono px-2.5 py-0.5 bg-white/10 text-[#f1e2c8] border border-white/20">
                   Chưa gồm VAT
                 </span>
               </div>
 
               <div>
-                <div className="font-title text-3xl sm:text-4xl font-light text-[#e94222] tracking-tight">
+                <div className="font-title text-3xl sm:text-4xl font-light text-[#f1e2c8] tracking-tight">
                   {formatVND(monthlyCost)}
                 </div>
-                <div className="text-xs text-stone-400 mt-1 font-mono">
+                <div className="text-xs text-stone-200 mt-1 font-mono">
                   Chi phí mỗi ngày: {formatVND(dailyCost)}
                 </div>
               </div>
 
-              <div className="space-y-3 pt-4 border-t border-white/10 text-xs text-stone-300">
-                <div className="flex justify-between py-1.5 border-b border-white/5">
-                  <span className="text-stone-400">Tổng suất ăn mỗi ngày:</span>
+              <div className="space-y-3 pt-4 border-t border-white/15 text-xs text-stone-200">
+                <div className="flex justify-between py-1.5 border-b border-white/10">
+                  <span className="text-stone-300">Tổng suất ăn mỗi ngày:</span>
                   <span className="font-bold text-white font-mono">{dailyMeals.toLocaleString("vi-VN")} suất</span>
                 </div>
-                <div className="flex justify-between py-1.5 border-b border-white/5">
-                  <span className="text-stone-400">Đơn giá mỗi suất:</span>
-                  <span className="font-bold text-white font-mono">{formatVND(pricePerMeal)}</span>
+                <div className="flex justify-between py-1.5 border-b border-white/10">
+                  <span className="text-stone-300">Đơn giá áp dụng:</span>
+                  <span className="font-bold text-[#f1e2c8] font-mono">{formatVND(pricePerMeal)} / suất</span>
                 </div>
-                <div className="flex justify-between py-1.5 border-b border-white/5">
-                  <span className="text-stone-400">Mô hình đề xuất:</span>
-                  <span className="font-semibold text-emerald-400">
-                    {workers >= 500 ? "Nấu trực tiếp tại nhà máy / Xe bảo ôn" : "Giao khay giữ nhiệt 65°C"}
+                <div className="flex justify-between py-1.5 border-b border-white/10">
+                  <span className="text-stone-300">Mô hình vận hành:</span>
+                  <span className="font-semibold text-white">
+                    {workers >= 500 ? "Nấu trực tiếp tại cơ sở / Căng tin trọn gói" : "Giao khay bento giữ nhiệt"}
                   </span>
                 </div>
               </div>
@@ -188,11 +187,12 @@ export function MealCalculator() {
             </div>
 
             <div className="pt-8">
-              <a href="#trial-tasting" className="shushi-btn shushi-btn-primary w-full text-center">
-                <span>Nhận báo giá chính thức & Nếm thử</span>
+              <a href="#contact" className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 bg-[#f1e2c8] hover:bg-white text-[#75182d] font-bold text-xs uppercase tracking-wider transition-colors shadow-md">
+                <span>Nhận bảng báo giá & Thực đơn chi tiết</span>
+                <ArrowUpRight className="w-4 h-4" />
               </a>
-              <p className="text-[11px] text-center text-stone-400 mt-2 font-mono">
-                Shisei Food mang mẫu cơm tận nơi cho hội đồng công ty thẩm định
+              <p className="text-[11px] text-center text-stone-300 mt-2.5 font-mono">
+                Shinsei cử chuyên viên mang mẫu cơm đến tận nơi thẩm định
               </p>
             </div>
 

@@ -15,9 +15,20 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "SHISEI FOOD | Suất Ăn Công Nghiệp & Bếp Tập Thể Chuẩn Nhật Bản",
+  title: "SHINSEI | Công Ty Cổ Phần Thương Mại Shinsei - Food & Coffee & Travel",
   description:
-    "Chuyên cung cấp suất ăn công nghiệp tiêu chuẩn Nhật Bản cho nhà xưởng, khu công nghiệp và tổ chức giáo dục. Quy trình bếp một chiều, kiểm định an toàn HACCP và ISO 22000.",
+    "Shinsei - An tâm trong từng bữa ăn, tận tâm trong từng trải nghiệm. Cung cấp suất ăn công nghiệp, phổ thông, cao cấp, tiệc bàn, cơm hộp mang đi, quầy cà phê và dịch vụ du lịch y tế, golf, trải nghiệm chuẩn Nhật Bản.",
+  keywords: [
+    "Shinsei",
+    "Công ty Cổ phần Shinsei",
+    "suất ăn công nghiệp",
+    "suất ăn phổ thông",
+    "suất ăn cao cấp",
+    "tiêu chuẩn 5s",
+    "food and coffee",
+    "du lịch y tế nhật bản",
+    "du lịch golf",
+  ],
 };
 
 export default function RootLayout({
@@ -27,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="vi" className={`${fraunces.variable} ${jost.variable}`}>
-      <body className="font-body bg-[#f5ece4] text-[#3a3a3a] selection:bg-[#e94222] selection:text-white antialiased">
+      <body className="font-body bg-[#fbf7ef] text-[#222222] selection:bg-[#75182d] selection:text-white antialiased">
         {children}
       </body>
     </html>

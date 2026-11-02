@@ -1,27 +1,29 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { StatsBar } from "@/components/StatsBar";
-import { BentoPhilosophy } from "@/components/BentoPhilosophy";
-import { InteractiveMenu } from "@/components/InteractiveMenu";
-import { ProductionProcess } from "@/components/ProductionProcess";
+import { AboutShinsei } from "@/components/AboutShinsei";
+import { Standards5S } from "@/components/Standards5S";
+import { FoodCoffee } from "@/components/FoodCoffee";
 import { MealCalculator } from "@/components/MealCalculator";
+import { ShinseiTravel } from "@/components/ShinseiTravel";
 import { TestimonialsTrust } from "@/components/TestimonialsTrust";
-import { TastingForm } from "@/components/TastingForm";
+import { ContactShinsei } from "@/components/ContactShinsei";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#fcfbf9] text-[#191c1f]">
+    <div className="min-h-screen flex flex-col bg-[#fbf7ef] text-[#222222]">
       <Navbar />
       <main className="flex-1">
         <Hero />
         <StatsBar />
-        <BentoPhilosophy />
-        <InteractiveMenu />
-        <ProductionProcess />
+        <AboutShinsei />
+        <Standards5S />
+        <FoodCoffee />
         <MealCalculator />
+        <ShinseiTravel />
         <TestimonialsTrust />
-        <TastingForm />
+        <ContactShinsei />
       </main>
       <Footer />
     </div>
