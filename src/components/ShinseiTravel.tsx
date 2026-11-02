@@ -1,50 +1,50 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Plane, HeartPulse, Trophy, Compass, ArrowRight, ShieldCheck, Check } from "lucide-react";
+import { Plane, HeartPulse, Trophy, Compass, ArrowRight, Check } from "lucide-react";
 
 export function ShinseiTravel() {
   const travelServices = [
     {
       id: "medical",
       number: "01.",
-      title: "Du Lịch Y Tế (Medical Tourism)",
-      tag: "Nhật Bản cao cấp",
-      image: "/images/travel-medical.jpg",
+      title: "Du Lịch Y Tế (Medical Tourism Japan)",
+      tag: "Tokyo & Osaka Medical",
+      image: "/images/japan-medical-travel.jpg",
       icon: HeartPulse,
-      desc: "Kết nối các bệnh viện và viện nghiên cứu y khoa hàng đầu tại Tokyo, Osaka. Dịch vụ tầm soát sức khỏe tổng quát, tế bào gốc, điều trị chuyên sâu và phục hồi chức năng với phiên dịch viên y tế chuyên nghiệp.",
+      desc: "Kết nối trực tiếp hệ thống bệnh viện và viện nghiên cứu y khoa hàng đầu tại Tokyo & Osaka. Cung cấp gói tầm soát sức khỏe tổng quát kỹ thuật cao (Ningen Dock), liệu pháp tế bào gốc và điều trị chuyên sâu cùng đội ngũ phiên dịch y tế chứng chỉ quốc tế.",
       perks: [
-        "Khám tầm soát sớm ung thư & bệnh lối sống",
-        "Đội ngũ bác sĩ đầu ngành Nhật Bản",
-        "Hỗ trợ visa y tế và xe đưa đón VIP riêng",
+        "Khám tầm soát sớm ung thư & bệnh lối sống công nghệ Nhật",
+        "Đội ngũ giáo sư, bác sĩ đầu ngành tại bệnh viện Tokyo",
+        "Thủ tục visa y tế và dịch vụ xe đưa đón VIP tận sân bay",
       ],
     },
     {
       id: "golf",
       number: "02.",
-      title: "Du Lịch Golf (Golf Tour Japan)",
-      tag: "Trải nghiệm sân đỉnh cao",
-      image: "/images/travel-golf.jpg",
+      title: "Du Lịch Golf (Japan Golf Experience)",
+      tag: "Sân Golf Núi Phú Sĩ & Kanto",
+      image: "/images/japan-golf-travel.jpg",
       icon: Trophy,
-      desc: "Trải nghiệm những sân golf huyền thoại dưới chân núi Phú Sĩ và các vùng ven biển danh tiếng. Kết hợp dịch vụ nghỉ dưỡng suối khoáng nóng Onsen và thưởng thức ẩm thực Kaiseki thượng hạng.",
+      desc: "Trải nghiệm những sân golf đạt chuẩn PGA quốc tế dưới chân núi Phú Sĩ và các vùng ven biển nổi tiếng của Nhật Bản. Kết hợp kỳ nghỉ dưỡng suối nước nóng Onsen truyền thống và thưởng thức ẩm thực Kaiseki thượng hạng sau trận đánh.",
       perks: [
-        "Đặt chỗ ưu tiên tại các sân golf tư nhân danh giá",
-        "Caddy chuyên nghiệp & xe Limousine đưa đón",
-        "Tổ chức giải đấu giao lưu doanh nhân Việt – Nhật",
+        "Đặt chỗ ưu tiên tại các sân golf tư nhân danh giá Nhật Bản",
+        "Caddy chuyên nghiệp & xe Limousine đưa đón riêng biệt",
+        "Tổ chức giải đấu giao lưu kết nối doanh nhân Việt – Nhật",
       ],
     },
     {
       id: "experience",
       number: "03.",
-      title: "Du Lịch Trải Nghiệm (Experiential Tour)",
-      tag: "Văn hóa & Ẩm thực",
-      image: "/images/travel-experience.jpg",
+      title: "Du Lịch Trải Nghiệm (Cultural & Culinary Tour)",
+      tag: "Kyoto · Onsen · Kaiseki",
+      image: "/images/japan-experience-travel.jpg",
       icon: Compass,
-      desc: "Hành trình cá nhân hóa khám phá tinh hoa văn hóa Nhật Bản: Tham quan làng cổ Kyoto, trải nghiệm trà đạo, tắm Onsen truyền thống, ngắm hoa anh đào và thưởng ngoạn mùa lá đỏ theo lộ trình riêng biệt.",
+      desc: "Hành trình cá nhân hóa khám phá tinh hoa văn hóa và ẩm thực Nhật Bản: Dạo bước qua các ngôi chùa cổ ngàn năm tại Kyoto, trải nghiệm trà đạo, tắm khoáng nóng Ryokan truyền thống và thưởng ngoạn mùa hoa anh đào hoặc mùa lá đỏ Momiji.",
       perks: [
-        "Lịch trình thiết kế riêng cho gia đình & đoàn VIP",
-        "Trải nghiệm nông nghiệp hữu cơ & văn hóa ẩm thực",
-        "Hướng dẫn viên am hiểu sâu sắc văn hóa bản địa",
+        "Lịch trình thiết kế riêng cho gia đình & đoàn công tác VIP",
+        "Trải nghiệm nông nghiệp hữu cơ sạch & ẩm thực truyền thống",
+        "Hướng dẫn viên chuyên nghiệp am hiểu sâu sắc văn hóa bản địa",
       ],
     },
   ];
@@ -84,7 +84,7 @@ export function ShinseiTravel() {
           </div>
         </div>
 
-        {/* 3 Travel Pillars Grid */}
+        {/* 3 Travel Pillars Grid with Real Japan Photos */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {travelServices.map((tour) => {
             const Icon = tour.icon;
@@ -94,14 +94,14 @@ export function ShinseiTravel() {
                 className="bg-white/5 border border-white/15 hover:border-[#f1e2c8] transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  {/* Photo with Overlay */}
+                  {/* Real Japan Photo */}
                   <div className="aspect-[16/10] overflow-hidden relative bg-black/30">
                     <img
                       src={tour.image}
                       alt={tour.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent"></div>
                     
                     <div className="absolute top-4 left-4 bg-[#75182d] text-[#f1e2c8] px-3 py-1 text-xs font-mono font-bold tracking-wider border border-white/20">
                       {tour.tag}
