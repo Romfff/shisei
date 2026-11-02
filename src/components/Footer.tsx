@@ -9,6 +9,11 @@ export function Footer() {
         <div className="flex flex-col md:flex-row md:items-center justify-between pb-12 border-b border-white/10 gap-6">
           <div>
             <div className="flex items-center gap-3">
+              <img
+                src="/images/shinsei-mark-white.png"
+                alt="SHINSEI Emblem"
+                className="h-8 w-auto object-contain"
+              />
               <span className="font-title text-3xl font-light tracking-[0.08em] uppercase text-white">
                 SHINSEI
               </span>

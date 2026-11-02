@@ -18,6 +18,17 @@ export const metadata: Metadata = {
   title: "SHINSEI | Công Ty Cổ Phần Thương Mại Shinsei - Food & Coffee & Travel",
   description:
     "Shinsei - An tâm trong từng bữa ăn, tận tâm trong từng trải nghiệm. Cung cấp suất ăn công nghiệp, phổ thông, cao cấp, tiệc bàn, cơm hộp mang đi, quầy cà phê và dịch vụ du lịch y tế, golf, trải nghiệm chuẩn Nhật Bản.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/icon-32.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
   keywords: [
     "Shinsei",
     "Công ty Cổ phần Shinsei",

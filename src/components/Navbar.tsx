@@ -83,12 +83,19 @@ export function Navbar() {
               </nav>
             </div>
 
-            {/* Column 2 (Center): Shinsei Brand Logo */}
+            {/* Column 2 (Center): Shinsei Brand Logo with Official Emblem */}
             <div className="col-span-6 sm:col-span-4 flex flex-col items-center justify-center text-center">
               <a href="#" className="inline-flex flex-col items-center group">
-                <span className="font-title text-2xl sm:text-3xl font-light tracking-[0.12em] text-[#75182d] uppercase transition-colors group-hover:text-[#222222] leading-none">
-                  SHINSEI
-                </span>
+                <div className="flex items-center gap-2">
+                  <img
+                    src="/images/shinsei-mark-red.png"
+                    alt="SHINSEI Emblem"
+                    className="h-6 sm:h-7 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <span className="font-title text-2xl sm:text-3xl font-light tracking-[0.12em] text-[#75182d] uppercase transition-colors group-hover:text-[#222222] leading-none">
+                    SHINSEI
+                  </span>
+                </div>
                 <span className="text-[8.5px] sm:text-[9.5px] tracking-[0.24em] text-[#222222]/80 font-semibold uppercase mt-1">
                   Food & Coffee · Travel
                 </span>
@@ -152,9 +159,16 @@ export function Navbar() {
               <div>
                 {/* Header of Drawer */}
                 <div className="flex items-center justify-between pb-6 border-b border-black/10">
-                  <span className="font-mono text-xs uppercase tracking-widest text-[#75182d] font-bold">
-                    Công ty Cổ phần Thương Mại Shinsei
-                  </span>
+                  <div className="flex items-center gap-2.5">
+                    <img
+                      src="/images/shinsei-mark-red.png"
+                      alt="Shinsei Emblem"
+                      className="h-5 w-auto"
+                    />
+                    <span className="font-mono text-xs uppercase tracking-widest text-[#75182d] font-bold">
+                      Công ty Cổ phần Thương Mại Shinsei
+                    </span>
+                  </div>
                   <button
                     onClick={() => setDrawerOpen(false)}
                     className="flex items-center gap-2 p-2 text-[#222222] hover:text-[#75182d] transition-colors cursor-pointer"
