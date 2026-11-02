@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Utensils, Plane, Sparkles } from "lucide-react";
+import { Utensils, Plane } from "lucide-react";
 
 export function Hero() {
   const showcaseRef = useRef<HTMLDivElement>(null);
@@ -13,17 +13,17 @@ export function Hero() {
     offset: ["start start", "end end"],
   });
 
-  const leftX = useTransform(scrollYProgress, [0, 0.85], ["-12vw", "-34vw"]);
+  const leftX = useTransform(scrollYProgress, [0, 0.85], ["-16vw", "-36vw"]);
   const leftRotate = useTransform(scrollYProgress, [0, 0.85], [-2, -5]);
-  const leftOpacity = useTransform(scrollYProgress, [0, 0.3], [0.88, 1]);
-  const leftScale = useTransform(scrollYProgress, [0, 0.85], [0.92, 1.05]);
+  const leftOpacity = useTransform(scrollYProgress, [0, 0.3], [0.9, 1]);
+  const leftScale = useTransform(scrollYProgress, [0, 0.85], [0.95, 1.05]);
 
-  const rightX = useTransform(scrollYProgress, [0, 0.85], ["12vw", "34vw"]);
+  const rightX = useTransform(scrollYProgress, [0, 0.85], ["16vw", "36vw"]);
   const rightRotate = useTransform(scrollYProgress, [0, 0.85], [2, 5]);
-  const rightOpacity = useTransform(scrollYProgress, [0, 0.3], [0.88, 1]);
-  const rightScale = useTransform(scrollYProgress, [0, 0.85], [0.92, 1.05]);
+  const rightOpacity = useTransform(scrollYProgress, [0, 0.3], [0.9, 1]);
+  const rightScale = useTransform(scrollYProgress, [0, 0.85], [0.95, 1.05]);
 
-  const centerScale = useTransform(scrollYProgress, [0, 0.85], [0.98, 1.15]);
+  const centerScale = useTransform(scrollYProgress, [0, 0.85], [1, 1.15]);
 
   return (
     <section className="relative bg-[#fbf7ef] border-b border-black/10">
@@ -89,14 +89,14 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Pinned Scroll Track: 3 Images peek out then fan out to full screen */}
+      {/* Pinned Scroll Track: 3 Larger Images with clean typography overlay */}
       <div ref={showcaseRef} className="relative h-[220vh] w-full">
         
         <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden pointer-events-none">
           
           <div className="relative w-full h-full flex items-center justify-center pointer-events-auto">
             
-            {/* Left Card: Cơm hộp Bento & Quầy Café Shinsei */}
+            {/* Left Card: Quầy Café & Căng tin tổng hợp */}
             <motion.div
               style={{
                 x: leftX,
@@ -104,61 +104,62 @@ export function Hero() {
                 opacity: leftOpacity,
                 scale: leftScale,
               }}
-              className="absolute w-[80vw] sm:w-[48vw] md:w-[38vw] lg:w-[34vw] aspect-[16/10] bg-[#222222] border border-black/25 shadow-2xl overflow-hidden z-10 group cursor-pointer"
+              className="absolute w-[86vw] sm:w-[56vw] md:w-[45vw] lg:w-[40vw] max-w-[580px] aspect-[16/11] bg-[#222222] border border-black/25 shadow-2xl overflow-hidden z-10 group cursor-pointer"
             >
               <img
                 src="/images/food-coffee.jpg"
                 alt="Quầy Café và căng tin tổng hợp Shinsei"
                 className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
               
-              <div className="absolute bottom-5 left-5 right-5 text-white">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-semibold block">
+              <div className="absolute bottom-6 left-6 right-6 text-white">
+                <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
                   Food & Coffee · Căng tin tổng hợp
                 </span>
-                <p className="font-title text-base lg:text-xl font-light text-white mt-1">
-                  Vận hành quầy cà phê & bếp ăn tập thể chuyên nghiệp
+                <p className="font-title text-lg sm:text-xl font-normal text-white leading-snug">
+                  Vận hành quầy cà phê & căng tin chuyên nghiệp
                 </p>
               </div>
             </motion.div>
 
-            {/* Center Card: Suất ăn khay chuẩn Nhật Shinsei */}
+            {/* Center Card: Suất ăn khay chuẩn Nhật Shinsei (Larger size & clean typography) */}
             <motion.div
               style={{ scale: centerScale }}
-              className="relative w-[85vw] sm:w-[52vw] md:w-[42vw] lg:w-[38vw] aspect-[16/10] bg-[#222222] border border-black/30 shadow-2xl overflow-hidden z-20 group"
+              className="relative w-[90vw] sm:w-[62vw] md:w-[52vw] lg:w-[45vw] max-w-[660px] aspect-[16/11] bg-[#222222] border border-black/30 shadow-2xl overflow-hidden z-20 group"
             >
               <img
                 src="/images/food-takeaway.jpg"
                 alt="Suất ăn công nghiệp và bento Shinsei"
                 className="w-full h-full object-cover object-center opacity-90 group-hover:scale-104 transition-transform duration-1000 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
 
-              <div className="absolute bottom-5 left-5 right-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-white">
+              {/* Bottom Info: Clean, legible layout without overlapping text */}
+              <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-white">
                 <div className="max-w-md">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold">
+                  <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
                     Công ty Cổ phần Thương Mại Shinsei
                   </span>
-                  <p className="font-title text-xl sm:text-2xl font-light text-white mt-1 leading-snug">
+                  <p className="font-title text-xl sm:text-2xl font-light text-white leading-tight">
                     Suất ăn dinh dưỡng, an toàn tuyệt đối theo tiêu chuẩn 5S Nhật Bản.
                   </p>
                 </div>
 
-                <div className="flex items-center gap-5 text-xs text-stone-200">
+                <div className="flex items-center gap-4 text-xs text-stone-200 shrink-0">
                   <div className="border-l border-white/30 pl-3">
-                    <div className="font-bold text-white text-base font-mono">10.000+</div>
+                    <div className="font-bold text-white text-base sm:text-lg font-mono">10.000+</div>
                     <div className="text-[10px] text-[#f1e2c8] uppercase tracking-wider">Suất / ngày</div>
                   </div>
                   <div className="border-l border-white/30 pl-3">
-                    <div className="font-bold text-white text-base font-mono">HACCP · 5S</div>
+                    <div className="font-bold text-white text-base sm:text-lg font-mono">5S · HACCP</div>
                     <div className="text-[10px] text-[#f1e2c8] uppercase tracking-wider">Tiêu chuẩn</div>
                   </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Right Card: Shinsei Travel (Du lịch y tế, Golf, Trải nghiệm Nhật Bản) */}
+            {/* Right Card: Shinsei Travel */}
             <motion.div
               style={{
                 x: rightX,
@@ -166,20 +167,20 @@ export function Hero() {
                 opacity: rightOpacity,
                 scale: rightScale,
               }}
-              className="absolute w-[80vw] sm:w-[48vw] md:w-[38vw] lg:w-[34vw] aspect-[16/10] bg-[#222222] border border-black/25 shadow-2xl overflow-hidden z-10 group cursor-pointer"
+              className="absolute w-[86vw] sm:w-[56vw] md:w-[45vw] lg:w-[40vw] max-w-[580px] aspect-[16/11] bg-[#222222] border border-black/25 shadow-2xl overflow-hidden z-10 group cursor-pointer"
             >
               <img
                 src="/images/travel-golf.jpg"
                 alt="Shinsei Travel - Du lịch Golf và Y tế Nhật Bản"
                 className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
 
-              <div className="absolute bottom-5 left-5 right-5 text-white">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-semibold block">
+              <div className="absolute bottom-6 left-6 right-6 text-white">
+                <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
                   Shinsei Travel · Du lịch cao cấp
                 </span>
-                <p className="font-title text-base lg:text-xl font-light text-white mt-1">
+                <p className="font-title text-lg sm:text-xl font-normal text-white leading-snug">
                   Du lịch y tế, du lịch golf & hành trình trải nghiệm chuyên sâu
                 </p>
               </div>

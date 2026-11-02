@@ -18,16 +18,16 @@ export function Navbar() {
 
   return (
     <>
-      {/* Top subtle bar: Hotline & Address */}
-      <div className="bg-[#75182d] text-[#f1e2c8] text-[11.5px] tracking-[0.12em] uppercase py-2 px-4 border-b border-white/10 relative z-40">
+      {/* Top bar: Hotline & Address */}
+      <div className="bg-[#75182d] text-[#f1e2c8] text-[11px] sm:text-[11.5px] tracking-[0.1em] uppercase py-2 px-4 border-b border-white/10 relative z-40">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#f1e2c8] animate-ping"></span>
-            <span className="font-medium text-[11px] sm:text-[11.5px]">
+          <div className="flex items-center gap-2 truncate pr-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#f1e2c8] animate-ping shrink-0"></span>
+            <span className="font-medium truncate">
               Công ty Cổ phần Thương Mại Shinsei · A19 Geleximco A, Tây Mỗ, Hà Nội
             </span>
           </div>
-          <div className="hidden md:flex items-center gap-6 font-mono text-[11px] text-[#f1e2c8]/85">
+          <div className="hidden lg:flex items-center gap-5 font-mono text-[11px] text-[#f1e2c8]/85 shrink-0">
             <span className="flex items-center gap-1.5">
               <span>Hotline VN:</span>
               <strong className="text-white">0981.365.391</strong>
@@ -44,20 +44,31 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Main Navbar: Strict 3-Column Grid */}
+      {/* Main Navbar: Flex distribution with zero overlap */}
       <header
         className={`sticky top-0 z-40 transition-all duration-300 border-b border-black/10 ${
-          isScrolled ? "bg-[#fbf7ef]/95 backdrop-blur-md py-3 shadow-sm" : "bg-[#fbf7ef] py-4"
+          isScrolled ? "bg-[#fbf7ef]/95 backdrop-blur-md py-2.5 shadow-sm" : "bg-[#fbf7ef] py-3.5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-12 items-center">
+          <div className="flex items-center justify-between gap-4">
             
-            {/* Left Column (5 cols): Menu Drawer & Main Nav Links */}
-            <div className="col-span-4 sm:col-span-5 flex items-center gap-3 xl:gap-6 justify-start">
+            {/* Left: Brand Logo + Menu Drawer Trigger */}
+            <div className="flex items-center gap-4 sm:gap-6 shrink-0">
+              <a href="#" className="inline-flex flex-col group">
+                <span className="font-title text-2xl sm:text-3xl font-light tracking-[0.08em] text-[#75182d] uppercase transition-colors group-hover:text-[#222222] leading-none">
+                  SHINSEI
+                </span>
+                <span className="text-[9px] tracking-[0.2em] text-[#222222]/80 font-semibold uppercase mt-1">
+                  Food & Coffee · Travel
+                </span>
+              </a>
+
+              <div className="h-6 w-[1px] bg-black/15 hidden sm:block"></div>
+
               <button
                 onClick={() => setDrawerOpen(true)}
-                className="group flex items-center gap-2 p-1 text-[#222222] hover:text-[#75182d] transition-colors cursor-pointer shrink-0"
+                className="group flex items-center gap-2 p-1 text-[#222222] hover:text-[#75182d] transition-colors cursor-pointer"
                 aria-label="Open drawer menu"
               >
                 <div className="space-y-1.5 w-5">
@@ -65,72 +76,59 @@ export function Navbar() {
                   <span className="block h-[1.5px] w-3.5 bg-current transition-all group-hover:w-5"></span>
                   <span className="block h-[1.5px] w-4 bg-current transition-all group-hover:w-4"></span>
                 </div>
-                <span className="hidden sm:inline-block text-xs uppercase tracking-[0.15em] font-semibold">
+                <span className="text-xs uppercase tracking-[0.15em] font-semibold">
                   Menu
                 </span>
               </button>
-
-              <div className="hidden lg:block h-3.5 w-[1px] bg-black/15 shrink-0"></div>
-
-              <nav className="hidden lg:flex items-center gap-3.5 xl:gap-5 text-[11.5px] xl:text-[12.5px] uppercase tracking-[0.06em] font-semibold text-[#222222]">
-                <a
-                  href="#about"
-                  className="whitespace-nowrap hover:text-[#75182d] transition-colors py-1"
-                >
-                  Về chúng tôi
-                </a>
-                <a
-                  href="#standards-5s"
-                  className="whitespace-nowrap hover:text-[#75182d] transition-colors py-1"
-                >
-                  Tiêu chuẩn 5S
-                </a>
-                <a
-                  href="#food-coffee"
-                  className="whitespace-nowrap hover:text-[#75182d] transition-colors py-1 text-[#75182d]"
-                >
-                  Food & Coffee
-                </a>
-                <a
-                  href="#travel"
-                  className="whitespace-nowrap hover:text-[#75182d] transition-colors py-1"
-                >
-                  Travel
-                </a>
-                <a
-                  href="#contact"
-                  className="whitespace-nowrap hover:text-[#75182d] transition-colors py-1"
-                >
-                  Liên hệ
-                </a>
-              </nav>
             </div>
 
-            {/* Center Column (2 cols): Brand Logo */}
-            <div className="col-span-4 sm:col-span-2 text-center flex justify-center">
-              <a href="#" className="inline-flex flex-col items-center group">
-                <span className="font-title text-xl sm:text-2xl xl:text-3xl font-light tracking-[0.08em] text-[#75182d] uppercase transition-colors group-hover:text-[#222222] whitespace-nowrap">
-                  SHINSEI
-                </span>
-                <span className="text-[9px] sm:text-[9.5px] tracking-[0.2em] text-[#222222]/80 font-semibold uppercase mt-0.5 whitespace-nowrap">
-                  Food & Coffee · Travel
-                </span>
+            {/* Center/Right: Clean Horizontal Navigation Links */}
+            <nav className="hidden xl:flex items-center gap-6 text-[12.5px] uppercase tracking-[0.08em] font-semibold text-[#222222]">
+              <a
+                href="#about"
+                className="whitespace-nowrap hover:text-[#75182d] transition-colors py-1 hover:underline underline-offset-8 decoration-[#75182d]"
+              >
+                Về chúng tôi
               </a>
-            </div>
+              <a
+                href="#standards-5s"
+                className="whitespace-nowrap hover:text-[#75182d] transition-colors py-1 hover:underline underline-offset-8 decoration-[#75182d]"
+              >
+                Tiêu chuẩn 5S
+              </a>
+              <a
+                href="#food-coffee"
+                className="whitespace-nowrap text-[#75182d] font-bold py-1 hover:underline underline-offset-8 decoration-[#75182d]"
+              >
+                Food & Coffee
+              </a>
+              <a
+                href="#travel"
+                className="whitespace-nowrap hover:text-[#75182d] transition-colors py-1 hover:underline underline-offset-8 decoration-[#75182d]"
+              >
+                Travel
+              </a>
+              <a
+                href="#contact"
+                className="whitespace-nowrap hover:text-[#75182d] transition-colors py-1 hover:underline underline-offset-8 decoration-[#75182d]"
+              >
+                Liên hệ
+              </a>
+            </nav>
 
-            {/* Right Column (5 cols): Hotline & Button */}
-            <div className="col-span-4 sm:col-span-5 flex items-center justify-end gap-3 sm:gap-4">
+            {/* Far Right: Hotline & CTA Button */}
+            <div className="flex items-center gap-3 sm:gap-4 shrink-0">
               <a
                 href="tel:0981365391"
-                className="hidden xl:flex items-center gap-2 text-xs font-semibold tracking-wider text-[#222222] hover:text-[#75182d] transition-colors whitespace-nowrap"
+                className="hidden md:flex items-center gap-2 text-xs font-semibold tracking-wider text-[#222222] hover:text-[#75182d] transition-colors whitespace-nowrap bg-white/70 px-3 py-2 border border-black/10"
               >
                 <Phone className="w-3.5 h-3.5 text-[#75182d]" />
-                <span>0981.365.391</span>
+                <span className="font-mono">0981.365.391</span>
               </a>
 
               <a
                 href="#contact"
-                className="shushi-btn shushi-btn-primary whitespace-nowrap !py-2.5 !px-3.5 sm:!py-3 sm:!px-5 text-xs"
+                className="shushi-btn shushi-btn-primary whitespace-nowrap !py-2.5 !px-3.5 sm:!py-3 sm:!px-5 text-xs shadow-sm"
               >
                 <span className="flex items-center gap-1.5">
                   <span>Liên hệ ngay</span>
@@ -195,7 +193,7 @@ export function Navbar() {
                     { label: "Tiêu chuẩn 5S & Bếp 1 chiều", href: "#standards-5s" },
                     { label: "Food & Coffee (Suất ăn, Bàn tiệc, Café)", href: "#food-coffee" },
                     { label: "Dự toán chi phí B2B", href: "#calculator" },
-                    { label: "Travel (Du lịch Y tế, Golf, Trải nghiệm)", href: "#travel" },
+                    { label: "Shinsei Travel (Du lịch Y tế, Golf, Trải nghiệm)", href: "#travel" },
                     { label: "Liên hệ & Đặt lịch nếm thử", href: "#contact" },
                   ].map((link, idx) => (
                     <div key={idx} className="overflow-hidden">
