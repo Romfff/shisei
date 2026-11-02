@@ -8,11 +8,11 @@ export function ShinseiTravel() {
     {
       id: "medical",
       number: "01.",
-      title: "Du Lịch Y Tế (Medical Tourism Japan)",
-      tag: "Tokyo & Osaka Medical",
+      title: "Du Lịch Y Tế · 医療ツーリズム",
+      tag: "東京・大阪 先端医療",
       image: "/images/japan-medical-travel.jpg",
       icon: HeartPulse,
-      desc: "Kết nối trực tiếp hệ thống bệnh viện và viện nghiên cứu y khoa hàng đầu tại Tokyo & Osaka. Cung cấp gói tầm soát sức khỏe tổng quát kỹ thuật cao (Ningen Dock), liệu pháp tế bào gốc và điều trị chuyên sâu cùng đội ngũ phiên dịch y tế chứng chỉ quốc tế.",
+      desc: "Kết nối trực tiếp hệ thống bệnh viện và viện nghiên cứu y khoa hàng đầu tại Tokyo & Osaka. Cung cấp gói tầm soát sức khỏe tổng quát kỹ thuật cao Ningen Dock 人間ドック, liệu pháp tế bào gốc và điều trị chuyên sâu cùng đội ngũ phiên dịch y tế chứng chỉ quốc tế.",
       perks: [
         "Khám tầm soát sớm ung thư & bệnh lối sống công nghệ Nhật",
         "Đội ngũ giáo sư, bác sĩ đầu ngành tại bệnh viện Tokyo",
@@ -22,9 +22,9 @@ export function ShinseiTravel() {
     {
       id: "golf",
       number: "02.",
-      title: "Du Lịch Golf (Japan Golf Experience)",
-      tag: "Sân Golf Núi Phú Sĩ & Kanto",
-      image: "/images/japan-golf-travel.jpg",
+      title: "Du Lịch Golf · ゴルフツアー",
+      tag: "富士山・関東 ゴルフ場",
+      image: "/images/japan-golf-course.jpg",
       icon: Trophy,
       desc: "Trải nghiệm những sân golf đạt chuẩn PGA quốc tế dưới chân núi Phú Sĩ và các vùng ven biển nổi tiếng của Nhật Bản. Kết hợp kỳ nghỉ dưỡng suối nước nóng Onsen truyền thống và thưởng thức ẩm thực Kaiseki thượng hạng sau trận đánh.",
       perks: [
@@ -36,8 +36,8 @@ export function ShinseiTravel() {
     {
       id: "experience",
       number: "03.",
-      title: "Du Lịch Trải Nghiệm (Cultural & Culinary Tour)",
-      tag: "Kyoto · Onsen · Kaiseki",
+      title: "Du Lịch Trải Nghiệm · 文化・体験ツアー",
+      tag: "京都 · 温泉 · 会席料理",
       image: "/images/japan-experience-travel.jpg",
       icon: Compass,
       desc: "Hành trình cá nhân hóa khám phá tinh hoa văn hóa và ẩm thực Nhật Bản: Dạo bước qua các ngôi chùa cổ ngàn năm tại Kyoto, trải nghiệm trà đạo, tắm khoáng nóng Ryokan truyền thống và thưởng ngoạn mùa hoa anh đào hoặc mùa lá đỏ Momiji.",
@@ -64,7 +64,7 @@ export function ShinseiTravel() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] font-bold text-[#f1e2c8] mb-3 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15">
               <span className="w-1.5 h-1.5 rounded-full bg-[#f1e2c8]"></span>
-              <span>Dịch vụ lữ hành quốc tế · Shinsei Travel</span>
+              <span>Dịch vụ lữ hành quốc tế · Shinsei Travel · 海外旅行</span>
             </div>
             <h2 className="font-title text-4xl sm:text-5xl font-light text-white tracking-tight leading-[1.05]">
               Hành trình tinh hoa Nhật Bản: Y tế · Golf · Trải nghiệm
