@@ -90,6 +90,16 @@ export function Footer() {
                 </span>
               </div>
 
+              <div>
+                <span className="text-stone-400 block font-mono text-[11px]">Email tiếp nhận thông tin & tư vấn:</span>
+                <a
+                  href="mailto:ddcjp.ceo@gmail.com"
+                  className="font-mono text-sm font-semibold text-[#f1e2c8] hover:underline block mt-0.5"
+                >
+                  ddcjp.ceo@gmail.com
+                </a>
+              </div>
+
               <div className="pt-2">
                 <div className="inline-flex items-center gap-2 p-2.5 bg-white/5 border border-white/10 text-[#f1e2c8] text-[11px] font-mono">
                   <ShieldCheck className="w-4 h-4 text-[#f1e2c8] shrink-0" />
