@@ -54,16 +54,26 @@ export function AboutShinsei() {
             </div>
 
             <div className="pt-6 mt-6 border-t border-black/10 flex items-center justify-between">
-              <div>
-                <div className="font-title text-xl font-normal text-[#75182d]">
-                  Đỗ Thị Trang
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#75182d] shrink-0 shadow-sm bg-stone-100">
+                  <img
+                    src="/images/shinsei-ceo.jpg"
+                    alt="Đỗ Thị Trang - Tổng Giám đốc Công ty Cổ phần SHINSEI"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="text-xs text-[#222222]/70 font-mono mt-0.5">
-                  Tổng Giám đốc · Công ty Cổ phần SHINSEI
+                <div>
+                  <div className="font-title text-xl font-normal text-[#75182d]">
+                    Đỗ Thị Trang
+                  </div>
+                  <div className="text-xs text-[#222222]/70 font-mono mt-0.5">
+                    Tổng Giám đốc · Công ty Cổ phần SHINSEI
+                  </div>
                 </div>
               </div>
-              <div className="font-title italic text-sm text-[#75182d]/80 font-serif">
-                Shinsei CEO
+
+              <div className="font-title italic text-sm text-[#75182d]/80 font-serif hidden sm:block">
+                CEO Shinsei
               </div>
             </div>
           </div>

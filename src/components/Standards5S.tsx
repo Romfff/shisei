@@ -140,7 +140,7 @@ export function Standards5S() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             {safetyProcess.map((item, idx) => {
               const Icon = item.icon;
               return (
@@ -166,6 +166,52 @@ export function Standards5S() {
               );
             })}
           </div>
+
+          {/* Visual Showcase: Shinsei Kitchen & Fleet */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-black/10">
+            <div className="flex items-center gap-4 bg-[#fbf7ef] p-4 border border-black/10">
+              <div className="w-24 h-24 rounded-none overflow-hidden shrink-0 border border-black/15 bg-stone-100">
+                <img
+                  src="/images/shinsei-staff-kitchen.jpg"
+                  alt="Đội ngũ đầu bếp tiêu chuẩn 5S Shinsei"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#75182d] font-bold block mb-1">
+                  Đội ngũ nhân sự
+                </span>
+                <h5 className="font-title text-base font-medium text-[#222222]">
+                  Đầu bếp đào tạo 5S Nhật Bản
+                </h5>
+                <p className="text-xs text-[#222222]/70 mt-1">
+                  100% nhân viên khám sức khỏe định kỳ và tuân thủ đồng phục bảo hộ khép kín.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 bg-[#fbf7ef] p-4 border border-black/10">
+              <div className="w-24 h-24 rounded-none overflow-hidden shrink-0 border border-black/15 bg-stone-100">
+                <img
+                  src="/images/shinsei-truck.jpg"
+                  alt="Đội xe tải bảo ôn giữ nhiệt Shinsei"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#75182d] font-bold block mb-1">
+                  Vận tải bảo ôn
+                </span>
+                <h5 className="font-title text-base font-medium text-[#222222]">
+                  Đội xe tải chuyên dụng giữ nhiệt
+                </h5>
+                <p className="text-xs text-[#222222]/70 mt-1">
+                  Bảo đảm thức ăn trên 65°C, giao tận nơi đúng giờ cho mọi ca kíp nhà máy.
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>

@@ -7,23 +7,24 @@ import { Utensils, Plane } from "lucide-react";
 export function Hero() {
   const showcaseRef = useRef<HTMLDivElement>(null);
 
-  // Pinned scroll animation: Left and Right cards peek out initially, then fan out full screen
+  // Pinned scroll animation: Left and Right cards peek out initially, then smoothly slide out full width
   const { scrollYProgress } = useScroll({
     target: showcaseRef,
     offset: ["start start", "end end"],
   });
 
-  const leftX = useTransform(scrollYProgress, [0, 0.85], ["-16vw", "-36vw"]);
-  const leftRotate = useTransform(scrollYProgress, [0, 0.85], [-2, -5]);
-  const leftOpacity = useTransform(scrollYProgress, [0, 0.3], [0.9, 1]);
-  const leftScale = useTransform(scrollYProgress, [0, 0.85], [0.95, 1.05]);
+  // Pre-peek: -24vw and +24vw initially, expanding to -46vw and +46vw for full-screen showcase
+  const leftX = useTransform(scrollYProgress, [0, 0.85], ["-24vw", "-46vw"]);
+  const leftRotate = useTransform(scrollYProgress, [0, 0.85], [-3, -6]);
+  const leftOpacity = useTransform(scrollYProgress, [0, 0.25], [0.92, 1]);
+  const leftScale = useTransform(scrollYProgress, [0, 0.85], [0.96, 1.04]);
 
-  const rightX = useTransform(scrollYProgress, [0, 0.85], ["16vw", "36vw"]);
-  const rightRotate = useTransform(scrollYProgress, [0, 0.85], [2, 5]);
-  const rightOpacity = useTransform(scrollYProgress, [0, 0.3], [0.9, 1]);
-  const rightScale = useTransform(scrollYProgress, [0, 0.85], [0.95, 1.05]);
+  const rightX = useTransform(scrollYProgress, [0, 0.85], ["24vw", "46vw"]);
+  const rightRotate = useTransform(scrollYProgress, [0, 0.85], [3, 6]);
+  const rightOpacity = useTransform(scrollYProgress, [0, 0.25], [0.92, 1]);
+  const rightScale = useTransform(scrollYProgress, [0, 0.85], [0.96, 1.04]);
 
-  const centerScale = useTransform(scrollYProgress, [0, 0.85], [1, 1.15]);
+  const centerScale = useTransform(scrollYProgress, [0, 0.85], [1, 1.12]);
 
   return (
     <section className="relative bg-[#fbf7ef] border-b border-black/10">
@@ -45,7 +46,7 @@ export function Hero() {
           <span>5S 日本基準</span>
         </motion.div>
 
-        {/* Massive Display Title */}
+        {/* Display Title */}
         <div className="overflow-hidden">
           <motion.h1
             initial={{ y: "100%", opacity: 0 }}
@@ -89,14 +90,14 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Pinned Scroll Track: 3 Larger Authentic Images with clean typography overlay */}
+      {/* Pinned Scroll Track: 3 Extra Large Authentic Images with perfectly legible typography */}
       <div ref={showcaseRef} className="relative h-[220vh] w-full">
         
         <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden pointer-events-none">
           
           <div className="relative w-full h-full flex items-center justify-center pointer-events-auto">
             
-            {/* Left Card: Quầy Café & Điểm tâm sáng phong cách Nhật Bản */}
+            {/* Left Card: Shinsei Café & Căng tin tổng hợp */}
             <motion.div
               style={{
                 x: leftX,
@@ -104,44 +105,44 @@ export function Hero() {
                 opacity: leftOpacity,
                 scale: leftScale,
               }}
-              className="absolute w-[86vw] sm:w-[56vw] md:w-[45vw] lg:w-[40vw] max-w-[580px] aspect-[16/11] bg-[#222222] border border-black/25 shadow-2xl overflow-hidden z-10 group cursor-pointer"
+              className="absolute w-[84vw] sm:w-[64vw] md:w-[54vw] lg:w-[48vw] max-w-[720px] aspect-[16/10] bg-[#222222] border border-black/30 shadow-2xl overflow-hidden z-10 group cursor-pointer"
             >
               <img
-                src="/images/japan-cafe-counter.jpg"
-                alt="Quầy Café và căng tin ẩm thực Nhật Bản Shinsei"
-                className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
+                src="/images/shinsei-staff-coffee.jpg"
+                alt="Đội ngũ nhân viên quầy Café và căng tin Shinsei"
+                className="w-full h-full object-cover object-top opacity-90 group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent"></div>
               
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
                   Food & Coffee · Căng tin tổng hợp
                 </span>
-                <p className="font-title text-lg sm:text-xl font-normal text-white leading-snug">
+                <p className="font-title text-lg sm:text-xl md:text-2xl font-light text-white leading-snug">
                   Vận hành quầy cà phê & căng tin chuyên nghiệp
                 </p>
               </div>
             </motion.div>
 
-            {/* Center Card: Khay cơm Bento cá nướng chuẩn Nhật Bản (Chính xác ẩm thực Nhật) */}
+            {/* Center Card: Khay cơm Makunouchi chuẩn Nhật Bản */}
             <motion.div
               style={{ scale: centerScale }}
-              className="relative w-[90vw] sm:w-[62vw] md:w-[52vw] lg:w-[45vw] max-w-[660px] aspect-[16/11] bg-[#222222] border border-black/30 shadow-2xl overflow-hidden z-20 group"
+              className="relative w-[88vw] sm:w-[68vw] md:w-[58vw] lg:w-[52vw] max-w-[800px] aspect-[16/10] bg-[#222222] border border-black/35 shadow-2xl overflow-hidden z-20 group"
             >
               <img
-                src="/images/japan-bento-hero.jpg"
-                alt="Khay cơm Bento cá thu Nhật Saba Shioyaki và cơm trắng chuẩn Nhật"
-                className="w-full h-full object-cover object-center opacity-90 group-hover:scale-104 transition-transform duration-1000 ease-out"
+                src="/images/japan-popular-meal.jpg"
+                alt="Khay cơm Bento Makunouchi truyền thống Nhật Bản Shinsei"
+                className="w-full h-full object-cover object-center opacity-92 group-hover:scale-104 transition-transform duration-1000 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
-              {/* Bottom Info: Clean, legible layout without overlapping text */}
+              {/* Bottom Info: Clean, spacious layout with no text overflow */}
               <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-white">
-                <div className="max-w-md">
+                <div className="max-w-lg">
                   <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
                     Công ty Cổ phần Thương Mại Shinsei
                   </span>
-                  <p className="font-title text-xl sm:text-2xl font-light text-white leading-tight">
+                  <p className="font-title text-xl sm:text-2xl md:text-3xl font-light text-white leading-snug">
                     Suất ăn dinh dưỡng, an toàn tuyệt đối theo tiêu chuẩn 5S Nhật Bản.
                   </p>
                 </div>
@@ -159,7 +160,7 @@ export function Hero() {
               </div>
             </motion.div>
 
-            {/* Right Card: Shinsei Travel - Sân Golf dưới chân núi Phú Sĩ Nhật Bản */}
+            {/* Right Card: Shinsei Travel - Sân Golf & Trải nghiệm Nhật Bản */}
             <motion.div
               style={{
                 x: rightX,
@@ -167,20 +168,20 @@ export function Hero() {
                 opacity: rightOpacity,
                 scale: rightScale,
               }}
-              className="absolute w-[86vw] sm:w-[56vw] md:w-[45vw] lg:w-[40vw] max-w-[580px] aspect-[16/11] bg-[#222222] border border-black/25 shadow-2xl overflow-hidden z-10 group cursor-pointer"
+              className="absolute w-[84vw] sm:w-[64vw] md:w-[54vw] lg:w-[48vw] max-w-[720px] aspect-[16/10] bg-[#222222] border border-black/30 shadow-2xl overflow-hidden z-10 group cursor-pointer"
             >
               <img
-                src="/images/japan-golf-travel.jpg"
-                alt="Shinsei Travel - Sân Golf nhìn ra núi Phú Sĩ Nhật Bản"
+                src="/images/japan-golf-course.jpg"
+                alt="Shinsei Travel - Sân Golf tiêu chuẩn quốc tế tại Nhật Bản"
                 className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent"></div>
 
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
                   Shinsei Travel · Du lịch cao cấp
                 </span>
-                <p className="font-title text-lg sm:text-xl font-normal text-white leading-snug">
+                <p className="font-title text-lg sm:text-xl md:text-2xl font-light text-white leading-snug">
                   Du lịch y tế, du lịch golf & hành trình trải nghiệm chuyên sâu
                 </p>
               </div>
