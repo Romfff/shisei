@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Flame, Check, ChevronDown, Utensils, Coffee, Users, ShoppingBag } from "lucide-react";
+import { Flame, Check, ChevronDown, Utensils, Coffee, Users, ShoppingBag, Salad, Sparkles, ShieldCheck } from "lucide-react";
 
 interface ServiceTier {
   id: string;
@@ -30,28 +30,28 @@ export function FoodCoffee() {
       title: "Suất ăn Công nghiệp",
       sub: "30k – 35k – 40k",
       icon: Utensils,
-      desc: "Phục vụ nhà máy, khu công nghiệp, dây chuyền may mặc, cơ khí, linh kiện điện tử",
+      desc: "Trường học, cơ quan, doanh nghiệp, bệnh viện, khu công nghiệp",
     },
     {
       id: "popular",
       title: "Suất ăn Phổ thông",
       sub: "35k – 40k – 45k – 50k",
       icon: Users,
-      desc: "Trường học, cơ quan nhà nước, bệnh viện, khối văn phòng liên xưởng",
+      desc: "Trường học bán trú, khối văn phòng, cơ quan nhà nước",
     },
     {
       id: "premium",
       title: "Suất ăn Cao cấp",
       sub: "60k – 80k – 100k – 120k",
       icon: Flame,
-      desc: "Tiếp khách, hội nghị, chuyên gia nước ngoài, ban lãnh đạo, khách VIP",
+      desc: "Tiếp khách, hội nghị, chuyên gia nước ngoài, ban lãnh đạo VIP",
     },
     {
       id: "banquet",
       title: "Đặt tiệc Bàn 6 - 8 - 10",
       sub: "Từ 120k / người",
       icon: Users,
-      desc: "Tiệc liên hoan công ty, tất niên, lễ kỷ niệm, sự kiện nội bộ nhà xưởng",
+      desc: "Tiệc liên hoan công ty, tất niên, lễ kỷ niệm, sự kiện nội bộ",
     },
     {
       id: "takeaway",
@@ -62,10 +62,10 @@ export function FoodCoffee() {
     },
     {
       id: "coffee",
-      title: "Quầy Café & Căng tin",
+      title: "Café & Đồ uống",
       sub: "Vận hành trọn gói",
       icon: Coffee,
-      desc: "Thiết kế, đầu tư và vận hành quầy thức uống, cà phê sạch & điểm tâm tại chỗ",
+      desc: "Pha chế, phục vụ và quản lý quầy đồ uống tại trường học, cơ quan, doanh nghiệp",
     },
   ];
 
@@ -73,9 +73,9 @@ export function FoodCoffee() {
     industrial: {
       id: "industrial",
       number: "01.",
-      name: "Suất ăn Công nghiệp · 定食トレー",
+      name: "Suất ăn Tập thể & Công nghiệp · 定食トレー",
       priceDisplay: "30.000đ – 35.000đ – 40.000đ / suất",
-      target: "Khu công nghiệp, nhà xưởng, công nhân ca ngày & ca đêm",
+      target: "Trường học, cơ quan, doanh nghiệp, khu công nghiệp, bệnh viện",
       image: "/images/japan-industrial-meal.jpg",
       calories: "750 – 850 kcal",
       description: "Suất cơm khay inox SUS 304 chuẩn định lượng dinh dưỡng Shokuiku Nhật Bản. Thực đơn đổi món mỗi ngày, cơm trắng dẻo thơm và nước canh nóng được phục vụ thêm tự do miễn phí.",
@@ -117,9 +117,9 @@ export function FoodCoffee() {
     premium: {
       id: "premium",
       number: "03.",
-      name: "Suất ăn Cao cấp · 会席・VIP",
+      name: "Suất ăn Đặc biệt & Sự kiện · 会席・VIP",
       priceDisplay: "60.000đ – 80.000đ – 100.000đ – 120.000đ / suất",
-      target: "Chuyên gia Nhật Bản, ban lãnh đạo, khách tiếp đón hội nghị",
+      target: "Hội nghị, tiếp khách, sự kiện, chuyên gia nước ngoài, ban lãnh đạo VIP",
       image: "/images/japan-premium-meal.jpg",
       calories: "600 – 700 kcal",
       description: "Phục vụ theo hình thức đĩa riêng từng món theo chuẩn bàn ăn Nhật Bản hoặc hộp bento sơn mài truyền thống, bài trí trang nhã và nguyên liệu thượng hạng.",
@@ -163,19 +163,19 @@ export function FoodCoffee() {
       number: "05.",
       name: "Cơm hộp – Mang đi · 持ち帰り弁当",
       priceDisplay: "35.000đ – 60.000đ / hộp tiện lợi",
-      target: "Sự kiện ngoài trời, hội thảo, học sinh dã ngoại, nhân viên văn phòng",
-      image: "/images/shinsei-packaging.png",
+      target: "Học sinh, sinh viên, nhân viên văn phòng, hội thảo, sự kiện dã ngoại ngoài trời",
+      image: "/images/japan-takeaway-bento.jpg",
       calories: "650 – 800 kcal",
-      description: "Suất đóng hộp bento chuyên nghiệp với bộ bao bì nhận diện thương hiệu Shinsei độc quyền: Túi giấy quai xách sang trọng, hộp quai xách có nắp kính nhìn rõ món ăn, giữ ấm tốt và dễ dàng vận chuyển sử dụng ngay.",
+      description: "Suất đóng hộp bento nhiều ngăn sâu lòng chuẩn Nhật, giữ ấm tốt, kiểm soát chặt chẽ nhiệt độ và thời gian giao nhận để bảo đảm chất lượng bữa ăn tươi ngon nhất.",
       dishes: {
         main: "Thịt heo chiên xù Tonkatsu · Gà sốt chua ngọt · Sườn rim nước dừa",
         side: "Trứng cuộn rong biển Tamagoyaki · Xúc xích nướng",
         veg: "Bắp cải xào nấm · Salad dưa chuột cà chua bi",
-        soup: "Canh đựng cốc giữ nhiệt riêng biệt",
-        dessert: "Bao bì túi giấy & hộp bánh mang đi thương hiệu Shinsei",
+        soup: "Canh đựng cốc giữ nhiệt riêng biệt · Cơm dẻo thơm",
+        dessert: "Trái cây tươi đóng gói vệ sinh kèm khăn ướt, thìa đũa tiệt trùng",
       },
       features: [
-        "Bộ bao bì túi giấy & hộp đựng chịu nhiệt an toàn, thân thiện môi trường",
+        "Hộp bento nhiều ngăn chịu nhiệt an toàn, chống tràn đổ",
         "Kèm đủ thìa đũa tăm và khăn ướt tiệt trùng",
         "Giao hàng đúng giờ tận tay người nhận",
       ],
@@ -207,6 +207,38 @@ export function FoodCoffee() {
   const [activeTab, setActiveTab] = useState("industrial");
   const current = mealTiers[activeTab] || mealTiers.industrial;
 
+  // Bám sát Hồ sơ năng lực / 11: Giải pháp thực đơn & dinh dưỡng
+  const nutritionPillars = [
+    {
+      code: "01",
+      category: "Suất ăn tập thể",
+      structure: "Tinh bột + Đạm + Rau + Canh riêng",
+      controls: "Kiểm soát định lượng calo, chi phí tối ưu, an toàn vệ sinh và tính đa dạng xoay vòng 4 tuần.",
+      target: "Trường học, cơ quan, KCN, bệnh viện",
+    },
+    {
+      code: "02",
+      category: "Suất ăn đặc biệt",
+      structure: "Món chính & Món phụ theo yêu cầu",
+      controls: "Kiểm soát dị ứng thực phẩm, khẩu vị chuyên gia, hình thức trình bày và lịch phục vụ VIP linh hoạt.",
+      target: "Hội nghị, tiếp khách, sự kiện",
+    },
+    {
+      code: "03",
+      category: "Cơm hộp mang đi",
+      structure: "Suất đóng hộp chuyên nghiệp",
+      controls: "Kiểm soát bao bì đạt chuẩn ATTP, giữ nhiệt độ trên 65°C và thời gian vận chuyển nhanh chóng.",
+      target: "Văn phòng, sự kiện, dã ngoại",
+    },
+    {
+      code: "04",
+      category: "Café & Đồ uống",
+      structure: "Cà phê, Trà, Nước trái cây, Bánh tươi",
+      controls: "Chuẩn hóa công thức pha chế, định lượng nguyên liệu sạch, vệ sinh quầy bar và dịch vụ tận tâm.",
+      target: "Khuôn viên cơ quan, trường học, nhà xưởng",
+    },
+  ];
+
   return (
     <section id="food-coffee" className="py-24 bg-[#ffffff] border-b border-black/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -216,22 +248,22 @@ export function FoodCoffee() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] font-bold text-[#75182d] mb-3 bg-[#f1e2c8]/60 px-3.5 py-1.5 rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-[#75182d]"></span>
-              <span>Hệ sinh thái ẩm thực Shinsei</span>
+              <span>Hồ sơ năng lực / 06 & 11 · Danh mục dịch vụ</span>
             </div>
             <h2 className="font-title text-4xl sm:text-5xl font-light text-[#222222] tracking-tight leading-[1.05]">
-              Food & Coffee · Đa dạng khẩu phần, chuẩn vị Nhật
+              Food & Coffee · Bếp ăn & Quầy Café chuẩn 5S
             </h2>
             <p className="text-base text-[#222222]/80 mt-4 leading-relaxed font-normal">
-              Từ bữa ăn công nhân ấm nóng, suất ăn học đường dinh dưỡng đến bàn tiệc trang trọng và quầy cà phê hiện đại.
+              Thiết kế thực đơn luân phiên theo mùa, nhóm tuổi, thời gian phục vụ và ngân sách; luôn có phương án thay thế linh hoạt khi nguyên liệu biến động.
             </p>
           </div>
 
           <div className="text-right shrink-0">
             <span className="font-mono text-xs uppercase tracking-widest text-[#75182d] font-bold block mb-1">
-              Phục vụ linh hoạt
+              Hình thức phục vụ linh hoạt
             </span>
             <span className="text-sm font-semibold text-[#222222]">
-              Khay ăn · Bát đĩa riêng · Cơm hộp · Tiệc bàn
+              Khay inox · Bát đĩa riêng · Cơm hộp · Tiệc bàn · Quầy Café
             </span>
           </div>
         </div>
@@ -392,6 +424,81 @@ export function FoodCoffee() {
               </div>
             </motion.div>
           </AnimatePresence>
+        </div>
+
+        {/* Bám sát Hồ sơ năng lực / 11: Giải Pháp Thực Đơn & Dinh Dưỡng */}
+        <div className="bg-[#fbf7ef] border border-black/10 p-8 sm:p-12 mb-16">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 pb-8 border-b border-black/10">
+            <div className="max-w-2xl">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#75182d] font-bold block mb-1">
+                Hồ sơ năng lực / 11
+              </span>
+              <h3 className="font-title text-2xl sm:text-3xl font-light text-[#222222]">
+                Giải Pháp Thực Đơn & Dinh Dưỡng Cân Bằng
+              </h3>
+              <p className="text-xs sm:text-sm text-[#222222]/75 mt-2 leading-relaxed">
+                Thiết kế thực đơn luân phiên theo mùa, nhóm tuổi, thời gian phục vụ và ngân sách của từng đơn vị; luôn có phương án nguyên liệu thay thế đảm bảo dinh dưỡng và ổn định chi phí.
+              </p>
+            </div>
+            <div className="text-xs font-mono text-[#75182d] bg-white px-4 py-2 rounded-full border border-[#75182d]/20 shrink-0">
+              Kiểm soát định lượng & ATTP nghiêm ngặt
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {nutritionPillars.map((item, idx) => (
+              <div key={idx} className="bg-white p-6 border border-black/10 hover:border-[#75182d] transition-all flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between pb-3 border-b border-black/5 mb-3">
+                    <span className="font-mono text-sm font-bold text-[#75182d]">{item.code}</span>
+                    <span className="text-[10px] font-mono text-[#222222]/60 uppercase">Phân loại</span>
+                  </div>
+                  <h4 className="font-title text-lg font-normal text-[#222222] mb-1">
+                    {item.category}
+                  </h4>
+                  <div className="text-xs text-[#75182d] font-medium mb-3">
+                    {item.structure}
+                  </div>
+                  <p className="text-xs text-[#222222]/75 leading-relaxed">
+                    {item.controls}
+                  </p>
+                </div>
+                <div className="pt-4 mt-4 border-t border-black/5 text-[11px] text-[#222222]/60 italic">
+                  Đối tượng: {item.target}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bao bì & Dịch vụ Café điểm tâm bổ trợ */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white p-6 sm:p-8 border border-black/10">
+            <div className="lg:col-span-5">
+              <div className="aspect-[16/10] overflow-hidden bg-stone-100 border border-black/10">
+                <img
+                  src="/images/shinsei-packaging.png"
+                  alt="Bao bì túi giấy và hộp bánh quà tặng Shinsei"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div className="lg:col-span-7 space-y-3">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#75182d] font-bold block">
+                Bao bì quầy café & quà tặng Shinsei
+              </span>
+              <h4 className="font-title text-xl sm:text-2xl font-light text-[#222222]">
+                Quy Chuẩn Bao Bì Túi Giấy & Hộp Bánh Quầy Café
+              </h4>
+              <p className="text-xs sm:text-sm text-[#222222]/80 leading-relaxed font-normal">
+                Bên cạnh các suất cơm khay inox và suất ăn tập thể, quầy Café Shinsei cung cấp các sản phẩm bánh ngọt điểm tâm nướng tươi (Croissant, Tart trái cây) được đóng gói trong hộp có nắp mica trong suốt và túi giấy quai xách đỏ rượu vang lượn sóng be kem sang trọng, thân thiện môi trường.
+              </p>
+              <div className="pt-2 flex flex-wrap gap-4 text-xs font-mono text-[#75182d]">
+                <span>✓ Túi giấy quai xách thương hiệu</span>
+                <span>✓ Hộp quai xách tiện dụng</span>
+                <span>✓ Thân thiện môi trường & an toàn thực phẩm</span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>

@@ -243,53 +243,69 @@ export function Standards5S() {
           </div>
         </div>
 
-        {/* Tiêu Chuẩn Trang Phục Bếp & Phục Vụ Shinsei */}
+        {/* Tiêu Chuẩn Trang Phục Bếp & Logistics Vận Chuyển Shinsei */}
         <div className="bg-[#ffffff] p-8 sm:p-12 border border-[#75182d]/15 shadow-sm">
           <div className="max-w-2xl mb-8">
             <span className="font-mono text-xs uppercase tracking-widest text-[#75182d] font-bold block mb-1">
-              Nhận diện chuyên nghiệp
+              Nhận diện & Hậu cần chuyên nghiệp
             </span>
             <h3 className="font-title text-2xl sm:text-3xl font-light text-[#222222]">
-              Quy chuẩn trang phục nhân sự Shinsei
+              Quy chuẩn trang phục nhân sự & Logistics Shinsei
             </h3>
             <p className="text-xs sm:text-sm text-[#222222]/70 mt-1">
-              Đồng phục được thiết kế đồng bộ theo nhận diện đỏ rượu vang & be kem, đáp ứng 3 tiêu chí cốt lõi: Sạch sẽ • An toàn • Chuyên nghiệp.
+              Đồng phục và phương tiện được chuẩn hóa theo tiêu chuẩn 5S Nhật Bản, đáp ứng 3 tiêu chí cốt lõi: Sạch sẽ • An toàn • Chuyên nghiệp.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            {/* Card 1: Đồng phục bếp 5S */}
-            <div className="bg-[#fbf7ef] border border-black/10 overflow-hidden flex flex-col justify-between group">
-              <div>
-                <div className="aspect-[4/3] overflow-hidden bg-stone-100">
-                  <img
-                    src="/images/shinsei-staff-chef.jpg"
-                    alt="Đồng phục bếp Shinsei"
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
+          {/* Full-width Detailed Showcase: Đồng phục Bếp 5S (Front + Back + Accessories) */}
+          <div className="bg-[#fbf7ef] border border-black/10 overflow-hidden mb-8 group">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              <div className="lg:col-span-8 overflow-hidden bg-white">
+                <img
+                  src="/images/shinsei-uniform-chef-full.jpg"
+                  alt="Bảng quy chuẩn chi tiết Đồng phục Bếp 5S Shinsei (mặt trước, mặt sau, nón bếp)"
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.01]"
+                />
+              </div>
+
+              <div className="lg:col-span-4 p-6 sm:p-8 space-y-4">
+                <div>
                   <span className="text-[10px] font-mono uppercase tracking-widest text-[#75182d] font-bold block mb-1">
-                    Khu vực chế biến
+                    Tiêu chuẩn 5S khu bếp
                   </span>
-                  <h4 className="font-title text-lg font-normal text-[#222222] mb-2">
-                    Đồng phục Bếp 5S
+                  <h4 className="font-title text-2xl font-light text-[#222222]">
+                    Đồng Phục Bếp Chuyên Nghiệp
                   </h4>
-                  <p className="text-xs text-[#222222]/75 leading-relaxed">
-                    Áo bếp trắng viền đỏ rượu vang kháng khuẩn, mũ bếp xếp ly thêu logo, khăn bandana giữ tóc vô trùng và giày chống trơn trượt.
+                  <p className="text-xs text-[#222222]/80 mt-2 leading-relaxed">
+                    Đầy đủ chi tiết mặt trước, mặt sau và phụ kiện: Áo bếp trắng viền đỏ rượu vang thêu logo Shinsei, mũ bếp xếp ly cao cấp, khăn bandana giữ tóc vô trùng và tạp dề bếp dày dặn.
                   </p>
                 </div>
-              </div>
-              <div className="px-6 pb-6 text-[11px] font-mono text-[#75182d] font-semibold">
-                ✓ Khám sức khỏe định kỳ & sát khuẩn tay
+
+                <div className="space-y-2 text-xs font-mono text-[#75182d] pt-3 border-t border-black/10">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#75182d]"></span>
+                    <span>Khám sức khỏe định kỳ & khử trùng tay</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#75182d]"></span>
+                    <span>Tuân thủ bảo hộ khép kín trong chế biến</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#75182d]"></span>
+                    <span>Giày bảo hộ chuyên dụng chống trượt</span>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
 
-            {/* Card 2: Đồng phục Quầy Café & Phục vụ */}
+          {/* 2 Sub-cards: Đồng phục Quầy Café & Đội xe tải Logistics HD */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            {/* Card 1: Đồng phục Quầy Café & Phục vụ */}
             <div className="bg-[#fbf7ef] border border-black/10 overflow-hidden flex flex-col justify-between group">
               <div>
-                <div className="aspect-[4/3] overflow-hidden bg-stone-100">
+                <div className="aspect-[16/10] overflow-hidden bg-stone-100">
                   <img
                     src="/images/shinsei-staff-polo.jpg"
                     alt="Đồng phục quầy café Shinsei"
@@ -300,11 +316,11 @@ export function Standards5S() {
                   <span className="text-[10px] font-mono uppercase tracking-widest text-[#75182d] font-bold block mb-1">
                     Khu vực quầy & phục vụ
                   </span>
-                  <h4 className="font-title text-lg font-normal text-[#222222] mb-2">
-                    Đồng phục Quầy Café & Căng tin
+                  <h4 className="font-title text-xl font-normal text-[#222222] mb-2">
+                    Đồng phục Quầy Café & Phục vụ
                   </h4>
                   <p className="text-xs text-[#222222]/75 leading-relaxed">
-                    Áo polo đỏ rượu vang #75182D thêu logo ngực, tạp dề buộc nơ tiện dụng, tác phong niềm nở, thân thiện và chu đáo chuẩn phong cách Nhật.
+                    Áo polo đỏ rượu vang #75182D thêu logo ngực, tạp dề buộc nơ trang nhã, tác phong niềm nở, thân thiện và chu đáo chuẩn phong cách phục vụ Nhật Bản Omotenashi.
                   </p>
                 </div>
               </div>
@@ -313,13 +329,13 @@ export function Standards5S() {
               </div>
             </div>
 
-            {/* Card 3: Đội xe tải vận chuyển bảo ôn */}
+            {/* Card 2: Đội xe tải vận chuyển bảo ôn sắc nét */}
             <div className="bg-[#fbf7ef] border border-black/10 overflow-hidden flex flex-col justify-between group">
               <div>
-                <div className="aspect-[4/3] overflow-hidden bg-stone-100">
+                <div className="aspect-[16/10] overflow-hidden bg-stone-100">
                   <img
                     src="/images/shinsei-truck.jpg"
-                    alt="Đội xe tải bảo ôn Shinsei"
+                    alt="Đội xe tải bảo ôn logistics Shinsei"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -327,16 +343,16 @@ export function Standards5S() {
                   <span className="text-[10px] font-mono uppercase tracking-widest text-[#75182d] font-bold block mb-1">
                     Logistics & Vận chuyển
                   </span>
-                  <h4 className="font-title text-lg font-normal text-[#222222] mb-2">
+                  <h4 className="font-title text-xl font-normal text-[#222222] mb-2">
                     Đội xe tải bảo ôn chuyên dụng
                   </h4>
                   <p className="text-xs text-[#222222]/75 leading-relaxed">
-                    Đội xe tải thùng kín bảo ôn giữ ấm thức ăn trên 65°C trong suốt quá trình lưu thông, cam kết đúng giờ cho từng ca kíp của nhà máy.
+                    Phương tiện thùng kín bảo ôn chuyên dụng, giữ ấm liên tục trên 65°C trong suốt quá trình lưu thông. Cam kết giao thức ăn đúng giờ cho mọi ca ngày và ca đêm của nhà máy.
                   </p>
                 </div>
               </div>
               <div className="px-6 pb-6 text-[11px] font-mono text-[#75182d] font-semibold">
-                ✓ Đúng giờ theo từng ca ngày & ca đêm
+                ✓ Đảm bảo an toàn thực phẩm & đúng giờ tuyệt đối
               </div>
             </div>
 

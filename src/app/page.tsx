@@ -6,7 +6,6 @@ import { Standards5S } from "@/components/Standards5S";
 import { FoodCoffee } from "@/components/FoodCoffee";
 import { MealCalculator } from "@/components/MealCalculator";
 import { ShinseiTravel } from "@/components/ShinseiTravel";
-import { TestimonialsTrust } from "@/components/TestimonialsTrust";
 import { ContactShinsei } from "@/components/ContactShinsei";
 import { Footer } from "@/components/Footer";
 
@@ -22,7 +21,6 @@ export default function Home() {
         <FoodCoffee />
         <MealCalculator />
         <ShinseiTravel />
-        <TestimonialsTrust />
         <ContactShinsei />
       </main>
       <Footer />

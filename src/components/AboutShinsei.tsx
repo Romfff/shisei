@@ -36,54 +36,62 @@ export function AboutShinsei() {
           </p>
         </div>
 
-        {/* Message from Founder & Company Profile */}
+        {/* Message from Representative & Company Vision */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch mb-16">
           
-          {/* Left: Thông điệp người đại diện - Đỗ Thị Trang (7 cols) */}
-          <div className="lg:col-span-7 bg-[#fbf7ef] p-8 sm:p-12 border border-[#75182d]/15 flex flex-col justify-between shadow-sm relative">
+          {/* Left: Thông điệp người đại diện - Đỗ Thị Trang (7 cols) with prominent circular portrait */}
+          <div className="lg:col-span-7 bg-[#fbf7ef] p-8 sm:p-10 border border-[#75182d]/15 flex flex-col justify-between shadow-sm relative">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#75182d] font-bold block mb-2">
-                Thông điệp người đại diện
-              </span>
-              <h3 className="font-title text-2xl sm:text-3xl font-light text-[#222222] mb-4 leading-snug">
-                &ldquo;Chúng tôi tin rằng chất lượng của một bữa ăn không chỉ nằm ở nguyên liệu và hương vị, mà còn ở tính an toàn, sự đúng giờ và tinh thần trách nhiệm trong từng công đoạn phục vụ.&rdquo;
-              </h3>
               
-              <div className="space-y-3 text-sm text-[#222222]/85 leading-relaxed font-normal">
+              {/* Header block with large circular portrait */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-6 pb-6 mb-6 border-b border-black/10">
+                <div className="relative shrink-0 mx-auto sm:mx-0">
+                  <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-[3px] border-[#75182d] p-1 bg-white shadow-md">
+                    <img
+                      src="/images/shinsei-chairman-trang.jpg"
+                      alt="Đỗ Thị Trang - Chủ tịch Hội đồng Quản trị SHINSEI"
+                      className="w-full h-full object-cover rounded-full"
+                      style={{ objectPosition: "center 22%" }}
+                    />
+                  </div>
+                  <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-auto sm:-right-1 bg-[#75182d] text-[#f1e2c8] text-[9.5px] font-mono uppercase px-2.5 py-0.5 rounded-full border border-white font-bold tracking-wider shadow-sm whitespace-nowrap">
+                    Chairman
+                  </div>
+                </div>
+
+                <div className="text-center sm:text-left">
+                  <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#75182d] font-bold block mb-1">
+                    Thông điệp người đại diện
+                  </span>
+                  <h3 className="font-title text-2xl sm:text-3xl font-normal text-[#222222] leading-tight">
+                    Đỗ Thị Trang
+                  </h3>
+                  <p className="text-xs text-[#222222]/80 font-mono mt-1 font-semibold">
+                    Chủ tịch Hội đồng Quản trị · Người đại diện pháp luật
+                  </p>
+                  <p className="text-[11px] text-[#75182d] font-medium mt-0.5">
+                    CÔNG TY CỔ PHẦN THƯƠNG MẠI SHINSEI
+                  </p>
+                </div>
+              </div>
+
+              {/* Quote & Philosophy */}
+              <blockquote className="font-title italic text-lg sm:text-xl font-light text-[#222222] mb-4 leading-snug border-l-2 border-[#75182d] pl-4">
+                &ldquo;Chúng tôi tin rằng chất lượng của một bữa ăn không chỉ nằm ở nguyên liệu và hương vị, mà còn ở tính an toàn, sự đúng giờ và tinh thần trách nhiệm trong từng công đoạn phục vụ.&rdquo;
+              </blockquote>
+              
+              <div className="space-y-3 text-xs sm:text-sm text-[#222222]/85 leading-relaxed font-normal">
                 <p>
                   SHINSEI hướng đến xây dựng mô hình dịch vụ ăn uống có quy trình rõ ràng, môi trường làm việc ngăn nắp và khả năng thích ứng với nhu cầu của từng đơn vị. Chúng tôi coi trọng sự minh bạch trong phối hợp, chất lượng phục vụ và cải tiến liên tục.
                 </p>
                 <p>
                   Từ định hướng quản lý theo tinh thần 5S Nhật Bản, SHINSEI mong muốn trở thành đối tác lâu dài của Quý Đối Tác trong trường học, cơ quan và doanh nghiệp tại Việt Nam.
                 </p>
-                <p className="font-title italic text-base text-[#75182d] pt-1">
+                <div className="p-3.5 bg-[#f1e2c8]/50 border border-[#75182d]/20 text-[#75182d] font-semibold text-xs sm:text-sm">
                   &ldquo;Mỗi bữa ăn an toàn và ngon miệng là nền tảng cho sức khoẻ, học tập và làm việc hiệu quả!&rdquo;
-                </p>
-              </div>
-            </div>
-
-            <div className="pt-6 mt-6 border-t border-black/10 flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#75182d] shrink-0 shadow-sm bg-stone-100">
-                  <img
-                    src="/images/shinsei-ceo.jpg"
-                    alt="Đỗ Thị Trang - Chủ tịch Hội đồng Quản trị SHINSEI"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <div className="font-title text-xl font-normal text-[#75182d]">
-                    Đỗ Thị Trang
-                  </div>
-                  <div className="text-xs text-[#222222]/70 font-mono mt-0.5">
-                    Chủ tịch Hội đồng Quản trị · CÔNG TY CỔ PHẦN THƯƠNG MẠI SHINSEI
-                  </div>
                 </div>
               </div>
 
-              <div className="font-title italic text-sm text-[#75182d]/80 font-serif hidden sm:block">
-                Chairwoman
-              </div>
             </div>
           </div>
 
