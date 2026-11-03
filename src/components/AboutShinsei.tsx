@@ -46,16 +46,12 @@ export function AboutShinsei() {
               {/* Header block with large circular portrait */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-6 pb-6 mb-6 border-b border-black/10">
                 <div className="relative shrink-0 mx-auto sm:mx-0">
-                  <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-[3px] border-[#75182d] p-1 bg-white shadow-md">
+                  <div className="w-32 h-32 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-[3px] border-[#75182d] p-1.5 bg-white shadow-lg">
                     <img
-                      src="/images/shinsei-chairman-trang.jpg"
+                      src="/images/shinsei-trang-zoomed.jpg"
                       alt="Đỗ Thị Trang - Chủ tịch Hội đồng Quản trị SHINSEI"
                       className="w-full h-full object-cover rounded-full"
-                      style={{ objectPosition: "center 22%" }}
                     />
-                  </div>
-                  <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-auto sm:-right-1 bg-[#75182d] text-[#f1e2c8] text-[9.5px] font-mono uppercase px-2.5 py-0.5 rounded-full border border-white font-bold tracking-wider shadow-sm whitespace-nowrap">
-                    Chairman
                   </div>
                 </div>
 

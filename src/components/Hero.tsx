@@ -108,7 +108,7 @@ export function Hero() {
               className="absolute w-[84vw] sm:w-[64vw] md:w-[54vw] lg:w-[48vw] max-w-[720px] aspect-[16/10] bg-[#222222] border border-black/30 shadow-2xl overflow-hidden z-10 group cursor-pointer"
             >
               <img
-                src="/images/shinsei-cups-beverages.png"
+                src="/images/shinsei-hero-cups.jpg"
                 alt="Bộ cốc giữ nhiệt & thức uống thương hiệu Shinsei"
                 className="w-full h-full object-cover object-center opacity-92 group-hover:scale-105 transition-transform duration-700"
               />
@@ -119,19 +119,19 @@ export function Hero() {
                   Food & Coffee · Cốc & Thức uống Shinsei
                 </span>
                 <p className="font-title text-lg sm:text-xl md:text-2xl font-light text-white leading-snug">
-                  Menu cà phê pha máy & thức uống nhận diện thương hiệu
+                  Menu cà phê pha máy & thức uống nhận diện thương hiệu Shinsei
                 </p>
               </div>
             </motion.div>
 
-            {/* Center Card: Khay cơm Makunouchi chuẩn Nhật Bản */}
+            {/* Center Card: Khay bento & Bếp 5S Shinsei */}
             <motion.div
               style={{ scale: centerScale }}
               className="relative w-[88vw] sm:w-[68vw] md:w-[58vw] lg:w-[52vw] max-w-[800px] aspect-[16/10] bg-[#222222] border border-black/35 shadow-2xl overflow-hidden z-20 group"
             >
               <img
-                src="/images/japan-popular-meal.jpg"
-                alt="Khay cơm Bento Makunouchi truyền thống Nhật Bản Shinsei"
+                src="/images/shinsei-hero-bento-kitchen.jpg"
+                alt="Suất ăn bento dinh dưỡng & Bếp chế biến 5S Shinsei"
                 className="w-full h-full object-cover object-center opacity-92 group-hover:scale-104 transition-transform duration-1000 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
@@ -160,7 +160,7 @@ export function Hero() {
               </div>
             </motion.div>
 
-            {/* Right Card: Shinsei Travel - Sân Golf & Trải nghiệm Nhật Bản */}
+            {/* Right Card: Hộp bánh & Túi quà tặng Shinsei */}
             <motion.div
               style={{
                 x: rightX,
@@ -171,18 +171,18 @@ export function Hero() {
               className="absolute w-[84vw] sm:w-[64vw] md:w-[54vw] lg:w-[48vw] max-w-[720px] aspect-[16/10] bg-[#222222] border border-black/30 shadow-2xl overflow-hidden z-10 group cursor-pointer"
             >
               <img
-                src="/images/japan-golf-course.jpg"
-                alt="Shinsei Travel - Sân Golf tiêu chuẩn quốc tế tại Nhật Bản"
+                src="/images/shinsei-hero-packaging.jpg"
+                alt="Bao bì túi giấy & Hộp bánh quà tặng Shinsei"
                 className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent"></div>
 
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
-                  Shinsei Travel · Du lịch cao cấp
+                  Bao bì & Nhận diện thương hiệu Shinsei
                 </span>
                 <p className="font-title text-lg sm:text-xl md:text-2xl font-light text-white leading-snug">
-                  Du lịch y tế, du lịch golf & hành trình trải nghiệm chuyên sâu
+                  Hộp bánh cao cấp & bao bì đóng gói thân thiện môi trường
                 </p>
               </div>
             </motion.div>

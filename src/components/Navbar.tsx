@@ -53,40 +53,28 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-12 items-center gap-2 sm:gap-4">
             
-            {/* Column 1 (Left): Menu Drawer Button & Left Nav Links */}
-            <div className="col-span-3 sm:col-span-4 flex items-center justify-start gap-4 lg:gap-6">
+            {/* Column 1 (Left): Menu Drawer Button */}
+            <div className="col-span-3 sm:col-span-4 flex items-center justify-start gap-4">
               <button
                 onClick={() => setDrawerOpen(true)}
-                className="group flex items-center gap-2 p-1 text-[#222222] hover:text-[#75182d] transition-colors cursor-pointer shrink-0"
+                className="group flex items-center gap-2.5 px-3 py-1.5 rounded-full border border-black/10 hover:border-[#75182d] text-[#222222] hover:text-[#75182d] bg-white/60 hover:bg-white transition-all cursor-pointer shrink-0 shadow-2xs"
                 aria-label="Open navigation menu"
               >
-                <div className="space-y-1.5 w-5">
-                  <span className="block h-[1.5px] w-5 bg-current transition-all group-hover:w-3.5"></span>
-                  <span className="block h-[1.5px] w-3.5 bg-current transition-all group-hover:w-5"></span>
-                  <span className="block h-[1.5px] w-4 bg-current transition-all group-hover:w-4"></span>
+                <div className="space-y-1.5 w-4">
+                  <span className="block h-[1.5px] w-4 bg-current transition-all group-hover:w-3"></span>
+                  <span className="block h-[1.5px] w-3 bg-current transition-all group-hover:w-4"></span>
+                  <span className="block h-[1.5px] w-3.5 bg-current transition-all group-hover:w-3"></span>
                 </div>
-                <span className="text-xs uppercase tracking-[0.16em] font-semibold hidden sm:inline-block">
+                <span className="text-xs uppercase tracking-[0.16em] font-semibold">
                   Menu
                 </span>
               </button>
-
-              <div className="h-5 w-[1px] bg-black/15 hidden 2xl:block"></div>
-
-              {/* Quick nav links for ultra-wide screens */}
-              <nav className="hidden 2xl:flex items-center gap-5 text-xs uppercase tracking-[0.08em] font-semibold text-[#222222]">
-                <a href="#about" className="whitespace-nowrap hover:text-[#75182d] transition-colors hover:underline underline-offset-8 decoration-[#75182d]">
-                  Về chúng tôi
-                </a>
-                <a href="#standards-5s" className="whitespace-nowrap hover:text-[#75182d] transition-colors hover:underline underline-offset-8 decoration-[#75182d]">
-                  Tiêu chuẩn 5S
-                </a>
-              </nav>
             </div>
 
             {/* Column 2 (Center): Shinsei Brand Logo with Official Emblem */}
-            <div className="col-span-6 sm:col-span-4 flex flex-col items-center justify-center text-center">
+            <div className="col-span-6 sm:col-span-4 flex flex-col items-center justify-center text-center px-2">
               <a href="#" className="inline-flex flex-col items-center group">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 sm:gap-2.5">
                   <img
                     src="/images/shinsei-mark-red.png"
                     alt="SHINSEI Emblem"
@@ -102,20 +90,11 @@ export function Navbar() {
               </a>
             </div>
 
-            {/* Column 3 (Right): Right Nav Links, Hotline & CTA Button */}
-            <div className="col-span-3 sm:col-span-4 flex items-center justify-end gap-3 lg:gap-5">
-              <nav className="hidden 2xl:flex items-center gap-5 text-xs uppercase tracking-[0.08em] font-semibold text-[#222222]">
-                <a href="#food-coffee" className="whitespace-nowrap hover:text-[#75182d] transition-colors hover:underline underline-offset-8 decoration-[#75182d]">
-                  Food & Coffee
-                </a>
-                <a href="#travel" className="whitespace-nowrap hover:text-[#75182d] transition-colors hover:underline underline-offset-8 decoration-[#75182d]">
-                  Travel
-                </a>
-              </nav>
-
+            {/* Column 3 (Right): Hotline & CTA Button (No squeezed nav links) */}
+            <div className="col-span-3 sm:col-span-4 flex items-center justify-end gap-3 lg:gap-4">
               <a
                 href="tel:0981365391"
-                className="hidden lg:flex items-center gap-1.5 text-xs font-semibold tracking-wider text-[#222222] hover:text-[#75182d] transition-colors whitespace-nowrap bg-white/70 px-2.5 py-1.5 border border-black/10 shrink-0"
+                className="hidden md:flex items-center gap-1.5 text-xs font-semibold tracking-wider text-[#222222] hover:text-[#75182d] transition-colors whitespace-nowrap bg-white/80 px-3 py-1.5 border border-black/10 rounded-sm shrink-0 shadow-2xs"
               >
                 <Phone className="w-3.5 h-3.5 text-[#75182d]" />
                 <span className="font-mono">0981.365.391</span>
@@ -123,7 +102,7 @@ export function Navbar() {
 
               <a
                 href="#contact"
-                className="shushi-btn shushi-btn-primary whitespace-nowrap !py-2 !px-3 sm:!py-2.5 sm:!px-4 text-xs shadow-sm shrink-0"
+                className="shushi-btn shushi-btn-primary whitespace-nowrap !py-2 !px-3.5 sm:!py-2.5 sm:!px-4.5 text-xs shadow-sm shrink-0"
               >
                 <span className="flex items-center gap-1.5">
                   <span className="hidden sm:inline">Liên hệ ngay</span>

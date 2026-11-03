@@ -329,13 +329,13 @@ export function Standards5S() {
               </div>
             </div>
 
-            {/* Card 2: Đội xe tải vận chuyển bảo ôn sắc nét */}
+            {/* Card 2: Đội xe bán tải & xe bảo ôn vận chuyển sắc nét */}
             <div className="bg-[#fbf7ef] border border-black/10 overflow-hidden flex flex-col justify-between group">
               <div>
                 <div className="aspect-[16/10] overflow-hidden bg-stone-100">
                   <img
                     src="/images/shinsei-truck.jpg"
-                    alt="Đội xe tải bảo ôn logistics Shinsei"
+                    alt="Xe bán tải giao hàng bảo ôn nhận diện Shinsei"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -344,15 +344,15 @@ export function Standards5S() {
                     Logistics & Vận chuyển
                   </span>
                   <h4 className="font-title text-xl font-normal text-[#222222] mb-2">
-                    Đội xe tải bảo ôn chuyên dụng
+                    Xe Bán Tải & Xe Bảo Ôn Giao Hàng
                   </h4>
                   <p className="text-xs text-[#222222]/75 leading-relaxed">
-                    Phương tiện thùng kín bảo ôn chuyên dụng, giữ ấm liên tục trên 65°C trong suốt quá trình lưu thông. Cam kết giao thức ăn đúng giờ cho mọi ca ngày và ca đêm của nhà máy.
+                    Đội xe bán tải và xe bảo ôn nhận diện thương hiệu Shinsei, trang bị thùng chuyên dụng kiểm soát nhiệt độ nghiêm ngặt, giữ ấm liên tục trên 65°C trong suốt quá trình lưu thông. Cam kết giao thức ăn đúng giờ cho mọi ca ngày và ca đêm.
                   </p>
                 </div>
               </div>
               <div className="px-6 pb-6 text-[11px] font-mono text-[#75182d] font-semibold">
-                ✓ Đảm bảo an toàn thực phẩm & đúng giờ tuyệt đối
+                ✓ Thùng bảo ôn giữ nhiệt chuyên dụng · Giao đúng giờ tuyệt đối
               </div>
             </div>
 
