@@ -6,6 +6,7 @@ export async function POST(request: Request) {
     const { companyName, contactName, phone, email, serviceType, quantity, notes } = body;
 
     const recipientEmail = "ddcjp.ceo@gmail.com";
+    const ccEmail = "contact-shinsei@gmail.com";
 
     // Format service type label
     const serviceLabels: Record<string, string> = {
@@ -22,7 +23,7 @@ export async function POST(request: Request) {
 
     // Console log for audit trail & server monitoring
     console.log("==================================================");
-    console.log(`[SHINSEI B2B INQUIRY] New consultation request for: ${recipientEmail}`);
+    console.log(`[SHINSEI B2B INQUIRY] New consultation request for: ${recipientEmail}, ${ccEmail}`);
     console.log(`Time: ${timestamp}`);
     console.log(`Company: ${companyName}`);
     console.log(`Contact Person: ${contactName}`);
@@ -33,7 +34,7 @@ export async function POST(request: Request) {
     console.log(`Notes: ${notes || "Không có"}`);
     console.log("==================================================");
 
-    // Forward to FormSubmit to deliver directly to ddcjp.ceo@gmail.com
+    // Forward to FormSubmit to deliver directly to ddcjp.ceo@gmail.com & contact-shinsei@gmail.com
     try {
       const formSubmitResponse = await fetch(`https://formsubmit.co/ajax/${recipientEmail}`, {
         method: "POST",
@@ -45,6 +46,7 @@ export async function POST(request: Request) {
           _subject: `[Shinsei B2B] Yêu cầu tư vấn & nếm thử: ${companyName} - ${contactName}`,
           _template: "table",
           _captcha: "false",
+          _cc: ccEmail,
           "Thời gian gửi": timestamp,
           "Tên doanh nghiệp / Đơn vị": companyName,
           "Người phụ trách / Chức vụ": contactName,

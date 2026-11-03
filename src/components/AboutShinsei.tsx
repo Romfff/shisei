@@ -1,15 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, Sparkles, HeartHandshake, Eye, Target, Award } from "lucide-react";
+import { ShieldCheck, Sparkles, HeartHandshake, Eye, Target, Award, CheckCircle2, RefreshCw } from "lucide-react";
 
 export function AboutShinsei() {
   const coreValues = [
-    { title: "An Toàn", desc: "Tuyệt đối an toàn vệ sinh thực phẩm trong từng công đoạn chế biến." },
-    { title: "Sạch Sẽ", desc: "Không gian bếp và căng tin luôn ngăn nắp, vệ sinh theo tiêu chuẩn 5S." },
-    { title: "Chất Lượng", desc: "100% nguyên liệu tươi mới, có nguồn gốc kiểm định rõ ràng mỗi ngày." },
-    { title: "Dinh Dưỡng", desc: "Khẩu phần cân bằng vi chất, năng lượng theo khuyến nghị chuyên gia." },
-    { title: "Hài Lòng", desc: "Đem lại trải nghiệm ẩm thực vui vẻ, ngon miệng và phục vụ chu đáo." },
+    { title: "An Toàn", desc: "Kiểm soát nghiêm ngặt 100% nguyên liệu, chế biến một chiều và lưu mẫu thức ăn." },
+    { title: "Chất Lượng", desc: "Bảo đảm hương vị tươi ngon, khẩu phần dinh dưỡng cân đối và trình bày chỉn chu." },
+    { title: "Trách Nhiệm", desc: "Đúng giờ trong từng ca phục vụ, minh bạch nguồn gốc và phản hồi nhanh chóng." },
+    { title: "Đồng Hành", desc: "Lắng nghe, thấu hiểu và thiết kế giải pháp ẩm thực linh hoạt theo từng đối tác." },
+    { title: "Cải Tiến", desc: "Không ngừng hoàn thiện quy trình, đào tạo nhân sự và áp dụng chuẩn 5S Nhật Bản." },
+  ];
+
+  const servicePrinciples = [
+    "Lấy nhu cầu thực tế của đơn vị sử dụng dịch vụ làm trung tâm phục vụ.",
+    "Minh bạch định lượng, tiêu chuẩn chất lượng và phương án xử lý phản hồi kịp thời.",
+    "Tuân thủ nghiêm ngặt quy định pháp luật và yêu cầu đặc thù của từng địa điểm vận hành.",
   ];
 
   return (
@@ -20,35 +26,38 @@ export function AboutShinsei() {
         <div className="max-w-3xl mb-16">
           <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] font-bold text-[#75182d] mb-3 bg-[#f1e2c8]/60 px-3.5 py-1.5 rounded-full">
             <span className="w-1.5 h-1.5 rounded-full bg-[#75182d]"></span>
-            <span>Về chúng tôi · 会社案内</span>
+            <span>Hồ sơ năng lực · Company Profile</span>
           </div>
           <h2 className="font-title text-4xl sm:text-5xl font-light text-[#222222] tracking-tight leading-[1.05]">
             Công ty Cổ phần Thương Mại Shinsei
           </h2>
           <p className="text-base text-[#222222]/80 mt-4 leading-relaxed font-normal">
-            Doanh nghiệp tiên phong cung cấp giải pháp toàn diện về dịch vụ bếp ăn tập thể, vận hành căng tin, quầy cà phê và các dịch vụ du lịch cao cấp tiêu chuẩn Nhật Bản.
+            Dịch vụ Bếp ăn & Café theo tiêu chuẩn 5S Nhật Bản — An tâm trong từng bữa ăn, tận tâm trong từng trải nghiệm.
           </p>
         </div>
 
         {/* Message from Founder & Company Profile */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch mb-16">
           
-          {/* Left: Thông điệp sáng lập - Đỗ Thị Trang (7 cols) */}
+          {/* Left: Thông điệp người đại diện - Đỗ Thị Trang (7 cols) */}
           <div className="lg:col-span-7 bg-[#fbf7ef] p-8 sm:p-12 border border-[#75182d]/15 flex flex-col justify-between shadow-sm relative">
             <div>
               <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#75182d] font-bold block mb-2">
-                Thông điệp sáng lập
+                Thông điệp người đại diện
               </span>
-              <h3 className="font-title text-2xl sm:text-3xl font-light text-[#222222] mb-4">
-                &ldquo;Mỗi bữa ăn an toàn và ngon miệng là nền tảng cho sức khỏe, học tập và làm việc hiệu quả.&rdquo;
+              <h3 className="font-title text-2xl sm:text-3xl font-light text-[#222222] mb-4 leading-snug">
+                &ldquo;Chúng tôi tin rằng chất lượng của một bữa ăn không chỉ nằm ở nguyên liệu và hương vị, mà còn ở tính an toàn, sự đúng giờ và tinh thần trách nhiệm trong từng công đoạn phục vụ.&rdquo;
               </h3>
               
               <div className="space-y-3 text-sm text-[#222222]/85 leading-relaxed font-normal">
                 <p>
-                  Với hơn 10 năm kinh nghiệm học tập và làm việc tại Nhật Bản, tôi luôn tin rằng một bữa ăn ngon, an toàn và một hành trình trải nghiệm chất lượng sẽ tạo nên nền tảng cho một cuộc sống khỏe mạnh, hạnh phúc và hiệu quả hơn.
+                  SHINSEI hướng đến xây dựng mô hình dịch vụ ăn uống có quy trình rõ ràng, môi trường làm việc ngăn nắp và khả năng thích ứng với nhu cầu của từng đơn vị. Chúng tôi coi trọng sự minh bạch trong phối hợp, chất lượng phục vụ và cải tiến liên tục.
                 </p>
                 <p>
-                  <strong>SHINSEI</strong> được thành lập với mong muốn mang đến những giá trị Nhật Bản tốt nhất cho khách hàng tại Việt Nam thông qua dịch vụ bếp ăn tập thể, café và du lịch.
+                  Từ định hướng quản lý theo tinh thần 5S Nhật Bản, SHINSEI mong muốn trở thành đối tác lâu dài của Quý Đối Tác trong trường học, cơ quan và doanh nghiệp tại Việt Nam.
+                </p>
+                <p className="font-title italic text-base text-[#75182d] pt-1">
+                  &ldquo;Mỗi bữa ăn an toàn và ngon miệng là nền tảng cho sức khoẻ, học tập và làm việc hiệu quả!&rdquo;
                 </p>
               </div>
             </div>
@@ -58,7 +67,7 @@ export function AboutShinsei() {
                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#75182d] shrink-0 shadow-sm bg-stone-100">
                   <img
                     src="/images/shinsei-ceo.jpg"
-                    alt="Đỗ Thị Trang - Tổng Giám đốc Công ty Cổ phần SHINSEI"
+                    alt="Đỗ Thị Trang - Chủ tịch Hội đồng Quản trị SHINSEI"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -67,13 +76,13 @@ export function AboutShinsei() {
                     Đỗ Thị Trang
                   </div>
                   <div className="text-xs text-[#222222]/70 font-mono mt-0.5">
-                    Tổng Giám đốc · Công ty Cổ phần SHINSEI
+                    Chủ tịch Hội đồng Quản trị · CÔNG TY CỔ PHẦN THƯƠNG MẠI SHINSEI
                   </div>
                 </div>
               </div>
 
               <div className="font-title italic text-sm text-[#75182d]/80 font-serif hidden sm:block">
-                CEO Shinsei
+                Chairwoman
               </div>
             </div>
           </div>
@@ -92,10 +101,10 @@ export function AboutShinsei() {
                 </span>
               </div>
               <h4 className="font-title text-xl font-normal text-white mb-2">
-                Đơn vị hàng đầu Việt Nam
+                Chất lượng ổn định & Quản trị minh bạch
               </h4>
               <p className="text-xs sm:text-sm text-stone-200 leading-relaxed font-normal">
-                Trở thành đơn vị hàng đầu Việt Nam về dịch vụ bếp ăn tập thể và du lịch theo tiêu chuẩn Nhật Bản, là đối tác tin cậy của các trường học, tập đoàn và doanh nghiệp trong & ngoài nước.
+                Phát triển thành đơn vị cung cấp giải pháp dịch vụ ăn uống có chất lượng ổn định, quản trị minh bạch và khả năng mở rộng linh hoạt theo nhu cầu của từng khách hàng.
               </p>
             </div>
 
@@ -110,15 +119,38 @@ export function AboutShinsei() {
                 </span>
               </div>
               <h4 className="font-title text-xl font-normal text-[#222222] mb-2">
-                Trọn vẹn từng trải nghiệm
+                Bữa ăn an toàn, dịch vụ tận tâm
               </h4>
               <p className="text-xs sm:text-sm text-[#222222]/85 leading-relaxed font-normal">
-                Mang đến những bữa ăn an toàn, dinh dưỡng, chất lượng và trải nghiệm dịch vụ tốt nhất cho khách hàng, gắn kết cộng đồng và phát triển bền vững.
+                Cung cấp bữa ăn phù hợp, an toàn và dịch vụ tận tâm; góp phần tạo dựng môi trường học tập, làm việc thuận tiện, văn minh và lành mạnh.
               </p>
             </div>
 
           </div>
 
+        </div>
+
+        {/* 3 Nguyên Tắc Phục Vụ Banner */}
+        <div className="bg-[#fbf7ef] border border-black/10 p-6 sm:p-8 mb-16">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="shrink-0">
+              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#75182d] font-bold block mb-1">
+                Phương châm hành động
+              </span>
+              <h4 className="font-title text-xl sm:text-2xl font-light text-[#222222]">
+                3 Nguyên Tắc Phục Vụ Cốt Lõi
+              </h4>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 flex-1">
+              {servicePrinciples.map((principle, pIdx) => (
+                <div key={pIdx} className="flex items-start gap-2.5 text-xs text-[#222222]/85 leading-relaxed">
+                  <CheckCircle2 className="w-4 h-4 text-[#75182d] shrink-0 mt-0.5" />
+                  <span>{principle}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* 5 Giá Trị Cốt Lõi */}
@@ -128,7 +160,7 @@ export function AboutShinsei() {
               Giá trị cốt lõi
             </span>
             <h3 className="font-title text-2xl sm:text-3xl font-light text-[#222222]">
-              5 Cam kết nền tảng của Shinsei
+              5 Cam kết chuẩn mực của Shinsei
             </h3>
           </div>
 

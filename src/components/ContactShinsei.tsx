@@ -93,20 +93,28 @@ export function ContactShinsei() {
               </div>
 
               {/* Email direct inbox */}
-              <div className="p-4 bg-[#fbf7ef] border border-[#75182d]/20 flex items-center gap-4">
-                <div className="w-10 h-10 rounded bg-[#75182d] text-white flex items-center justify-center shrink-0">
+              <div className="p-4 bg-[#fbf7ef] border border-[#75182d]/20 flex items-start gap-4">
+                <div className="w-10 h-10 rounded bg-[#75182d] text-white flex items-center justify-center shrink-0 mt-0.5">
                   <Mail className="w-5 h-5 text-[#f1e2c8]" />
                 </div>
                 <div>
                   <div className="text-xs uppercase font-mono tracking-wider text-[#75182d] font-bold">
-                    Email tiếp nhận yêu cầu tư vấn:
+                    Email tiếp nhận yêu cầu & phản hồi:
                   </div>
-                  <a
-                    href="mailto:ddcjp.ceo@gmail.com"
-                    className="text-sm sm:text-base font-bold text-[#222222] hover:text-[#75182d] transition-colors font-mono"
-                  >
-                    ddcjp.ceo@gmail.com
-                  </a>
+                  <div className="space-y-0.5 mt-1">
+                    <a
+                      href="mailto:contact-shinsei@gmail.com"
+                      className="text-sm sm:text-base font-bold text-[#222222] hover:text-[#75182d] transition-colors font-mono block"
+                    >
+                      contact-shinsei@gmail.com
+                    </a>
+                    <a
+                      href="mailto:ddcjp.ceo@gmail.com"
+                      className="text-xs text-[#222222]/70 hover:text-[#75182d] transition-colors font-mono block"
+                    >
+                      ddcjp.ceo@gmail.com (Ban điều hành)
+                    </a>
+                  </div>
                 </div>
               </div>
 

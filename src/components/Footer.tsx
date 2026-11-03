@@ -98,8 +98,14 @@ export function Footer() {
               <div>
                 <span className="text-stone-400 block font-mono text-[11px]">Email tiếp nhận thông tin & tư vấn:</span>
                 <a
-                  href="mailto:ddcjp.ceo@gmail.com"
+                  href="mailto:contact-shinsei@gmail.com"
                   className="font-mono text-sm font-semibold text-[#f1e2c8] hover:underline block mt-0.5"
+                >
+                  contact-shinsei@gmail.com
+                </a>
+                <a
+                  href="mailto:ddcjp.ceo@gmail.com"
+                  className="font-mono text-xs text-stone-400 hover:text-white block mt-0.5"
                 >
                   ddcjp.ceo@gmail.com
                 </a>

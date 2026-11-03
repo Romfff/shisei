@@ -97,7 +97,7 @@ export function Hero() {
           
           <div className="relative w-full h-full flex items-center justify-center pointer-events-auto">
             
-            {/* Left Card: Shinsei Café & Căng tin tổng hợp */}
+            {/* Left Card: Shinsei Café & Thức uống độc quyền */}
             <motion.div
               style={{
                 x: leftX,
@@ -108,18 +108,18 @@ export function Hero() {
               className="absolute w-[84vw] sm:w-[64vw] md:w-[54vw] lg:w-[48vw] max-w-[720px] aspect-[16/10] bg-[#222222] border border-black/30 shadow-2xl overflow-hidden z-10 group cursor-pointer"
             >
               <img
-                src="/images/shinsei-staff-coffee.jpg"
-                alt="Đội ngũ nhân viên quầy Café và căng tin Shinsei"
-                className="w-full h-full object-cover object-top opacity-90 group-hover:scale-105 transition-transform duration-700"
+                src="/images/shinsei-cups-beverages.png"
+                alt="Bộ cốc giữ nhiệt & thức uống thương hiệu Shinsei"
+                className="w-full h-full object-cover object-center opacity-92 group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent"></div>
               
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
-                  Food & Coffee · Căng tin tổng hợp
+                  Food & Coffee · Cốc & Thức uống Shinsei
                 </span>
                 <p className="font-title text-lg sm:text-xl md:text-2xl font-light text-white leading-snug">
-                  Vận hành quầy cà phê & căng tin chuyên nghiệp
+                  Menu cà phê pha máy & thức uống nhận diện thương hiệu
                 </p>
               </div>
             </motion.div>
