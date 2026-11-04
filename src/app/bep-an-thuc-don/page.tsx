@@ -75,28 +75,28 @@ export default function BepAnThucDonPage() {
 
   const services = [
     {
-      title: "Bếp Ăn Công Nghiệp & Tập Thể",
+      title: "Suất Ăn Công Nghiệp & Bếp Tập Thể",
       desc: "Thiết kế, đầu tư thiết bị và vận hành trọn gói bếp ăn tại chỗ cho các nhà máy, xí nghiệp, trường học bán trú từ 200 đến 10.000+ suất/ngày.",
-      img: "/images/japan-industrial-meal.jpg",
-      points: ["Quy trình bếp 1 chiều", "Lưu mẫu 24 giờ", "Kiểm định vi sinh định kỳ"],
+      img: "/images/service-suat-an-cong-nghiep.jpg",
+      points: ["Quy trình bếp 1 chiều chuẩn 5S", "Lưu mẫu 24 giờ tuyệt đối", "Kiểm định vi sinh định kỳ"],
     },
     {
-      title: "Cơm Khay Bento Văn Phòng",
-      desc: "Suất ăn chia sẵn trong khay chuyên dụng 4-5 ngăn cao cấp, giữ nhiệt tối ưu, phục vụ các tòa nhà văn phòng, khu công nghệ cao.",
-      img: "/images/japan-popular-meal.jpg",
-      points: ["Giao nóng tận bàn", "Thực đơn thay đổi theo ngày", "Đóng gói vệ sinh tuyệt đối"],
-    },
-    {
-      title: "Tiệc Bàn Doanh Nghiệp 6 - 8 - 10 Người",
-      desc: "Phục vụ các sự kiện kỷ niệm thành lập, tiệc tất niên, đón tiếp đối tác, liên hoan công đoàn với thực đơn tiệc bàn sang trọng, phục vụ chuyên nghiệp.",
-      img: "/images/japan-banquet-table.jpg",
-      points: ["Đội ngũ phục vụ tận tâm", "Dụng cụ bàn tiệc cao cấp", "Thiết kế món theo ngân sách"],
+      title: "Suất Cơm Đặc Biệt · Bento Cao Cấp",
+      desc: "Suất ăn khẩu phần bento sang trọng chuẩn phong cách Nhật Bản, dinh dưỡng cân đối, chuyên phục vụ ban giám đốc, chuyên gia và cán bộ văn phòng.",
+      img: "/images/service-suat-com-dac-biet.jpg",
+      points: ["Thực đơn cá hồi, bò Wagyu, tempura", "Khay giữ nhiệt sang trọng", "Trình bày chuẩn mực văn hóa Nhật"],
     },
     {
       title: "Cơm Hộp Mang Đi · Takeaway Bento",
-      desc: "Hộp bento đóng gói thân thiện môi trường, nhỏ gọn, kín mùi, chuyên dùng cho các đoàn công tác, tour du lịch, hội thảo dã ngoại.",
-      img: "/images/japan-takeaway-bento.jpg",
-      points: ["Hộp bento sinh học cao cấp", "Giữ ấm liên tục", "Kèm đầy đủ dụng cụ tiện lợi"],
+      desc: "Hộp bento đóng gói thân thiện môi trường, nhỏ gọn, kín mùi, kèm túi giấy nhận diện thương hiệu Shinsei, chuyên dùng cho tour du lịch, hội thảo dã ngoại.",
+      img: "/images/service-com-hop-mang-di.jpg",
+      points: ["Hộp bento sinh học cao cấp", "Giữ ấm liên tục suốt chặng đường", "Đóng gói đồng bộ túi giấy Shinsei"],
+    },
+    {
+      title: "Tiệc Bàn Doanh Nghiệp 6 - 8 - 10 Người",
+      desc: "Phục vụ các sự kiện kỷ niệm thành lập, tiệc tất niên, đón tiếp đối tác, liên hoan công đoàn với thực đơn lẩu nướng và mâm tiệc thịnh soạn, phục vụ chuyên nghiệp.",
+      img: "/images/service-tiec-ban-doanh-nghiep.jpg",
+      points: ["Mâm tiệc phong phú, tươi ngon", "Dụng cụ bàn tiệc cao cấp", "Thiết kế thực đơn theo ngân sách"],
     },
   ];
 
@@ -318,7 +318,7 @@ export default function BepAnThucDonPage() {
               <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="rounded overflow-hidden border border-black/10 shadow-sm bg-white flex flex-col">
                   <div className="h-48 overflow-hidden">
-                    <img src="/images/japan-premium-meal.jpg" alt="Khẩu phần tươi ngon, chuẩn vị" className="w-full h-full object-cover" />
+                    <img src="/images/service-suat-com-dac-biet.jpg" alt="Khẩu phần tươi ngon, chuẩn vị" className="w-full h-full object-cover" />
                   </div>
                   <div className="p-3 text-center text-xs font-medium text-[#222222]/85 border-t border-black/5 bg-[#fbf7ef]/50">
                     Khẩu phần tươi ngon, chuẩn vị

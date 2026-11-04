@@ -76,7 +76,7 @@ export function FoodCoffee() {
       name: "Suất ăn Tập thể & Công nghiệp · 定食トレー",
       priceDisplay: "30.000đ – 35.000đ – 40.000đ / suất",
       target: "Trường học, cơ quan, doanh nghiệp, khu công nghiệp, bệnh viện",
-      image: "/images/japan-industrial-meal.jpg",
+      image: "/images/service-suat-an-cong-nghiep.jpg",
       calories: "750 – 850 kcal",
       description: "Suất cơm khay inox SUS 304 chuẩn định lượng dinh dưỡng Shokuiku Nhật Bản. Thực đơn đổi món mỗi ngày, cơm trắng dẻo thơm và nước canh nóng được phục vụ thêm tự do miễn phí.",
       dishes: {
@@ -120,7 +120,7 @@ export function FoodCoffee() {
       name: "Suất ăn Đặc biệt & Sự kiện · 会席・VIP",
       priceDisplay: "60.000đ – 80.000đ – 100.000đ – 120.000đ / suất",
       target: "Hội nghị, tiếp khách, sự kiện, chuyên gia nước ngoài, ban lãnh đạo VIP",
-      image: "/images/japan-premium-meal.jpg",
+      image: "/images/service-suat-com-dac-biet.jpg",
       calories: "600 – 700 kcal",
       description: "Phục vụ theo hình thức đĩa riêng từng món theo chuẩn bàn ăn Nhật Bản hoặc hộp bento sơn mài truyền thống, bài trí trang nhã và nguyên liệu thượng hạng.",
       dishes: {
@@ -142,7 +142,7 @@ export function FoodCoffee() {
       name: "Đặt Tiệc Bàn 6 – 8 – 10 Người · 宴会コース",
       priceDisplay: "Từ 120.000đ / người",
       target: "Liên hoan tổng kết, tiệc tất niên, khai xuân, sự kiện công ty",
-      image: "/images/japan-banquet-table.jpg",
+      image: "/images/service-tiec-ban-doanh-nghiep.jpg",
       calories: "Theo cơ cấu mâm tiệc",
       description: "Tổ chức mâm cỗ tiệc trọn gói ngay tại hội trường hoặc căng tin cơ quan với đầy đủ bát đĩa sứ, ly cốc và đội ngũ nhân viên phục vụ tận bàn.",
       dishes: {
@@ -164,7 +164,7 @@ export function FoodCoffee() {
       name: "Cơm hộp – Mang đi · 持ち帰り弁当",
       priceDisplay: "35.000đ – 60.000đ / hộp tiện lợi",
       target: "Học sinh, sinh viên, nhân viên văn phòng, hội thảo, sự kiện dã ngoại ngoài trời",
-      image: "/images/japan-takeaway-bento.jpg",
+      image: "/images/service-com-hop-mang-di.jpg",
       calories: "650 – 800 kcal",
       description: "Suất đóng hộp bento nhiều ngăn sâu lòng chuẩn Nhật, giữ ấm tốt, kiểm soát chặt chẽ nhiệt độ và thời gian giao nhận để bảo đảm chất lượng bữa ăn tươi ngon nhất.",
       dishes: {
