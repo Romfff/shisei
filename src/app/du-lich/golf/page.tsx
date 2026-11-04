@@ -5,9 +5,9 @@ import { Footer } from "@/components/Footer";
 import { Flag, Sparkles, Award, CheckCircle2, ArrowRight, ShieldCheck, MapPin, Trophy } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Du Lịch Golf Nhật Bản · Sân PGA Dưới Chân Núi Phú Sĩ | SHINSEI TRAVEL",
+  title: "Du Lịch Golf Nhật Bản · Phú Sĩ, Tokyo & Osaka Chuẩn PGA | SHINSEI TRAVEL",
   description:
-    "Trải nghiệm đánh golf tại các sân golf đạt chuẩn PGA quốc tế ven biển và dưới chân núi Phú Sĩ, kết hợp nghỉ dưỡng suối nước nóng Onsen và ẩm thực Kaiseki thượng hạng.",
+    "Trải nghiệm đánh golf tại các sân golf danh giá đạt chuẩn PGA quốc tế tại Phú Sĩ (Taiheiyo), Tokyo (Sagamihara) và Osaka (World Country), kết hợp nghỉ dưỡng suối nước nóng Onsen và ẩm thực Kaiseki thượng hạng.",
 };
 
 export default function DuLichGolfPage() {
@@ -16,28 +16,40 @@ export default function DuLichGolfPage() {
       name: "Sân Taiheiyo Club Gotemba Course",
       japanese: "太平洋クラブ 御殿場コース",
       location: "Gotemba, Shizuoka · Chân núi Phú Sĩ",
-      img: "/images/Golf/golf_3.jpg",
-      tag: "PGA Tour Venue",
+      img: "/images/Golf/taiheiyo-club-gotemba.jpg",
+      tag: "PGA Tour Venue · Chân Núi Phú Sĩ",
       desc: "Nơi đăng cai giải đấu danh giá Mitsui Sumitomo VISA Taiheiyo Masters và World Cup Golf. Tầm nhìn thẳng lên đỉnh núi Phú Sĩ tuyết phủ hùng vĩ, fairway uốn lượn giữa rừng thông bạt ngàn.",
-      features: ["18 hố tiêu chuẩn Championship", "Par 72 · Chiều dài 7.327 yards", "Thiết kế bởi huyền thoại Robert Trent Jones Jr."],
+      features: [
+        "18 hố tiêu chuẩn Championship quốc tế · Par 72",
+        "Tầm nhìn trực diện đỉnh núi Phú Sĩ tuyết phủ tuyệt mỹ",
+        "Thiết kế bởi huyền thoại Robert Trent Jones Jr. & Rees Jones",
+      ],
     },
     {
-      name: "Sân Kawana Hotel Golf Course · Fuji Course",
-      japanese: "川奈ホテルゴルフコース 富士コース",
-      location: "Ito, Shizuoka · Bán đảo Izu ven biển",
-      img: "/images/Golf/golf_4.jpg",
-      tag: "Top 100 Sân Golf Đẹp Nhất Thế Giới",
-      desc: "Được mệnh danh là Pebble Beach của châu Á. Sân nằm trên vách đá nhìn ra biển Thái Bình Dương với gió biển và địa hình thách thức mọi golfer đẳng cấp.",
-      features: ["Xếp hạng Top 100 Thế giới do Golf Magazine bình chọn", "Par 72 · Khung cảnh biển tuyệt mỹ", "Dịch vụ caddy đi bộ truyền thống chuẩn Nhật"],
+      name: "Sân Sagamihara Golf Club",
+      japanese: "相模原ゴルフクラブ",
+      location: "Sagamihara, Kanagawa · Đại đô thị Tokyo",
+      img: "/images/Golf/sagamihara-golf-club-tokyo.png",
+      tag: "CLB Danh Giá Vùng Tokyo · Japan Open Venue",
+      desc: "Thành lập từ năm 1955, Sagamihara Golf Club là một trong những câu lạc bộ danh giá và truyền thống bậc nhất vùng thủ đô Tokyo. Từng là địa điểm đăng cai Japan Open Golf Championship, sở hữu địa hình rừng thông phẳng (Rinkan Course) và mặt cỏ nhung chăm sóc tỉ mỉ theo tiêu chuẩn đỉnh cao Nhật Bản.",
+      features: [
+        "Quy mô 36 hố đẳng cấp: Sân Đông (East) & Sân Tây (West)",
+        "Từng đăng cai giải đấu Japan Open Golf Championship danh giá",
+        "Chính sách độc quyền hội viên VIP, thuận tiện di chuyển từ Tokyo",
+      ],
     },
     {
-      name: "Sân Narita Golf Club",
-      japanese: "成田ゴルフ倶楽部",
-      location: "Narita, Chiba · Thuận tiện từ thủ đô Tokyo",
-      img: "/images/Golf/golf_8.jpg",
-      tag: "Câu Lạc Bộ Độc Quyền Thành Viên",
-      desc: "Câu lạc bộ golf thượng lưu hàng đầu vùng Kanto với nhà câu lạc bộ tráng lệ và mặt cỏ nhung mượt mà được chăm sóc tỉ mỉ từng milimet theo tiêu chuẩn Nhật Bản.",
-      features: ["Chỉ tiếp khách hội viên và khách VIP quốc tế", "Dịch vụ ẩm thực nhà hàng 5 sao tại sân", "Thuận tiện di chuyển từ sân bay quốc tế Narita"],
+      name: "Sân World Country Golf Club",
+      japanese: "ワールドカントリーゴルフクラブ",
+      location: "Kanan, Minamikawachi · Vùng đô thị Osaka",
+      img: "/images/Golf/osaka-world-country-golf-club.jpg",
+      tag: "Toàn Cảnh Osaka 360° · Thiết Kế Peter Thomson",
+      desc: "Sân golf danh tiếng tại Osaka nổi bật với nhà câu lạc bộ phong cách lâu đài châu Âu tráng lệ và tầm nhìn 360 độ ôm trọn đồng bằng Osaka. Được thiết kế bởi huyền thoại 5 lần vô địch The Open - Peter Thomson, kết hợp hài hòa giữa đồi dốc tự nhiên, hố nước chiến lược và thảm cỏ xanh mướt quanh năm.",
+      features: [
+        "Quy mô 27 hố đa dạng địa hình (vòng Đông, Tây, Nam)",
+        "Clubhouse phong cách lâu đài châu Âu sang trọng bậc nhất Kansai",
+        "Kết nối thuận tiện trung tâm Osaka, sân bay Kansai và cố đô Kyoto",
+      ],
     },
   ];
 
@@ -73,7 +85,7 @@ export default function DuLichGolfPage() {
             </h1>
 
             <p className="text-base sm:text-lg text-[#f1e2c8]/85 font-normal leading-relaxed mt-4">
-              Chinh phục những sân golf đạt chuẩn PGA quốc tế dưới chân núi Phú Sĩ hùng vĩ. Kết hợp kỳ nghỉ dưỡng suối nước nóng Onsen truyền thống và thưởng thức ẩm thực Kaiseki thượng hạng.
+              Chinh phục những sân golf đạt chuẩn PGA quốc tế tại Phú Sĩ, Tokyo và Osaka. Kết hợp kỳ nghỉ dưỡng suối nước nóng Onsen truyền thống và thưởng thức ẩm thực Kaiseki thượng hạng.
             </p>
 
             <div className="pt-6">

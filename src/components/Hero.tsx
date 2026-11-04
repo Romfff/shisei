@@ -132,7 +132,7 @@ export function Hero() {
               className="absolute w-[68vw] sm:w-[48vw] md:w-[38vw] lg:w-[32vw] max-w-[480px] aspect-[16/10] bg-[#222222] border border-black/30 shadow-2xl overflow-hidden z-10 group cursor-pointer"
             >
               <img
-                src="/images/Golf/golf_3.jpg"
+                src="/images/Golf/taiheiyo-club-gotemba.jpg"
                 alt="Shinsei Travel · Sân Golf PGA núi Phú Sĩ"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
