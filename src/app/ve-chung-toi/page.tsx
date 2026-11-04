@@ -231,22 +231,43 @@ export default function VeChungToiPage() {
 
             {/* Quy chuẩn đồng phục & Đội xe bảo ôn */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#fbf7ef] p-8 sm:p-12 border border-[#75182d]/20">
-              <div className="lg:col-span-7">
-                <img
-                  src="/images/shinsei-uniform-chef-full.jpg"
-                  alt="Bảng quy chuẩn chi tiết Đồng phục Bếp 5S Shinsei"
-                  className="w-full h-auto object-contain bg-white border border-black/10 shadow-sm"
-                />
+              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-white border border-black/10 shadow-sm overflow-hidden flex flex-col">
+                  <div className="h-64 bg-[#fbf7ef] flex items-center justify-center p-2">
+                    <img
+                      src="/images/shinsei-uniform-chef-full.jpg"
+                      alt="Đồng phục Bếp 5S Shinsei"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="p-3 text-center text-xs font-mono font-bold text-[#75182d] border-t border-black/5 bg-white">
+                    Đồng phục Bếp & Chế biến 5S
+                  </div>
+                </div>
+
+                <div className="bg-white border border-black/10 shadow-sm overflow-hidden flex flex-col">
+                  <div className="h-64 overflow-hidden">
+                    <img
+                      src="/images/shinsei-staff-polo.jpg"
+                      alt="Đồng phục Phục vụ & Kiosk Café Shinsei"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <div className="p-3 text-center text-xs font-mono font-bold text-[#75182d] border-t border-black/5 bg-white">
+                    Đồng phục Phục vụ & Quầy Café
+                  </div>
+                </div>
               </div>
+
               <div className="lg:col-span-5 space-y-4">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-[#75182d] font-bold block">
                   Nhận diện & Tác phong 5S
                 </span>
                 <h3 className="font-title text-2xl sm:text-3xl font-light text-[#222222]">
-                  Đồng Phục Bếp & Vận Tải Chuyên Nghiệp
+                  Đồng Phục & Vận Tải Chuyên Nghiệp
                 </h3>
                 <p className="text-xs sm:text-sm text-[#222222]/80 leading-relaxed">
-                  Trang phục bếp được thiết kế khép kín gồm áo bếp viền đỏ thêu logo Shinsei, mũ bếp xếp ly, tạp dề bảo hộ chống bẩn và giày chống trượt. Đội xe bán tải giao hàng thùng bảo ôn giữ nhiệt trên 65°C, bảo đảm suất ăn nóng sốt khi đến tay đối tác.
+                  Trang phục bếp khép kín gồm áo viền đỏ thêu logo Shinsei, mũ xếp ly và tạp dề chuyên dụng. Đội ngũ phục vụ chỉn chu với áo polo đỏ đô và tạp dề lịch sự. Đội xe bán tải giao hàng thùng bảo ôn giữ nhiệt trên 65°C, bảo đảm suất ăn nóng sốt khi đến tay đối tác.
                 </p>
                 <div className="pt-2">
                   <img

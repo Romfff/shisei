@@ -53,7 +53,7 @@ export default function DuLichOverviewPage() {
       link: "/du-lich/trai-nghiem",
       linkText: "Khám phá Tour Trải nghiệm",
       badge: "Bespoke Luxury",
-      img: "/images/Travel/travel_1.jpg",
+      img: "/images/Travel/1-Tra-dao-Nhat-Ban.png",
       highlights: [
         "Trà đạo Chado, Kimono truyền thống tại phố cổ Gion, Kyoto",
         "Hành trình ẩm thực bò Wagyu Kobe A5 & Sushi Michelin",

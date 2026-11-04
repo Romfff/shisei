@@ -16,7 +16,7 @@ export default function DuLichTraiNghiemPage() {
       title: "Trà Đạo Chado & Văn Hóa Cố Đô Kyoto",
       japanese: "京都・茶道と歴史文化",
       desc: "Trải nghiệm không gian thanh tịnh của trà thất cổ, học cách thưởng trà đạo truyền thống cùng nghệ nhân, dạo bước qua ngôi chùa nghìn năm tuổi Kinkaku-ji và đền nghìn cổng Fushimi Inari.",
-      img: "/images/Travel/travel_1.jpg",
+      img: "/images/Travel/1-Tra-dao-Nhat-Ban.png",
       tag: "Văn hóa tinh hoa",
       highlights: [
         "Thưởng thức matcha nguyên chất pha tay theo nghi thức Chado",
@@ -40,7 +40,7 @@ export default function DuLichTraiNghiemPage() {
       title: "Hành Trình Ẩm Thực Tinh Hoa & Wagyu Kobe A5",
       japanese: "神戸牛 & 豊洲市場グルメ",
       desc: "Đánh thức mọi giác quan với bò Wagyu Kobe A5 nướng than hoa, thưởng thức sushi cá ngừ vây xanh tươi sống tại chợ hải sản Toyosu và bàn tiệc Kaiseki do đầu bếp sao Michelin phục vụ.",
-      img: "/images/Travel/travel_3.jpg",
+      img: "/images/Travel/HanhTrinhAmThuc.jpg",
       tag: "Ẩm thực thượng hạng",
       highlights: [
         "Thịt bò Wagyu Kobe A5 chính gốc đạt chuẩn bảo tồn",
@@ -52,7 +52,7 @@ export default function DuLichTraiNghiemPage() {
       title: "Nghỉ Dưỡng Suối Khoáng Nóng Onsen & Ryokan",
       japanese: "温泉旅館 & 露天風呂",
       desc: "Lưu trú tại những Ryokan nghìn năm tuổi bằng gỗ tuyết tùng, ngâm mình trong làn suối khoáng nóng lộ thiên Rotenburo nhìn thẳng ra núi tuyết Phú Sĩ, tái tạo năng lượng thể chất và tinh thần.",
-      img: "/images/Travel/travel_6.jpg",
+      img: "/images/Travel/NghiDuongSuoiKhoang.jpg",
       tag: "Nghỉ dưỡng tĩnh tâm",
       highlights: [
         "Bể tắm khoáng nóng tự nhiên giàu khoáng chất lưu huỳnh",
@@ -63,12 +63,12 @@ export default function DuLichTraiNghiemPage() {
   ];
 
   const travelPhotos = [
-    "/images/Travel/travel_1.jpg",
+    "/images/Travel/1-Tra-dao-Nhat-Ban.png",
     "/images/Travel/travel_2.jpg",
-    "/images/Travel/travel_3.jpg",
+    "/images/Travel/HanhTrinhAmThuc.jpg",
+    "/images/Travel/NghiDuongSuoiKhoang.jpg",
     "/images/Travel/travel_4.jpg",
     "/images/Travel/travel_5.jpg",
-    "/images/Travel/travel_6.jpg",
     "/images/Travel/travel_7.jpg",
     "/images/Travel/travel_8.jpg",
     "/images/Travel/travel_9.jpg",

@@ -315,18 +315,30 @@ export default function BepAnThucDonPage() {
                 </div>
               </div>
 
-              <div className="lg:col-span-7 grid grid-cols-2 gap-4">
-                <div className="rounded overflow-hidden border border-black/10 shadow-sm">
-                  <img src="/images/kitchen-5s.jpg" alt="Quy trình bếp 5S sạch sẽ" className="w-full h-48 object-cover" />
+              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="rounded overflow-hidden border border-black/10 shadow-sm bg-white flex flex-col">
+                  <div className="h-48 overflow-hidden">
+                    <img src="/images/japan-premium-meal.jpg" alt="Khẩu phần tươi ngon, chuẩn vị" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-3 text-center text-xs font-medium text-[#222222]/85 border-t border-black/5 bg-[#fbf7ef]/50">
+                    Khẩu phần tươi ngon, chuẩn vị
+                  </div>
                 </div>
-                <div className="rounded overflow-hidden border border-black/10 shadow-sm">
-                  <img src="/images/japan-premium-meal.jpg" alt="Suất ăn cao cấp tươi ngon" className="w-full h-48 object-cover" />
+                <div className="rounded overflow-hidden border border-black/10 shadow-sm bg-white flex flex-col">
+                  <div className="h-48 overflow-hidden">
+                    <img src="/images/shinsei-truck.jpg" alt="Xe bán tải bảo ôn giao hàng" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-3 text-center text-xs font-medium text-[#222222]/85 border-t border-black/5 bg-[#fbf7ef]/50">
+                    Giao hàng bảo ôn nhiệt độ chuẩn
+                  </div>
                 </div>
-                <div className="rounded overflow-hidden border border-black/10 shadow-sm">
-                  <img src="/images/shinsei-truck.jpg" alt="Xe bán tải bảo ôn giao hàng" className="w-full h-48 object-cover" />
-                </div>
-                <div className="rounded overflow-hidden border border-black/10 shadow-sm">
-                  <img src="/images/shinsei-uniform-chef-full.jpg" alt="Đồng phục đầu bếp chuẩn 5S" className="w-full h-48 object-contain bg-[#fbf7ef]" />
+                <div className="rounded overflow-hidden border border-black/10 shadow-sm bg-white flex flex-col">
+                  <div className="h-48 overflow-hidden bg-[#fbf7ef] flex items-center justify-center p-1">
+                    <img src="/images/shinsei-uniform-chef-full.jpg" alt="Quy chuẩn đồng phục bếp 5S" className="w-full h-full object-contain" />
+                  </div>
+                  <div className="p-3 text-center text-xs font-medium text-[#222222]/85 border-t border-black/5 bg-[#fbf7ef]/50">
+                    Quy chuẩn đồng phục bếp 5S
+                  </div>
                 </div>
               </div>
             </div>
