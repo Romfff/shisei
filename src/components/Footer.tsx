@@ -2,6 +2,25 @@ import { Phone, MapPin, Globe, ShieldCheck, Mail, ArrowUpRight } from "lucide-re
 import Link from "next/link";
 
 export function Footer() {
+  const partnerLogos = [
+    { name: "Vietnam Airlines", img: "/images/Partners/partner-vietnam-airlines.png" },
+    { name: "Medical Excellence Japan (MEJ)", img: "/images/Partners/partner-mej.png" },
+    { name: "The University of Tokyo Hospital (東大病院)", img: "/images/Partners/partner-tokyo-univ-hospital.png" },
+    { name: "Fujita Health University", img: "/images/Partners/partner-fujita-health-univ.jpg" },
+    { name: "St. Luke's International Hospital", img: "/images/Partners/partner-st-lukes.jpg" },
+    { name: "Shonan Kamakura General Hospital", img: "/images/Partners/partner-shonan-kamakura.png" },
+    { name: "Center for iPS Cell Research (CiRA) Kyoto", img: "/images/Partners/partner-cira-kyoto.png" },
+    { name: "Accordia Golf", img: "/images/Partners/partner-accordia-golf.jpg" },
+    { name: "PGM (Pacific Golf Management)", img: "/images/Partners/partner-pgm-golf.jpg" },
+    { name: "Hotel JAL City", img: "/images/Partners/partner-jal-city.png" },
+    { name: "Nikko Hotels International", img: "/images/Partners/partner-nikko-hotels.png" },
+    { name: "NEMU Resort", img: "/images/Partners/partner-nemu-resort.png" },
+    { name: "HOTEL THE MITSUI KYOTO", img: "/images/Partners/partner-hotel-the-mitsui-kyoto.png" },
+    { name: "Mitsui Garden Hotels", img: "/images/Partners/partner-mitsui-garden-hotels.png" },
+    { name: "Halekulani Okinawa", img: "/images/Partners/partner-halekulani.png" },
+    { name: "Tokyo Dome Hotel", img: "/images/Partners/partner-tokyo-dome-hotel.png" },
+  ];
+
   return (
     <footer className="bg-[#1c1917] text-white pt-20 pb-12 border-t border-black/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,6 +51,41 @@ export function Footer() {
             <a href="#contact" className="shushi-btn shushi-btn-primary text-xs">
               <span>Liên hệ & Đăng ký nếm thử</span>
             </a>
+          </div>
+        </div>
+
+        {/* Strategic Partners & Brand Network in Japan */}
+        <div className="py-12 border-b border-white/10">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
+            <div>
+              <div className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold mb-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#f1e2c8]"></span>
+                <span>Mạng Lưới Đối Tác Chiến Lược · 日本パートナー</span>
+              </div>
+              <h3 className="font-title text-2xl sm:text-3xl font-light text-white">
+                Đối Tác Y Tế, Hàng Không & Khách Sạn Tại Nhật Bản
+              </h3>
+            </div>
+            <p className="text-xs text-stone-300 max-w-lg font-normal leading-relaxed">
+              SHINSEI tự hào sở hữu mạng lưới đối tác rộng khắp với các bệnh viện đại học top đầu, viện nghiên cứu y sinh, hãng hàng không quốc gia, chuỗi resort & khách sạn 5 sao và các sân golf nổi tiếng nhất Nhật Bản.
+            </p>
+          </div>
+
+          {/* Grid of 16 Partner Logos */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-3 sm:gap-4 items-center">
+            {partnerLogos.map((p, idx) => (
+              <div
+                key={idx}
+                className="bg-white p-2.5 rounded h-16 flex items-center justify-center shadow-xs hover:scale-105 transition-all group"
+                title={p.name}
+              >
+                <img
+                  src={p.img}
+                  alt={p.name}
+                  className="max-h-11 max-w-full object-contain filter group-hover:brightness-105"
+                />
+              </div>
+            ))}
           </div>
         </div>
 

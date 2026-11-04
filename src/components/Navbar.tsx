@@ -282,13 +282,13 @@ export function Navbar() {
 
                   <nav className="space-y-1">
                     {[
-                      { label: "Trang chủ", href: "/", num: "01", icon: Sparkles },
-                      { label: "Về chúng tôi", href: "/ve-chung-toi", num: "02", icon: Users },
-                      { label: "Bếp ăn · Thực đơn", href: "/bep-an-thuc-don", num: "03", icon: Utensils },
-                      { label: "Dự toán chi phí B2B", href: "/du-toan-chi-phi", num: "04", icon: Calculator },
-                      { label: "Đồ uống & Café", href: "/do-uong", num: "05", icon: Coffee },
-                      { label: "Du lịch", href: "/du-lich", num: "06", icon: Compass, isTravel: true },
-                      { label: "Liên hệ", href: "#contact", num: "07", icon: Phone },
+                      { label: "Trang chủ", href: "/", icon: Sparkles },
+                      { label: "Về chúng tôi", href: "/ve-chung-toi", icon: Users },
+                      { label: "Bếp ăn · Thực đơn", href: "/bep-an-thuc-don", icon: Utensils },
+                      { label: "Dự toán chi phí B2B", href: "/du-toan-chi-phi", icon: Calculator },
+                      { label: "Đồ uống & Café", href: "/do-uong", icon: Coffee },
+                      { label: "Du lịch", href: "/du-lich", icon: Compass, isTravel: true },
+                      { label: "Liên hệ", href: "#contact", icon: Phone },
                     ].map((link) => {
                       const Icon = link.icon;
                       const isActive = pathname === link.href || (link.isTravel && isTravelActive);
@@ -307,9 +307,6 @@ export function Navbar() {
                                 {link.label}
                               </span>
                             </div>
-                            <span className={`font-mono text-xs ${isActive ? "text-white/80" : "text-[#222222]/40"}`}>
-                              {link.num}
-                            </span>
                           </Link>
 
                           {/* Nested Sub-tours for Du lịch */}
