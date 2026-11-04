@@ -1,25 +1,46 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Phone, ArrowUpRight, Menu, X, MapPin, Globe } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Phone, ArrowUpRight, Menu, X, Globe, ChevronDown, MapPin, Sparkles, Utensils, Coffee, Compass, Calculator, Users, Activity, Flag } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [travelDropdown, setTravelDropdown] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navLinks = [
+    { label: "Trang chủ", href: "/" },
+    { label: "Bếp ăn • Thực đơn", href: "/bep-an-thuc-don" },
+    { label: "Đồ uống & Café", href: "/do-uong" },
+    { label: "Về chúng tôi", href: "/ve-chung-toi" },
+    { label: "Dự toán B2B", href: "/du-toan-chi-phi" },
+  ];
+
+  const travelSubLinks = [
+    { label: "Tổng quan Du lịch Shinsei", href: "/du-lich", desc: "Hành trình tinh hoa Nhật Bản", icon: Compass },
+    { label: "Du lịch Y tế (Medical)", href: "/du-lich/y-te", desc: "Khám chuyên sâu, tế bào gốc & 6 bệnh viện top đầu", icon: Activity },
+    { label: "Du lịch Golf (PGA)", href: "/du-lich/golf", desc: "Sân golf chân núi Phú Sĩ & nghỉ dưỡng Onsen", icon: Flag },
+    { label: "Du lịch Trải nghiệm", href: "/du-lich/trai-nghiem", desc: "Trà đạo, cố đô Kyoto, Kaiseki & ẩm thực", icon: Sparkles },
+  ];
+
+  const isTravelActive = pathname.startsWith("/du-lich");
+
   return (
     <>
-      {/* Top Bar: Hotline & Address */}
-      <div className="bg-[#75182d] text-[#f1e2c8] text-[11px] sm:text-[11.5px] tracking-[0.1em] uppercase py-2 px-4 border-b border-white/10 relative z-40">
+      {/* Top Bar: Hotlines & Official Address */}
+      <div className="bg-[#75182d] text-[#f1e2c8] text-[11px] sm:text-[11.5px] tracking-[0.08em] uppercase py-2 px-4 border-b border-white/10 relative z-40">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2 truncate pr-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#f1e2c8] animate-ping shrink-0"></span>
@@ -28,73 +49,143 @@ export function Navbar() {
             </span>
           </div>
           <div className="hidden lg:flex items-center gap-5 font-mono text-[11px] text-[#f1e2c8]/85 shrink-0">
-            <span className="flex items-center gap-1.5">
+            <a href="tel:0981365391" className="flex items-center gap-1.5 hover:text-white transition-colors">
               <span>Hotline VN:</span>
               <strong className="text-white">0981.365.391</strong>
-            </span>
+            </a>
             <span>·</span>
-            <span className="flex items-center gap-1.5">
+            <a href="tel:08023922268" className="flex items-center gap-1.5 hover:text-white transition-colors">
               <Globe className="w-3 h-3 text-[#f1e2c8]" />
               <span>Hotline JP:</span>
               <strong className="text-white">080.2392.2268</strong>
-            </span>
+            </a>
             <span>·</span>
             <span className="text-white font-serif">An tâm trong từng bữa ăn</span>
           </div>
         </div>
       </div>
 
-      {/* Main Navbar: Strict 3-Column Grid Layout (Guarantees zero text collision) */}
+      {/* Main Navbar */}
       <header
         className={`sticky top-0 z-40 transition-all duration-300 border-b border-black/10 ${
-          isScrolled ? "bg-[#fbf7ef]/95 backdrop-blur-md py-2.5 shadow-sm" : "bg-[#fbf7ef] py-3.5"
+          isScrolled ? "bg-[#fbf7ef]/98 backdrop-blur-md py-2.5 shadow-sm" : "bg-[#fbf7ef] py-3.5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-12 items-center gap-2 sm:gap-4">
+          <div className="flex items-center justify-between gap-4">
             
-            {/* Column 1 (Left): Menu Drawer Button */}
-            <div className="col-span-3 sm:col-span-4 flex items-center justify-start gap-4">
-              <button
-                onClick={() => setDrawerOpen(true)}
-                className="group flex items-center gap-2.5 px-3 py-1.5 rounded-full border border-black/10 hover:border-[#75182d] text-[#222222] hover:text-[#75182d] bg-white/60 hover:bg-white transition-all cursor-pointer shrink-0 shadow-2xs"
-                aria-label="Open navigation menu"
-              >
-                <div className="space-y-1.5 w-4">
-                  <span className="block h-[1.5px] w-4 bg-current transition-all group-hover:w-3"></span>
-                  <span className="block h-[1.5px] w-3 bg-current transition-all group-hover:w-4"></span>
-                  <span className="block h-[1.5px] w-3.5 bg-current transition-all group-hover:w-3"></span>
-                </div>
-                <span className="text-xs uppercase tracking-[0.16em] font-semibold">
-                  Menu
+            {/* Left: Shinsei Brand Logo */}
+            <Link href="/" className="inline-flex items-center gap-2.5 group shrink-0">
+              <img
+                src="/images/shinsei-mark-red.png"
+                alt="SHINSEI Emblem"
+                className="h-7 sm:h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="flex flex-col">
+                <span className="font-title text-2xl sm:text-2xl lg:text-3xl font-light tracking-[0.14em] text-[#75182d] uppercase transition-colors group-hover:text-[#222222] leading-none">
+                  SHINSEI
                 </span>
-              </button>
-            </div>
-
-            {/* Column 2 (Center): Shinsei Brand Logo with Official Emblem */}
-            <div className="col-span-6 sm:col-span-4 flex flex-col items-center justify-center text-center px-2">
-              <a href="#" className="inline-flex flex-col items-center group">
-                <div className="flex items-center gap-2 sm:gap-2.5">
-                  <img
-                    src="/images/shinsei-mark-red.png"
-                    alt="SHINSEI Emblem"
-                    className="h-6 sm:h-7 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <span className="font-title text-2xl sm:text-3xl font-light tracking-[0.12em] text-[#75182d] uppercase transition-colors group-hover:text-[#222222] leading-none">
-                    SHINSEI
-                  </span>
-                </div>
-                <span className="text-[8.5px] sm:text-[9.5px] tracking-[0.24em] text-[#222222]/80 font-semibold uppercase mt-1">
+                <span className="text-[8.5px] sm:text-[9px] tracking-[0.24em] text-[#222222]/80 font-semibold uppercase mt-1">
                   Food & Coffee · Travel
                 </span>
-              </a>
-            </div>
+              </div>
+            </Link>
 
-            {/* Column 3 (Right): Hotline & CTA Button (No squeezed nav links) */}
-            <div className="col-span-3 sm:col-span-4 flex items-center justify-end gap-3 lg:gap-4">
+            {/* Center: Desktop Navigation Links (Visible on XL screens >= 1200px) */}
+            <nav className="hidden xl:flex items-center gap-6 2xl:gap-7 text-xs uppercase tracking-[0.12em] font-semibold text-[#222222]">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`relative py-1 transition-colors hover:text-[#75182d] ${
+                      isActive ? "text-[#75182d] font-bold" : "text-[#222222]"
+                    }`}
+                  >
+                    <span>{link.label}</span>
+                    {isActive && (
+                      <motion.span
+                        layoutId="activeNavIndicator"
+                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#75182d]"
+                      />
+                    )}
+                  </Link>
+                );
+              })}
+
+              {/* Travel Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => setTravelDropdown(true)}
+                onMouseLeave={() => setTravelDropdown(false)}
+              >
+                <Link
+                  href="/du-lich"
+                  className={`inline-flex items-center gap-1.5 py-1 transition-colors hover:text-[#75182d] ${
+                    isTravelActive ? "text-[#75182d] font-bold" : "text-[#222222]"
+                  }`}
+                >
+                  <span>Du lịch Nhật Bản</span>
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${travelDropdown ? "rotate-180 text-[#75182d]" : ""}`} />
+                  {isTravelActive && (
+                    <motion.span
+                      layoutId="activeNavIndicator"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#75182d]"
+                    />
+                  )}
+                </Link>
+
+                <AnimatePresence>
+                  {travelDropdown && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.18 }}
+                      className="absolute top-full left-0 mt-2 w-80 bg-white border border-[#75182d]/20 shadow-xl p-3 z-50 rounded-sm"
+                    >
+                      <div className="text-[10px] font-mono uppercase tracking-widest text-[#75182d] font-bold px-3 py-1.5 border-b border-black/10 mb-1.5">
+                        Dịch vụ Shinsei Travel
+                      </div>
+                      <div className="space-y-1">
+                        {travelSubLinks.map((sub) => {
+                          const SubIcon = sub.icon;
+                          const isSubActive = pathname === sub.href;
+                          return (
+                            <Link
+                              key={sub.href}
+                              href={sub.href}
+                              className={`flex items-start gap-3 p-2.5 rounded-sm hover:bg-[#fbf7ef] transition-colors group ${
+                                isSubActive ? "bg-[#fbf7ef] border-l-2 border-[#75182d]" : ""
+                              }`}
+                            >
+                              <div className="w-7 h-7 rounded bg-[#75182d]/10 text-[#75182d] group-hover:bg-[#75182d] group-hover:text-white flex items-center justify-center shrink-0 mt-0.5 transition-colors">
+                                <SubIcon className="w-3.5 h-3.5" />
+                              </div>
+                              <div>
+                                <div className="text-xs font-semibold text-[#222222] group-hover:text-[#75182d] transition-colors leading-tight">
+                                  {sub.label}
+                                </div>
+                                <div className="text-[10.5px] text-[#222222]/60 mt-0.5 normal-case font-normal leading-snug">
+                                  {sub.desc}
+                                </div>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </nav>
+
+            {/* Right: Phone Hotline + Contact Button + Mobile Menu Drawer Trigger */}
+            <div className="flex items-center gap-3 sm:gap-4 shrink-0">
               <a
                 href="tel:0981365391"
-                className="hidden md:flex items-center gap-1.5 text-xs font-semibold tracking-wider text-[#222222] hover:text-[#75182d] transition-colors whitespace-nowrap bg-white/80 px-3 py-1.5 border border-black/10 rounded-sm shrink-0 shadow-2xs"
+                className="hidden lg:flex items-center gap-1.5 text-xs font-semibold tracking-wider text-[#222222] hover:text-[#75182d] transition-colors whitespace-nowrap bg-white/80 px-3 py-1.5 border border-black/10 rounded-sm shrink-0 shadow-2xs"
               >
                 <Phone className="w-3.5 h-3.5 text-[#75182d]" />
                 <span className="font-mono">0981.365.391</span>
@@ -102,7 +193,7 @@ export function Navbar() {
 
               <a
                 href="#contact"
-                className="shushi-btn shushi-btn-primary whitespace-nowrap !py-2 !px-3.5 sm:!py-2.5 sm:!px-4.5 text-xs shadow-sm shrink-0"
+                className="shushi-btn shushi-btn-primary whitespace-nowrap !py-2 !px-3.5 sm:!py-2.5 sm:!px-4 text-xs shadow-sm shrink-0"
               >
                 <span className="flex items-center gap-1.5">
                   <span className="hidden sm:inline">Liên hệ ngay</span>
@@ -110,13 +201,29 @@ export function Navbar() {
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </span>
               </a>
+
+              {/* Mobile / Tablet Menu Button */}
+              <button
+                onClick={() => setDrawerOpen(true)}
+                className="xl:hidden group flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 hover:border-[#75182d] text-[#222222] hover:text-[#75182d] bg-white/70 transition-all cursor-pointer shadow-2xs"
+                aria-label="Mở menu"
+              >
+                <div className="space-y-1 w-4">
+                  <span className="block h-[1.5px] w-4 bg-current transition-all group-hover:w-3"></span>
+                  <span className="block h-[1.5px] w-3 bg-current transition-all group-hover:w-4"></span>
+                  <span className="block h-[1.5px] w-3.5 bg-current transition-all group-hover:w-3"></span>
+                </div>
+                <span className="text-xs uppercase tracking-[0.14em] font-semibold">
+                  Menu
+                </span>
+              </button>
             </div>
 
           </div>
         </div>
       </header>
 
-      {/* Slide-out Fullscreen/Drawer Menu */}
+      {/* Slide-out Fullscreen/Drawer Menu (Multi-page comprehensive navigation) */}
       <AnimatePresence>
         {drawerOpen && (
           <motion.div
@@ -133,24 +240,24 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 220 }}
-              className="relative w-full max-w-lg bg-[#fbf7ef] text-[#222222] h-full shadow-2xl p-8 sm:p-12 flex flex-col justify-between overflow-y-auto z-10 border-l border-black/15"
+              className="relative w-full max-w-lg bg-[#fbf7ef] text-[#222222] h-full shadow-2xl p-6 sm:p-10 flex flex-col justify-between overflow-y-auto z-10 border-l border-black/15"
             >
               <div>
                 {/* Header of Drawer */}
-                <div className="flex items-center justify-between pb-6 border-b border-black/10">
+                <div className="flex items-center justify-between pb-5 border-b border-black/10">
                   <div className="flex items-center gap-2.5">
                     <img
                       src="/images/shinsei-mark-red.png"
                       alt="Shinsei Emblem"
-                      className="h-5 w-auto"
+                      className="h-6 w-auto"
                     />
                     <span className="font-mono text-xs uppercase tracking-widest text-[#75182d] font-bold">
-                      Công ty Cổ phần Thương Mại Shinsei
+                      CÔNG TY CP THƯƠNG MẠI SHINSEI
                     </span>
                   </div>
                   <button
                     onClick={() => setDrawerOpen(false)}
-                    className="flex items-center gap-2 p-2 text-[#222222] hover:text-[#75182d] transition-colors cursor-pointer"
+                    className="flex items-center gap-1.5 p-2 text-[#222222] hover:text-[#75182d] transition-colors cursor-pointer"
                   >
                     <span className="text-xs uppercase tracking-widest font-semibold">Đóng</span>
                     <X className="w-5 h-5" />
@@ -158,53 +265,98 @@ export function Navbar() {
                 </div>
 
                 {/* Slogan Statement */}
-                <div className="py-6 border-b border-black/10">
-                  <h3 className="font-title text-2xl sm:text-3xl font-light text-[#75182d] leading-snug">
+                <div className="py-4 border-b border-black/10">
+                  <h3 className="font-title text-xl sm:text-2xl font-light text-[#75182d] leading-snug">
                     An tâm trong từng bữa ăn, tận tâm trong từng trải nghiệm.
                   </h3>
-                  <p className="text-xs text-[#222222]/75 mt-2 leading-relaxed">
-                    Hệ sinh thái dịch vụ ẩm thực tập thể chuẩn Nhật Bản và tour du lịch chuyên sâu y tế, golf, trải nghiệm.
+                  <p className="text-xs text-[#222222]/75 mt-1.5 leading-relaxed">
+                    Hệ sinh thái Bếp ăn chuẩn 5S Nhật Bản và Tour Du lịch chuyên sâu Y tế, Golf, Trải nghiệm.
                   </p>
                 </div>
 
-                {/* Nav Links */}
-                <nav className="py-6 space-y-3">
-                  {[
-                    { label: "Trang chủ Shinsei", href: "#" },
-                    { label: "Về chúng tôi (Thông điệp CEO & Sứ mệnh)", href: "#about" },
-                    { label: "Tiêu chuẩn 5S & Bếp 1 chiều", href: "#standards-5s" },
-                    { label: "Food & Coffee (Suất ăn công nghiệp, Cơm văn phòng, Tiệc bàn)", href: "#food-coffee" },
-                    { label: "Dự toán chi phí B2B", href: "#calculator" },
-                    { label: "Shinsei Travel (Du lịch Y tế, Golf Núi Phú Sĩ, Trải nghiệm)", href: "#travel" },
-                    { label: "Liên hệ & Đặt lịch nếm thử", href: "#contact" },
-                  ].map((link, idx) => (
-                    <div key={idx} className="overflow-hidden">
-                      <a
-                        href={link.href}
-                        onClick={() => setDrawerOpen(false)}
-                        className="group flex items-baseline justify-between py-2 text-base sm:text-lg font-title font-light hover:text-[#75182d] transition-colors"
-                      >
-                        <span className="group-hover:translate-x-2 transition-transform duration-300">
-                          {link.label}
-                        </span>
-                        <span className="font-mono text-xs text-[#222222]/40 group-hover:text-[#75182d]">
-                          0{idx + 1}
-                        </span>
-                      </a>
+                {/* Multi-page Nav Links */}
+                <div className="py-5 space-y-4">
+                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#75182d] font-bold">
+                    Trang & Dịch vụ chính
+                  </div>
+
+                  <nav className="space-y-1">
+                    {[
+                      { label: "Trang chủ", href: "/", num: "01", icon: Sparkles },
+                      { label: "Bếp ăn • Thực đơn", href: "/bep-an-thuc-don", num: "02", icon: Utensils },
+                      { label: "Đồ uống & Kiosk Café", href: "/do-uong", num: "03", icon: Coffee },
+                      { label: "Về chúng tôi (Hồ sơ năng lực)", href: "/ve-chung-toi", num: "04", icon: Users },
+                      { label: "Dự toán chi phí B2B", href: "/du-toan-chi-phi", num: "05", icon: Calculator },
+                    ].map((link) => {
+                      const Icon = link.icon;
+                      const isActive = pathname === link.href;
+                      return (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          onClick={() => setDrawerOpen(false)}
+                          className={`group flex items-center justify-between py-2.5 px-3 rounded hover:bg-[#75182d]/10 transition-colors ${
+                            isActive ? "bg-[#75182d] text-white font-semibold" : "text-[#222222]"
+                          }`}
+                        >
+                          <div className="flex items-center gap-3">
+                            <Icon className={`w-4 h-4 ${isActive ? "text-white" : "text-[#75182d]"}`} />
+                            <span className="font-title text-base sm:text-lg font-normal">
+                              {link.label}
+                            </span>
+                          </div>
+                          <span className={`font-mono text-xs ${isActive ? "text-white/80" : "text-[#222222]/40"}`}>
+                            {link.num}
+                          </span>
+                        </Link>
+                      );
+                    })}
+                  </nav>
+
+                  {/* Sub-branch: Du lịch Nhật Bản */}
+                  <div className="pt-2">
+                    <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#75182d] font-bold mb-2">
+                      Shinsei Travel · Du lịch Nhật Bản
                     </div>
-                  ))}
-                </nav>
+                    <div className="space-y-1 pl-2 border-l-2 border-[#75182d]/30">
+                      {travelSubLinks.map((sub) => {
+                        const SubIcon = sub.icon;
+                        const isSubActive = pathname === sub.href;
+                        return (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            onClick={() => setDrawerOpen(false)}
+                            className={`flex items-start gap-2.5 py-2 px-2.5 rounded hover:bg-[#75182d]/10 transition-colors ${
+                              isSubActive ? "bg-[#75182d]/15 text-[#75182d] font-bold" : "text-[#222222]"
+                            }`}
+                          >
+                            <SubIcon className="w-3.5 h-3.5 text-[#75182d] shrink-0 mt-0.5" />
+                            <div>
+                              <div className="text-sm font-medium leading-tight">
+                                {sub.label}
+                              </div>
+                              <div className="text-[10.5px] text-[#222222]/60 mt-0.5 font-normal">
+                                {sub.desc}
+                              </div>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Bottom Drawer Contacts */}
-              <div className="pt-6 border-t border-black/10 space-y-2.5 text-xs text-[#222222]/80">
+              <div className="pt-5 border-t border-black/10 space-y-2.5 text-xs text-[#222222]/80">
                 <div className="flex items-start gap-2">
                   <MapPin className="w-4 h-4 text-[#75182d] shrink-0 mt-0.5" />
-                  <span>Lô 6, A19 Thiên Khôi, Geleximco A, Tây Mỗ, Hà Nội</span>
+                  <span>A19 Geleximco A, Tây Mỗ, Nam Từ Liêm, Hà Nội</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-[#75182d] shrink-0" />
-                  <span className="font-bold text-[#222222]">
+                  <span className="font-bold text-[#222222] font-mono">
                     VN: 0981.365.391 · JP: 080.2392.2268
                   </span>
                 </div>

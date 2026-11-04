@@ -1,11 +1,9 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { StatsBar } from "@/components/StatsBar";
+import { ServiceEcosystem } from "@/components/ServiceEcosystem";
 import { AboutShinsei } from "@/components/AboutShinsei";
 import { Standards5S } from "@/components/Standards5S";
-import { FoodCoffee } from "@/components/FoodCoffee";
-import { MealCalculator } from "@/components/MealCalculator";
-import { ShinseiTravel } from "@/components/ShinseiTravel";
 import { ContactShinsei } from "@/components/ContactShinsei";
 import { Footer } from "@/components/Footer";
 
@@ -16,11 +14,9 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <StatsBar />
+        <ServiceEcosystem />
         <AboutShinsei />
         <Standards5S />
-        <FoodCoffee />
-        <MealCalculator />
-        <ShinseiTravel />
         <ContactShinsei />
       </main>
       <Footer />
