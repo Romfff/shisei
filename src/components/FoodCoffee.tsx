@@ -248,7 +248,7 @@ export function FoodCoffee() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] font-bold text-[#75182d] mb-3 bg-[#f1e2c8]/60 px-3.5 py-1.5 rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-[#75182d]"></span>
-              <span>Hồ sơ năng lực / 06 & 11 · Danh mục dịch vụ</span>
+              <span>Danh Mục Dịch Vụ Ẩm Thực · Food & Beverage</span>
             </div>
             <h2 className="font-title text-4xl sm:text-5xl font-light text-[#222222] tracking-tight leading-[1.05]">
               Food & Coffee · Bếp ăn & Quầy Café chuẩn 5S
@@ -431,7 +431,7 @@ export function FoodCoffee() {
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 pb-8 border-b border-black/10">
             <div className="max-w-2xl">
               <span className="font-mono text-xs uppercase tracking-widest text-[#75182d] font-bold block mb-1">
-                Hồ sơ năng lực / 11
+                Tiêu chuẩn Shinsei Food
               </span>
               <h3 className="font-title text-2xl sm:text-3xl font-light text-[#222222]">
                 Giải Pháp Thực Đơn & Dinh Dưỡng Cân Bằng

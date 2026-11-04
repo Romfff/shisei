@@ -5,9 +5,9 @@ import { Footer } from "@/components/Footer";
 import { Coffee, Sparkles, Award, CheckCircle2, ArrowRight, HeartHandshake, ShieldCheck, Flame, GlassWater } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Đồ Uống & Kiosk Café Nhận Diện Thương Hiệu | SHINSEI FOOD & COFFEE",
+  title: "Đồ Uống & Café Nhận Diện Thương Hiệu | SHINSEI FOOD & COFFEE",
   description:
-    "Menu đồ uống nhận diện Shinsei: Cà phê pha máy, Matcha Uji Nhật Bản, trà hoa quả tươi và giải pháp vận hành quầy Kiosk Café trọn gói cho văn phòng, nhà máy và tòa nhà.",
+    "Menu đồ uống & cà phê nhận diện Shinsei: Cà phê pha máy, Matcha Uji Nhật Bản, trà hoa quả tươi và dịch vụ phục vụ cà phê chuyên nghiệp cho văn phòng, nhà máy và sự kiện.",
 };
 
 export default function DoUongPage() {
@@ -82,11 +82,11 @@ export default function DoUongPage() {
                 </div>
 
                 <h1 className="font-title text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.08]">
-                  Menu Đồ Uống & Mô Hình Quầy Kiosk Café Văn Phòng
+                  Menu Đồ Uống & Café Văn Phòng
                 </h1>
 
                 <p className="text-base sm:text-lg text-[#f1e2c8]/85 font-normal leading-relaxed max-w-2xl">
-                  Trải nghiệm hương vị cà phê pha máy thượng hạng, matcha Kyoto chuẩn Nhật và trà trái cây tươi mát ngay tại không gian làm việc. Giải pháp Kiosk trọn gói từ Shinsei giúp nâng cao đời sống tinh thần cho toàn bộ nhân sự.
+                  Trải nghiệm hương vị cà phê pha máy thượng hạng, matcha Kyoto chuẩn Nhật và trà trái cây tươi mát ngay tại không gian làm việc. Giải pháp đồ uống & cà phê từ Shinsei giúp nâng cao đời sống tinh thần cho toàn bộ nhân sự.
                 </p>
 
                 <div className="flex flex-wrap gap-4 pt-2">
@@ -94,8 +94,8 @@ export default function DoUongPage() {
                     <span>Khám phá menu đồ uống</span>
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </a>
-                  <a href="#kiosk-model" className="shushi-btn shushi-btn-outline !border-white/30 !text-white hover:!bg-white/10">
-                    <span>Mô hình Kiosk Café doanh nghiệp</span>
+                  <a href="#cafe-service" className="shushi-btn shushi-btn-outline !border-white/30 !text-white hover:!bg-white/10">
+                    <span>Dịch vụ Café doanh nghiệp</span>
                   </a>
                 </div>
               </div>
@@ -119,8 +119,8 @@ export default function DoUongPage() {
           </div>
         </section>
 
-        {/* Mô Hình Kiosk Doanh Nghiệp */}
-        <section id="kiosk-model" className="py-24 bg-white border-b border-black/10">
+        {/* Dịch Vụ Cà Phê & Đồ Uống Doanh Nghiệp */}
+        <section id="cafe-service" className="py-24 bg-white border-b border-black/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-6 space-y-6">
@@ -128,17 +128,17 @@ export default function DoUongPage() {
                   Giải Pháp Không Gian F&B
                 </span>
                 <h2 className="font-title text-3xl sm:text-4xl lg:text-5xl font-light text-[#222222] leading-tight">
-                  Quầy Kiosk Café Tự Vận Hành Tại Doanh Nghiệp
+                  Dịch Vụ Đồ Uống & Café Phục Vụ Doanh Nghiệp
                 </h2>
                 <p className="text-sm sm:text-base text-[#222222]/80 leading-relaxed">
-                  Shinsei cung cấp giải pháp thiết lập và vận hành trọn gói quầy Bar & Café cho tòa nhà, sảnh lễ tân hoặc khu nghỉ giải lao của doanh nghiệp:
+                  Shinsei cung cấp giải pháp thiết lập và phục vụ trọn gói đồ uống & cà phê cho tòa nhà, văn phòng, căng-tin hoặc khu nghỉ giải lao của doanh nghiệp:
                 </p>
 
                 <div className="space-y-4">
                   {[
                     {
-                      title: "Thiết kế & Đầu tư trọn gói",
-                      desc: "Không phát sinh chi phí mua máy móc đắt tiền, Shinsei setup toàn bộ máy pha cà phê Ý, tủ lạnh, quầy kệ hiện đại.",
+                      title: "Thiết kế & Pha chế chuyên nghiệp",
+                      desc: "Shinsei trang bị hệ thống máy pha cà phê Ý cao cấp, tủ bảo quản lạnh và nguyên liệu tuyển chọn chuẩn vị.",
                     },
                     {
                       title: "Nhân sự chuẩn phong cách Nhật Omotenashi",
@@ -264,7 +264,7 @@ export default function DoUongPage() {
                 href="#contact"
                 className="shushi-btn shushi-btn-primary inline-flex"
               >
-                <span>Đăng ký tư vấn mô hình Kiosk Café</span>
+                <span>Đăng ký tư vấn dịch vụ Đồ uống & Café</span>
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </div>

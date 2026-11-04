@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { ShieldCheck, Sparkles, HeartHandshake, Eye, Target, Award, CheckCircle2, RefreshCw, Truck, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Về Chúng Tôi - Hồ Sơ Năng Lực & Tiêu Chuẩn 5S | CÔNG TY CP THƯƠNG MẠI SHINSEI",
+  title: "Về Chúng Tôi - Tiêu Chuẩn 5S Nhật Bản | CÔNG TY CP THƯƠNG MẠI SHINSEI",
   description:
     "Tìm hiểu về Công ty Cổ phần Thương Mại Shinsei, thông điệp Chủ tịch Đỗ Thị Trang, tiêu chuẩn vận hành 5S Nhật Bản, quy chuẩn đồng phục và đội xe bảo ôn giao hàng chuyên nghiệp.",
 };
@@ -48,7 +48,7 @@ export default function VeChungToiPage() {
             <div className="max-w-3xl space-y-6">
               <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] font-bold text-[#f1e2c8] bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#f1e2c8] animate-pulse"></span>
-                <span>Hồ Sơ Năng Lực · Company Profile</span>
+                <span>Về Chúng Tôi · Company Profile</span>
               </div>
 
               <h1 className="font-title text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.08]">
@@ -249,7 +249,7 @@ export default function VeChungToiPage() {
                   <div className="h-64 overflow-hidden">
                     <img
                       src="/images/shinsei-staff-polo.jpg"
-                      alt="Đồng phục Phục vụ & Kiosk Café Shinsei"
+                      alt="Đồng phục Phục vụ & Café Shinsei"
                       className="w-full h-full object-cover object-top"
                     />
                   </div>

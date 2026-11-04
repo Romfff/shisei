@@ -101,18 +101,12 @@ export function ContactShinsei() {
                   <div className="text-xs uppercase font-mono tracking-wider text-[#75182d] font-bold">
                     Email tiếp nhận yêu cầu & phản hồi:
                   </div>
-                  <div className="space-y-0.5 mt-1">
+                  <div className="mt-1">
                     <a
                       href="mailto:info.shinseivn@gmail.com"
                       className="text-sm sm:text-base font-bold text-[#222222] hover:text-[#75182d] transition-colors font-mono block"
                     >
                       info.shinseivn@gmail.com
-                    </a>
-                    <a
-                      href="mailto:ddcjp.ceo@gmail.com"
-                      className="text-xs text-[#222222]/70 hover:text-[#75182d] transition-colors font-mono block"
-                    >
-                      ddcjp.ceo@gmail.com · Ban điều hành
                     </a>
                   </div>
                 </div>

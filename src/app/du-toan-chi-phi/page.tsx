@@ -177,10 +177,10 @@ export default function DuToanChiPhiPage() {
                       />
                       <div className="flex-1">
                         <div className="text-xs font-semibold text-[#222222]">
-                          Kiosk Café & Đồ uống pha máy Shinsei (+15.000đ / người / ngày)
+                          Đồ uống & Cà phê pha máy Shinsei (+15.000đ / người / ngày)
                         </div>
                         <div className="text-[11px] text-[#222222]/60">
-                          Setup quầy cà phê pha máy Ý, trà matcha, trà trái cây tự phục vụ tại chỗ.
+                          Phục vụ cà phê pha máy Ý, trà matcha, trà trái cây tươi tại chỗ.
                         </div>
                       </div>
                     </label>

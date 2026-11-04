@@ -58,17 +58,20 @@ export function Footer() {
               Dịch Vụ & Trang Chuyên Đề
             </h4>
             <div className="flex flex-col space-y-2 text-xs text-stone-300">
+              <Link href="/" className="hover:text-[#f1e2c8] transition-colors">
+                ✦ Trang chủ
+              </Link>
+              <Link href="/ve-chung-toi" className="hover:text-[#f1e2c8] transition-colors">
+                ✦ Về chúng tôi
+              </Link>
               <Link href="/bep-an-thuc-don" className="hover:text-[#f1e2c8] transition-colors">
                 ✦ Bếp ăn • Thực đơn 5S
               </Link>
-              <Link href="/do-uong" className="hover:text-[#f1e2c8] transition-colors">
-                ✦ Đồ uống & Kiosk Café
-              </Link>
-              <Link href="/ve-chung-toi" className="hover:text-[#f1e2c8] transition-colors">
-                ✦ Về chúng tôi · Hồ sơ năng lực
-              </Link>
               <Link href="/du-toan-chi-phi" className="hover:text-[#f1e2c8] transition-colors">
                 ✦ Dự toán chi phí B2B
+              </Link>
+              <Link href="/do-uong" className="hover:text-[#f1e2c8] transition-colors">
+                ✦ Đồ uống & Café
               </Link>
               <Link href="/du-lich" className="hover:text-[#f1e2c8] transition-colors font-semibold text-white">
                 ✦ Shinsei Travel · Du lịch Nhật Bản
@@ -84,6 +87,9 @@ export function Footer() {
                   • Du lịch Trải nghiệm văn hóa và ẩm thực
                 </Link>
               </div>
+              <a href="#contact" className="hover:text-[#f1e2c8] transition-colors">
+                ✦ Liên hệ & Hợp tác
+              </a>
             </div>
           </div>
 
@@ -133,12 +139,6 @@ export function Footer() {
                 >
                   info.shinseivn@gmail.com
                 </a>
-                <a
-                  href="mailto:ddcjp.ceo@gmail.com"
-                  className="font-mono text-[11px] text-stone-400 hover:text-white block mt-0.5"
-                >
-                  ddcjp.ceo@gmail.com
-                </a>
               </div>
 
               <div className="pt-2">
@@ -161,21 +161,24 @@ export function Footer() {
             <Link href="/" className="hover:text-white transition-colors">
               Trang chủ
             </Link>
-            <Link href="/bep-an-thuc-don" className="hover:text-white transition-colors">
-              Bếp ăn • Thực đơn
-            </Link>
-            <Link href="/do-uong" className="hover:text-white transition-colors">
-              Đồ uống
-            </Link>
             <Link href="/ve-chung-toi" className="hover:text-white transition-colors">
               Về chúng tôi
             </Link>
+            <Link href="/bep-an-thuc-don" className="hover:text-white transition-colors">
+              Bếp ăn • Thực đơn
+            </Link>
             <Link href="/du-toan-chi-phi" className="hover:text-white transition-colors">
-              Dự toán B2B
+              Dự toán chi phí B2B
+            </Link>
+            <Link href="/do-uong" className="hover:text-white transition-colors">
+              Đồ uống & Café
             </Link>
             <Link href="/du-lich" className="hover:text-white transition-colors">
               Du lịch Nhật Bản
             </Link>
+            <a href="#contact" className="hover:text-white transition-colors">
+              Liên hệ
+            </a>
           </div>
         </div>
 

@@ -101,7 +101,7 @@ export function Hero() {
           <Link href="/do-uong" className="shushi-btn shushi-btn-outline shadow-2xs">
             <span className="flex items-center gap-2">
               <Coffee className="w-4 h-4 text-[#75182d]" />
-              <span>Menu Đồ uống & Kiosk Café</span>
+              <span>Menu Đồ uống & Café</span>
             </span>
           </Link>
           <Link href="/du-lich" className="shushi-btn shushi-btn-outline shadow-2xs">

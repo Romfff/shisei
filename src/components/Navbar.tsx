@@ -22,10 +22,10 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Trang chủ", href: "/" },
-    { label: "Bếp ăn · Thực đơn", href: "/bep-an-thuc-don" },
-    { label: "Đồ uống & Café", href: "/do-uong" },
     { label: "Về chúng tôi", href: "/ve-chung-toi" },
-    { label: "Dự toán B2B", href: "/du-toan-chi-phi" },
+    { label: "Bếp ăn · Thực đơn", href: "/bep-an-thuc-don" },
+    { label: "Dự toán chi phí B2B", href: "/du-toan-chi-phi" },
+    { label: "Đồ uống & Café", href: "/do-uong" },
   ];
 
   const travelSubLinks = [
@@ -283,68 +283,68 @@ export function Navbar() {
                   <nav className="space-y-1">
                     {[
                       { label: "Trang chủ", href: "/", num: "01", icon: Sparkles },
-                      { label: "Bếp ăn · Thực đơn", href: "/bep-an-thuc-don", num: "02", icon: Utensils },
-                      { label: "Đồ uống & Kiosk Café", href: "/do-uong", num: "03", icon: Coffee },
-                      { label: "Về chúng tôi · Hồ sơ năng lực", href: "/ve-chung-toi", num: "04", icon: Users },
-                      { label: "Dự toán chi phí B2B", href: "/du-toan-chi-phi", num: "05", icon: Calculator },
+                      { label: "Về chúng tôi", href: "/ve-chung-toi", num: "02", icon: Users },
+                      { label: "Bếp ăn · Thực đơn", href: "/bep-an-thuc-don", num: "03", icon: Utensils },
+                      { label: "Dự toán chi phí B2B", href: "/du-toan-chi-phi", num: "04", icon: Calculator },
+                      { label: "Đồ uống & Café", href: "/do-uong", num: "05", icon: Coffee },
+                      { label: "Du lịch", href: "/du-lich", num: "06", icon: Compass, isTravel: true },
+                      { label: "Liên hệ", href: "#contact", num: "07", icon: Phone },
                     ].map((link) => {
                       const Icon = link.icon;
-                      const isActive = pathname === link.href;
+                      const isActive = pathname === link.href || (link.isTravel && isTravelActive);
                       return (
-                        <Link
-                          key={link.href}
-                          href={link.href}
-                          onClick={() => setDrawerOpen(false)}
-                          className={`group flex items-center justify-between py-2.5 px-3 rounded hover:bg-[#75182d]/10 transition-colors ${
-                            isActive ? "bg-[#75182d] text-white font-semibold" : "text-[#222222]"
-                          }`}
-                        >
-                          <div className="flex items-center gap-3">
-                            <Icon className={`w-4 h-4 ${isActive ? "text-white" : "text-[#75182d]"}`} />
-                            <span className="font-title text-base sm:text-lg font-normal">
-                              {link.label}
+                        <div key={link.href} className="space-y-1">
+                          <Link
+                            href={link.href}
+                            onClick={() => setDrawerOpen(false)}
+                            className={`group flex items-center justify-between py-2.5 px-3 rounded hover:bg-[#75182d]/10 transition-colors ${
+                              isActive ? "bg-[#75182d] text-white font-semibold" : "text-[#222222]"
+                            }`}
+                          >
+                            <div className="flex items-center gap-3">
+                              <Icon className={`w-4 h-4 ${isActive ? "text-white" : "text-[#75182d]"}`} />
+                              <span className="font-title text-base sm:text-lg font-normal">
+                                {link.label}
+                              </span>
+                            </div>
+                            <span className={`font-mono text-xs ${isActive ? "text-white/80" : "text-[#222222]/40"}`}>
+                              {link.num}
                             </span>
-                          </div>
-                          <span className={`font-mono text-xs ${isActive ? "text-white/80" : "text-[#222222]/40"}`}>
-                            {link.num}
-                          </span>
-                        </Link>
+                          </Link>
+
+                          {/* Nested Sub-tours for Du lịch */}
+                          {link.isTravel && (
+                            <div className="ml-5 pl-3 border-l-2 border-[#75182d]/30 space-y-1 py-1">
+                              {travelSubLinks.slice(1).map((sub) => {
+                                const SubIcon = sub.icon;
+                                const isSubActive = pathname === sub.href;
+                                return (
+                                  <Link
+                                    key={sub.href}
+                                    href={sub.href}
+                                    onClick={() => setDrawerOpen(false)}
+                                    className={`flex items-start gap-2.5 py-1.5 px-2 rounded hover:bg-[#75182d]/10 transition-colors ${
+                                      isSubActive ? "bg-[#75182d]/15 text-[#75182d] font-bold" : "text-[#222222]"
+                                    }`}
+                                  >
+                                    <SubIcon className="w-3.5 h-3.5 text-[#75182d] shrink-0 mt-0.5" />
+                                    <div>
+                                      <div className="text-xs font-medium leading-tight">
+                                        {sub.label}
+                                      </div>
+                                      <div className="text-[10.5px] text-[#222222]/60 mt-0.5 font-normal">
+                                        {sub.desc}
+                                      </div>
+                                    </div>
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
                       );
                     })}
                   </nav>
-
-                  {/* Sub-branch: Du lịch Nhật Bản */}
-                  <div className="pt-2">
-                    <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#75182d] font-bold mb-2">
-                      Shinsei Travel · Du lịch Nhật Bản
-                    </div>
-                    <div className="space-y-1 pl-2 border-l-2 border-[#75182d]/30">
-                      {travelSubLinks.map((sub) => {
-                        const SubIcon = sub.icon;
-                        const isSubActive = pathname === sub.href;
-                        return (
-                          <Link
-                            key={sub.href}
-                            href={sub.href}
-                            onClick={() => setDrawerOpen(false)}
-                            className={`flex items-start gap-2.5 py-2 px-2.5 rounded hover:bg-[#75182d]/10 transition-colors ${
-                              isSubActive ? "bg-[#75182d]/15 text-[#75182d] font-bold" : "text-[#222222]"
-                            }`}
-                          >
-                            <SubIcon className="w-3.5 h-3.5 text-[#75182d] shrink-0 mt-0.5" />
-                            <div>
-                              <div className="text-sm font-medium leading-tight">
-                                {sub.label}
-                              </div>
-                              <div className="text-[10.5px] text-[#222222]/60 mt-0.5 font-normal">
-                                {sub.desc}
-                              </div>
-                            </div>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </div>
                 </div>
               </div>
 
