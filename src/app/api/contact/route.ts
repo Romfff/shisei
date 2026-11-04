@@ -5,8 +5,8 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { companyName, contactName, phone, email, serviceType, quantity, notes } = body;
 
-    const recipientEmail = "ddcjp.ceo@gmail.com";
-    const ccEmail = "contact-shinsei@gmail.com";
+    const recipientEmail = "info.shinseivn@gmail.com";
+    const ccEmail = "ddcjp.ceo@gmail.com";
 
     // Format service type label
     const serviceLabels: Record<string, string> = {
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
     console.log(`Notes: ${notes || "Không có"}`);
     console.log("==================================================");
 
-    // Forward to FormSubmit to deliver directly to ddcjp.ceo@gmail.com & contact-shinsei@gmail.com
+    // Forward to FormSubmit to deliver directly to info.shinseivn@gmail.com (cc: ddcjp.ceo@gmail.com)
     try {
       const formSubmitResponse = await fetch(`https://formsubmit.co/ajax/${recipientEmail}`, {
         method: "POST",

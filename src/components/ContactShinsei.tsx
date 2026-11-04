@@ -103,10 +103,10 @@ export function ContactShinsei() {
                   </div>
                   <div className="space-y-0.5 mt-1">
                     <a
-                      href="mailto:contact-shinsei@gmail.com"
+                      href="mailto:info.shinseivn@gmail.com"
                       className="text-sm sm:text-base font-bold text-[#222222] hover:text-[#75182d] transition-colors font-mono block"
                     >
-                      contact-shinsei@gmail.com
+                      info.shinseivn@gmail.com
                     </a>
                     <a
                       href="mailto:ddcjp.ceo@gmail.com"
@@ -171,10 +171,10 @@ export function ContactShinsei() {
                   </h3>
                   <div className="text-sm text-[#222222]/85 max-w-md mx-auto space-y-2">
                     <p>
-                      Yêu cầu của <strong>{formData.contactName || "quý đơn vị"}</strong> đã được chuyển trực tiếp tới hòm thư ban điều hành:
+                      Yêu cầu của <strong>{formData.contactName || "quý đơn vị"}</strong> đã được chuyển trực tiếp tới hòm thư tiếp nhận:
                     </p>
                     <div className="py-2 px-4 bg-white border border-[#75182d]/20 font-mono font-bold text-[#75182d] text-base inline-block">
-                      ddcjp.ceo@gmail.com
+                      info.shinseivn@gmail.com
                     </div>
                     <p className="text-xs text-[#222222]/70 pt-2">
                       Đội ngũ chuyên viên Shinsei sẽ chủ động liên hệ qua số điện thoại <strong>{formData.phone}</strong> trong vòng 2 giờ làm việc.
@@ -204,7 +204,7 @@ export function ContactShinsei() {
                       Phiếu Yêu Cầu Tư Vấn & Nếm Thử Suất Ăn
                     </h3>
                     <p className="text-xs text-[#222222]/70 mt-1">
-                      Thông tin sẽ được gửi trực tiếp đến ban giám đốc qua email <strong>ddcjp.ceo@gmail.com</strong>
+                      Thông tin sẽ được gửi trực tiếp đến ban giám đốc qua email <strong>info.shinseivn@gmail.com</strong>
                     </p>
                   </div>
 
