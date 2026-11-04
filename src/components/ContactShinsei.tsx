@@ -3,10 +3,14 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { Send, CheckCircle2, Phone, MapPin, Mail, Globe, Clock, Building, Loader2, Utensils, Compass, Plane, ShieldCheck, HeartHandshake, Calendar } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/lib/translations";
 
 export function ContactShinsei() {
   const pathname = usePathname();
   const [formType, setFormType] = useState<"food" | "travel">("food");
+  const { language, isJa } = useLanguage();
+  const dict = translations[language];
 
   // Sync initial tab based on route
   useEffect(() => {
@@ -92,15 +96,17 @@ export function ContactShinsei() {
           <div className="lg:col-span-5 space-y-6">
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] font-bold text-[#75182d] bg-[#f1e2c8]/60 px-3.5 py-1.5 rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-[#75182d]"></span>
-              <span>Thông tin liên hệ & Đăng ký</span>
+              <span>{isJa ? "お問い合わせ・ご相談窓口" : "Thông tin liên hệ & Đăng ký"}</span>
             </div>
 
             <h2 className="font-title text-4xl sm:text-5xl font-light text-[#222222] tracking-tight leading-[1.05]">
-              Công ty Cổ phần Thương Mại Shinsei
+              {dict.drawerCompany}
             </h2>
 
             <p className="text-sm sm:text-base text-[#222222]/80 leading-relaxed font-normal">
-              Shinsei đồng hành cùng quý doanh nghiệp và khách hàng với hai lĩnh vực mũi nhọn: <strong>Hệ sinh thái Bếp ăn tập thể chuẩn 5S</strong> và <strong>Tour Du lịch chuyên sâu Nhật Bản (Y tế, Lọc máu DFPP, Tế bào gốc, Golf PGA)</strong>.
+              {isJa
+                ? "SHINSEIは、日本式5S管理基準の給食・社員食堂運営と、訪日医療（人間ドック・DFPP血液浄化・幹細胞）・PGAゴルフツアーの2大事業を展開しております。"
+                : "Shinsei đồng hành cùng quý doanh nghiệp và khách hàng với hai lĩnh vực mũi nhọn: Hệ sinh thái Bếp ăn tập thể chuẩn 5S và Tour Du lịch chuyên sâu Nhật Bản (Y tế, Lọc máu DFPP, Tế bào gốc, Golf PGA)."}
             </p>
 
             {/* Contact detail cards */}
@@ -112,13 +118,13 @@ export function ContactShinsei() {
                 </div>
                 <div>
                   <div className="text-xs uppercase font-mono tracking-wider text-[#75182d] font-bold">
-                    Trụ sở tại Việt Nam:
+                    {isJa ? "ベトナム本社所在地：" : "Trụ sở tại Việt Nam:"}
                   </div>
                   <div className="text-sm font-semibold text-[#222222] mt-0.5">
-                    Lô 6, A19 Thiên Khôi, Geleximco A, Tây Mỗ, Hà Nội
+                    {dict.topBarAddress}
                   </div>
                   <div className="text-xs text-[#222222]/65 mt-0.5">
-                    A19-32 NV8 Khu A, KĐT Geleximco Lê Trọng Tấn, Hà Nội
+                    A19-32 NV8 Khu A, Geleximco Lê Trọng Tấn, Hà Nội
                   </div>
                 </div>
               </div>
@@ -130,7 +136,7 @@ export function ContactShinsei() {
                 </div>
                 <div>
                   <div className="text-xs uppercase font-mono tracking-wider text-[#75182d] font-bold">
-                    Email tiếp nhận yêu cầu & phản hồi:
+                    {isJa ? "お問い合わせ専用メール：" : "Email tiếp nhận yêu cầu & phản hồi:"}
                   </div>
                   <div className="mt-1">
                     <a
@@ -147,23 +153,23 @@ export function ContactShinsei() {
                 <div className="p-4 bg-[#fbf7ef] border border-black/10">
                   <div className="flex items-center gap-2 text-[#75182d] mb-1">
                     <Phone className="w-4 h-4" />
-                    <span className="text-xs font-mono uppercase font-bold">Hotline Việt Nam</span>
+                    <span className="text-xs font-mono uppercase font-bold">{dict.hotlineVn}</span>
                   </div>
                   <a href="tel:0981365391" className="text-lg font-bold text-[#222222] hover:text-[#75182d] transition-colors font-mono">
                     0981.365.391
                   </a>
-                  <p className="text-[11px] text-[#222222]/60 mt-0.5">Zalo / Tư vấn 24/7</p>
+                  <p className="text-[11px] text-[#222222]/60 mt-0.5">{isJa ? "年中無休対応" : "Zalo / Tư vấn 24/7"}</p>
                 </div>
 
                 <div className="p-4 bg-[#fbf7ef] border border-black/10">
                   <div className="flex items-center gap-2 text-[#75182d] mb-1">
                     <Globe className="w-4 h-4" />
-                    <span className="text-xs font-mono uppercase font-bold">Hotline Nhật Bản</span>
+                    <span className="text-xs font-mono uppercase font-bold">{dict.hotlineJp}</span>
                   </div>
                   <a href="tel:08023922268" className="text-lg font-bold text-[#222222] hover:text-[#75182d] transition-colors font-mono">
                     080.2392.2268
                   </a>
-                  <p className="text-[11px] text-[#222222]/60 mt-0.5">Văn phòng đại diện JP</p>
+                  <p className="text-[11px] text-[#222222]/60 mt-0.5">{isJa ? "日本国内担当窓口" : "Văn phòng đại diện JP"}</p>
                 </div>
               </div>
 
@@ -173,19 +179,19 @@ export function ContactShinsei() {
             <div className="p-5 bg-[#f1e2c8]/40 border border-[#75182d]/20 text-xs text-[#222222]/85 space-y-2">
               <div className="flex items-center gap-2 font-semibold text-[#75182d]">
                 <CheckCircle2 className="w-4 h-4" />
-                <span>Cam kết đồng hành từ Shinsei:</span>
+                <span>{isJa ? "SHINSEIのお約束：" : "Cam kết đồng hành từ Shinsei:"}</span>
               </div>
               {formType === "food" ? (
                 <>
-                  <div>• Nếm thử 5 – 10 suất cơm mẫu tận nơi hoàn toàn miễn phí.</div>
-                  <div>• Đáp ứng linh hoạt quy mô từ 50 đến trên 10.000 suất ăn mỗi ngày.</div>
-                  <div>• Hỗ trợ tư vấn, thiết kế và đào tạo chuẩn 5S cho bếp ăn tập thể.</div>
+                  <div>{isJa ? "• 5〜10食分の試食サンプルを貴社へ無料でお届けします。" : "• Nếm thử 5 – 10 suất cơm mẫu tận nơi hoàn toàn miễn phí."}</div>
+                  <div>{isJa ? "• 50食から10,000食以上の大規模供給まで安定対応。" : "• Đáp ứng linh hoạt quy mô từ 50 đến trên 10.000 suất ăn mỗi ngày."}</div>
+                  <div>{isJa ? "• 日本式5S衛生管理の設計とスタッフ教育を無償支援。" : "• Hỗ trợ tư vấn, thiết kế và đào tạo chuẩn 5S cho bếp ăn tập thể."}</div>
                 </>
               ) : (
                 <>
-                  <div>• Kết nối trực tiếp 6 bệnh viện đại học hàng đầu Nhật Bản (Fujita, Tokyo Univ, St. Luke...).</div>
-                  <div>• Hỗ trợ xin Visa Y tế Medical Stay & phiên dịch viên y khoa đồng hành 1:1.</div>
-                  <div>• Sắp xếp sân Golf PGA tiêu chuẩn quốc tế và nghỉ dưỡng Onsen trọn gói.</div>
+                  <div>{isJa ? "• 東大病院、藤田医科大学、聖路加国際病院など6大名門病院と直結。" : "• Kết nối trực tiếp 6 bệnh viện đại học hàng đầu Nhật Bản (Fujita, Tokyo Univ, St. Luke...)."}</div>
+                  <div>{isJa ? "• 医療滞在ビザ（Medical Stay Visa）取得支援と専任医療通訳同行。" : "• Hỗ trợ xin Visa Y tế Medical Stay & phiên dịch viên y khoa đồng hành 1:1."}</div>
+                  <div>{isJa ? "• PGA基準名門ゴルフ場と天然温泉旅館の手配を一貫対応。" : "• Sắp xếp sân Golf PGA tiêu chuẩn quốc tế và nghỉ dưỡng Onsen trọn gói."}</div>
                 </>
               )}
             </div>
@@ -211,7 +217,7 @@ export function ContactShinsei() {
                   }`}
                 >
                   <Utensils className="w-4 h-4 shrink-0" />
-                  <span className="truncate">Ẩm Thực & Bếp Ăn B2B</span>
+                  <span className="truncate">{isJa ? "給食・カフェ事業" : "Ẩm Thực & Bếp Ăn B2B"}</span>
                 </button>
 
                 <button
@@ -227,7 +233,7 @@ export function ContactShinsei() {
                   }`}
                 >
                   <Compass className="w-4 h-4 shrink-0" />
-                  <span className="truncate">Shinsei Travel · Du Lịch Nhật</span>
+                  <span className="truncate">{isJa ? "Shinsei Travel · 訪日ツアー" : "Shinsei Travel · Du Lịch Nhật"}</span>
                 </button>
               </div>
 

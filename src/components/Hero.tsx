@@ -4,9 +4,13 @@ import { useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Utensils, Coffee, Compass, Plane, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/lib/translations";
 
 export function Hero() {
   const showcaseRef = useRef<HTMLDivElement>(null);
+  const { language, isJa } = useLanguage();
+  const dict = translations[language];
 
   // Pinned scroll animation: Cards peek out initially, then smoothly fan out into 4 directions
   const { scrollYProgress } = useScroll({
@@ -56,11 +60,7 @@ export function Hero() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] font-semibold text-[#75182d] mb-3 bg-[#f1e2c8]/60 px-4 py-1.5 rounded-full border border-[#75182d]/20"
         >
-          <span>株式会社 SHINSEI</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-[#75182d]/40"></span>
-          <span>Food & Coffee · Travel</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-[#75182d]/40"></span>
-          <span>5S 日本基準</span>
+          <span>{dict.heroBadge}</span>
         </motion.div>
 
         {/* Display Title */}
@@ -82,10 +82,10 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
           className="font-title italic text-xl sm:text-2xl md:text-3xl text-[#222222]/85 font-normal tracking-wide max-w-3xl mx-auto mt-3 mb-8"
         >
-          An tâm trong từng bữa ăn · Tận tâm trong từng trải nghiệm.
+          {dict.heroSubtitle}
         </motion.h2>
 
-        {/* 3 Action Buttons: Bếp ăn, Đồ uống, Du lịch */}
+        {/* 3 Action Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -95,19 +95,19 @@ export function Hero() {
           <Link href="/bep-an-thuc-don" className="shushi-btn shushi-btn-primary shadow-sm">
             <span className="flex items-center gap-2">
               <Utensils className="w-4 h-4" />
-              <span>Khám phá Bếp ăn · Thực đơn</span>
+              <span>{dict.heroCtaMenu}</span>
             </span>
           </Link>
           <Link href="/do-uong" className="shushi-btn shushi-btn-outline shadow-2xs">
             <span className="flex items-center gap-2">
               <Coffee className="w-4 h-4 text-[#75182d]" />
-              <span>Menu Đồ uống & Café</span>
+              <span>{dict.heroCtaDrinks}</span>
             </span>
           </Link>
           <Link href="/du-lich" className="shushi-btn shushi-btn-outline shadow-2xs">
             <span className="flex items-center gap-2">
               <Plane className="w-4 h-4 text-[#75182d]" />
-              <span>Dịch vụ Shinsei Travel</span>
+              <span>{dict.heroCtaTravel}</span>
             </span>
           </Link>
         </motion.div>
@@ -120,7 +120,7 @@ export function Hero() {
           
           <div className="relative w-full h-full flex items-center justify-center pointer-events-auto">
             
-            {/* Card 4 (Top-Right): Du lịch Golf PGA núi Phú Sĩ */}
+            {/* Card 4 (Top-Right): Du lịch Golf */}
             <motion.div
               style={{
                 y: topY,
@@ -133,21 +133,21 @@ export function Hero() {
             >
               <img
                 src="/images/Golf/taiheiyo-club-gotemba.jpg"
-                alt="Shinsei Travel · Sân Golf PGA núi Phú Sĩ"
+                alt="Shinsei Travel · Sân Golf PGA"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4 text-white">
                 <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-0.5">
-                  Shinsei Travel · Golf PGA
+                  {dict.heroCard4Tag}
                 </span>
                 <p className="font-title text-base sm:text-lg font-light text-white leading-snug">
-                  Sân golf đẳng cấp dưới chân núi Phú Sĩ
+                  {dict.heroCard4Title}
                 </p>
               </div>
             </motion.div>
 
-            {/* Card 5 (Bottom-Left): Du lịch Trải nghiệm & Văn hóa Kyoto */}
+            {/* Card 5 (Bottom-Left): Du lịch Trải nghiệm & Văn hóa */}
             <motion.div
               style={{
                 y: bottomY,
@@ -160,16 +160,16 @@ export function Hero() {
             >
               <img
                 src="/images/Travel/travel_1.jpg"
-                alt="Shinsei Travel · Cố đô Kyoto và Trà đạo Chado"
+                alt="Shinsei Travel · Văn hóa & Ẩm thực"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4 text-white">
                 <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-0.5">
-                  Shinsei Travel · Văn hóa & Ẩm thực
+                  {dict.heroCard5Tag}
                 </span>
                 <p className="font-title text-base sm:text-lg font-light text-white leading-snug">
-                  Cố đô Kyoto, trà đạo Chado và suối nước nóng Onsen
+                  {dict.heroCard5Title}
                 </p>
               </div>
             </motion.div>
@@ -193,10 +193,10 @@ export function Hero() {
               
               <div className="absolute bottom-5 left-5 right-5 text-white">
                 <span className="text-[10.5px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
-                  Food & Coffee · Cốc và Thức uống Shinsei
+                  {dict.heroCard1Tag}
                 </span>
                 <p className="font-title text-base sm:text-lg md:text-xl font-light text-white leading-snug">
-                  Menu cà phê pha máy và thức uống nhận diện thương hiệu
+                  {dict.heroCard1Title}
                 </p>
               </div>
             </motion.div>
@@ -220,10 +220,10 @@ export function Hero() {
 
               <div className="absolute bottom-5 left-5 right-5 text-white">
                 <span className="text-[10.5px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
-                  Bao bì và Nhận diện thương hiệu Shinsei
+                  {dict.heroCard2Tag}
                 </span>
                 <p className="font-title text-base sm:text-lg md:text-xl font-light text-white leading-snug">
-                  Hộp bánh cao cấp và bao bì đóng gói thân thiện môi trường
+                  {dict.heroCard2Title}
                 </p>
               </div>
             </motion.div>
@@ -240,25 +240,25 @@ export function Hero() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
-              {/* Bottom Info: Clean, spacious layout */}
+              {/* Bottom Info */}
               <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-white">
                 <div className="max-w-lg">
                   <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
-                    Công ty Cổ phần Thương Mại Shinsei
+                    {dict.heroCard3Tag}
                   </span>
                   <p className="font-title text-xl sm:text-2xl md:text-3xl font-light text-white leading-snug">
-                    Suất ăn dinh dưỡng, an toàn tuyệt đối theo tiêu chuẩn 5S Nhật Bản.
+                    {dict.heroCard3Title}
                   </p>
                 </div>
 
                 <div className="flex items-center gap-4 text-xs text-stone-200 shrink-0">
                   <div className="border-l border-white/30 pl-3">
                     <div className="font-bold text-white text-base sm:text-lg font-mono">10.000+</div>
-                    <div className="text-[10px] text-[#f1e2c8] uppercase tracking-wider">Suất / ngày</div>
+                    <div className="text-[10px] text-[#f1e2c8] uppercase tracking-wider">{isJa ? "食 / 日" : "Suất / ngày"}</div>
                   </div>
                   <div className="border-l border-white/30 pl-3">
                     <div className="font-bold text-white text-base sm:text-lg font-mono">5S · HACCP</div>
-                    <div className="text-[10px] text-[#f1e2c8] uppercase tracking-wider">Tiêu chuẩn</div>
+                    <div className="text-[10px] text-[#f1e2c8] uppercase tracking-wider">{isJa ? "衛生基準" : "Quy chuẩn ATTP"}</div>
                   </div>
                 </div>
               </div>
@@ -271,16 +271,33 @@ export function Hero() {
       {/* Marquee Ticker */}
       <div className="py-4 bg-[#75182d] text-[#f1e2c8] overflow-hidden whitespace-nowrap border-y border-white/10 select-none">
         <div className="animate-marquee flex items-center gap-8 text-xs font-semibold uppercase tracking-[0.2em]">
-          <span>~ Công ty Cổ phần Thương Mại Shinsei</span>
-          <span className="text-white">✦</span>
-          <span>Suất ăn công nghiệp: 30k – 35k – 40k</span>
-          <span className="text-white">✦</span>
-          <span>Shinsei Travel: Du lịch Y tế · Golf PGA · Trải nghiệm văn hóa</span>
-          <span className="text-white">✦</span>
-          <span>Tiêu chuẩn 5S Nhật Bản & HACCP</span>
-          <span className="text-white">✦</span>
-          <span>Hotline: 0981.365.391</span>
-          <span className="text-white">✦</span>
+          {isJa ? (
+            <>
+              <span>~ 株式会社SHINSEI商事</span>
+              <span className="text-white">✦</span>
+              <span>日本式5S管理の産業給食 & 弁当ケータリング</span>
+              <span className="text-white">✦</span>
+              <span>SHINSEIトラベル：先端医療 · PGAゴルフ · 伝統文化</span>
+              <span className="text-white">✦</span>
+              <span>HACCP & ISO 22000 衛生基準準拠</span>
+              <span className="text-white">✦</span>
+              <span>直通電話：080.2392.2268</span>
+              <span className="text-white">✦</span>
+            </>
+          ) : (
+            <>
+              <span>~ Công ty Cổ phần Thương Mại Shinsei</span>
+              <span className="text-white">✦</span>
+              <span>Suất ăn công nghiệp: 30k – 35k – 40k</span>
+              <span className="text-white">✦</span>
+              <span>Shinsei Travel: Du lịch Y tế · Golf PGA · Trải nghiệm văn hóa</span>
+              <span className="text-white">✦</span>
+              <span>Tiêu chuẩn 5S Nhật Bản & HACCP</span>
+              <span className="text-white">✦</span>
+              <span>Hotline: 0981.365.391</span>
+              <span className="text-white">✦</span>
+            </>
+          )}
         </div>
       </div>
 

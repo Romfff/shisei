@@ -1,28 +1,55 @@
-import { UtensilsCrossed, Building2, Clock4, ShieldCheck } from "lucide-react";
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
 
 export function StatsBar() {
-  const metrics = [
-    {
-      value: "10.000+",
-      label: "Suất ăn phục vụ mỗi ngày",
-      detail: "Cung ứng ổn định cho nhà máy, trường học, bệnh viện",
-    },
-    {
-      value: "10+ Năm",
-      label: "Kinh nghiệm chuyên gia Nhật Bản",
-      detail: "Đội ngũ sáng lập và quản lý dày dạn thực chiến tại Tokyo",
-    },
-    {
-      value: "5S & HACCP",
-      label: "Quy chuẩn an toàn quốc tế",
-      detail: "Kiểm định nguồn gốc 100% và lưu mẫu thực phẩm 24h",
-    },
-    {
-      value: "Trọn Gói",
-      label: "Bếp ăn · Căng tin · Café · Travel",
-      detail: "Hệ sinh thái ẩm thực và du lịch cao cấp chuẩn Nhật",
-    },
-  ];
+  const { isJa } = useLanguage();
+
+  const metrics = isJa
+    ? [
+        {
+          value: "10,000食+",
+          label: "1日の給食提供実績",
+          detail: "工場、学校、病院への安定した給食供給体制",
+        },
+        {
+          value: "10年+",
+          label: "日本での実務経験",
+          detail: "東京で長年培った創業チームとマネジメント陣",
+        },
+        {
+          value: "5S & HACCP",
+          label: "国際水準の衛生管理",
+          detail: "原材料100%産地検査と24時間検食保管の徹底",
+        },
+        {
+          value: "ワンストップ",
+          label: "給食・カフェ・売店・旅行",
+          detail: "日本基準の総合フードサービスと訪日ツアー",
+        },
+      ]
+    : [
+        {
+          value: "10.000+",
+          label: "Suất ăn phục vụ mỗi ngày",
+          detail: "Cung ứng ổn định cho nhà máy, trường học, bệnh viện",
+        },
+        {
+          value: "10+ Năm",
+          label: "Kinh nghiệm chuyên gia Nhật Bản",
+          detail: "Đội ngũ sáng lập và quản lý dày dạn thực chiến tại Tokyo",
+        },
+        {
+          value: "5S & HACCP",
+          label: "Quy chuẩn an toàn quốc tế",
+          detail: "Kiểm định nguồn gốc 100% và lưu mẫu thực phẩm 24h",
+        },
+        {
+          value: "Trọn Gói",
+          label: "Bếp ăn · Căng tin · Café · Travel",
+          detail: "Hệ sinh thái ẩm thực và du lịch cao cấp chuẩn Nhật",
+        },
+      ];
 
   return (
     <section className="bg-[#ffffff] py-14 border-b border-black/10">

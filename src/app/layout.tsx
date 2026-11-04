@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Jost } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const fraunces = Fraunces({
   subsets: ["latin", "vietnamese"],
@@ -50,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="vi" className={`${fraunces.variable} ${jost.variable}`}>
       <body className="font-body bg-[#fbf7ef] text-[#222222] selection:bg-[#75182d] selection:text-white antialiased">
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );
