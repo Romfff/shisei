@@ -246,7 +246,7 @@ export default function VeChungToiPage() {
                   Đồng Phục Bếp & Vận Tải Chuyên Nghiệp
                 </h3>
                 <p className="text-xs sm:text-sm text-[#222222]/80 leading-relaxed">
-                  Trang phục bếp được thiết kế khép kín (áo bếp viền đỏ thêu logo Shinsei, mũ bếp xếp ly, tạp dề bảo hộ chống bẩn và giày chống trượt). Đội xe bán tải giao hàng thùng bảo ôn giữ nhiệt trên 65°C, bảo đảm suất ăn nóng sốt khi đến tay đối tác.
+                  Trang phục bếp được thiết kế khép kín gồm áo bếp viền đỏ thêu logo Shinsei, mũ bếp xếp ly, tạp dề bảo hộ chống bẩn và giày chống trượt. Đội xe bán tải giao hàng thùng bảo ôn giữ nhiệt trên 65°C, bảo đảm suất ăn nóng sốt khi đến tay đối tác.
                 </p>
                 <div className="pt-2">
                   <img

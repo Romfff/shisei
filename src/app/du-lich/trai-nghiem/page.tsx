@@ -21,13 +21,13 @@ export default function DuLichTraiNghiemPage() {
       highlights: [
         "Thưởng thức matcha nguyên chất pha tay theo nghi thức Chado",
         "Trải nghiệm mặc Kimono truyền thống dạo bước phố cổ Gion",
-        "Thăm di sản văn hóa thế giới UNESCO tại Kyoto & Nara",
+        "Thăm di sản văn hóa thế giới UNESCO tại Kyoto và Nara",
       ],
     },
     {
       title: "Mùa Hoa Anh Đào Sakura & Mùa Lá Đỏ Momiji",
       japanese: "桜の季節 & 紅葉狩り",
-      desc: "Hành trình ngắm sắc hoa anh đào rực rỡ vào mùa xuân (tháng 3-4) và ngắm những rặng phong đỏ rực mùa thu (tháng 10-11) tại các danh thắng đẹp nhất xứ sở Phù Tang.",
+      desc: "Hành trình ngắm sắc hoa anh đào rực rỡ vào mùa xuân từ tháng 3 đến tháng 4 và ngắm những rặng phong đỏ rực mùa thu từ tháng 10 đến tháng 11 tại các danh thắng đẹp nhất xứ sở Phù Tang.",
       img: "/images/Travel/travel_2.jpg",
       tag: "Tuyệt tác bốn mùa",
       highlights: [
@@ -51,7 +51,7 @@ export default function DuLichTraiNghiemPage() {
     {
       title: "Nghỉ Dưỡng Suối Khoáng Nóng Onsen & Ryokan",
       japanese: "温泉旅館 & 露天風呂",
-      desc: "Lưu trú tại những Ryokan nghìn năm tuổi bằng gỗ tuyết tùng, ngâm mình trong làn suối khoáng nóng lộ thiên (Rotenburo) nhìn thẳng ra núi tuyết Phú Sĩ, tái tạo năng lượng thể chất và tinh thần.",
+      desc: "Lưu trú tại những Ryokan nghìn năm tuổi bằng gỗ tuyết tùng, ngâm mình trong làn suối khoáng nóng lộ thiên Rotenburo nhìn thẳng ra núi tuyết Phú Sĩ, tái tạo năng lượng thể chất và tinh thần.",
       img: "/images/Travel/travel_6.jpg",
       tag: "Nghỉ dưỡng tĩnh tâm",
       highlights: [
@@ -62,16 +62,16 @@ export default function DuLichTraiNghiemPage() {
     },
   ];
 
-  const travelGallery = [
-    { src: "/images/Travel/travel_1.jpg", title: "Cố đô Kyoto thanh bình", sub: "Không gian cổ kính ngàn năm văn hiến" },
-    { src: "/images/Travel/travel_2.jpg", title: "Khung cảnh mùa xuân Nhật Bản", sub: "Hoa anh đào nở rộ rực rỡ" },
-    { src: "/images/Travel/travel_3.jpg", title: "Ẩm thực truyền thống Kaiseki", sub: "Trình bày tỉ mỉ theo mùa" },
-    { src: "/images/Travel/travel_4.jpg", title: "Dạo bước dưới tán hoa", sub: "Khoảnh khắc lưu giữ kỷ niệm đẹp" },
-    { src: "/images/Travel/travel_5.jpg", title: "Đền chùa linh thiêng", sub: "Kiến trúc gỗ cổ truyền tinh xảo" },
-    { src: "/images/Travel/travel_6.jpg", title: "Suối khoáng nóng Onsen", sub: "Hồi phục sức khỏe và tĩnh tâm" },
-    { src: "/images/Travel/travel_7.jpg", title: "Góc phố cổ truyền thống", sub: "Nhịp sống chậm rãi và an yên" },
-    { src: "/images/Travel/travel_8.jpg", title: "Thưởng thức trà đạo Chado", sub: "Nghệ thuật giao thoa tâm hồn" },
-    { src: "/images/Travel/travel_9.jpg", title: "Hoàng hôn xứ sở Phù Tang", sub: "Vẻ đẹp quyến rũ khó phai" },
+  const travelPhotos = [
+    "/images/Travel/travel_1.jpg",
+    "/images/Travel/travel_2.jpg",
+    "/images/Travel/travel_3.jpg",
+    "/images/Travel/travel_4.jpg",
+    "/images/Travel/travel_5.jpg",
+    "/images/Travel/travel_6.jpg",
+    "/images/Travel/travel_7.jpg",
+    "/images/Travel/travel_8.jpg",
+    "/images/Travel/travel_9.jpg",
   ];
 
   return (
@@ -84,13 +84,13 @@ export default function DuLichTraiNghiemPage() {
           <div className="absolute inset-0 opacity-15 mix-blend-overlay pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] font-bold text-[#f1e2c8] bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 mb-6">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-bold text-[#f1e2c8] bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 mb-6">
               <Flower2 className="w-3.5 h-3.5" />
-              <span>Cultural & Bespoke Luxury · 文化・グルメ体験</span>
+              <span>Shinsei Travel · Du Lịch Trải Nghiệm Tinh Hoa</span>
             </div>
 
             <h1 className="font-title text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.08]">
-              Du Lịch Trải Nghiệm Văn Hóa & Ẩm Thực Tinh Hoa
+              Du Lịch Trải Nghiệm Văn Hóa & Ẩm Thực Nhật Bản
             </h1>
 
             <p className="text-base sm:text-lg text-[#f1e2c8]/85 font-normal leading-relaxed mt-4">
@@ -184,7 +184,7 @@ export default function DuLichTraiNghiemPage() {
           </div>
         </section>
 
-        {/* Gallery Trọn Bộ 9 Ảnh Thực Tế Travel */}
+        {/* Gallery Trọn Bộ 9 Ảnh Thực Tế Travel (No text overlay) */}
         <section className="py-24 bg-[#fbf7ef] border-b border-black/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -200,23 +200,17 @@ export default function DuLichTraiNghiemPage() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {travelGallery.map((item, idx) => (
+              {travelPhotos.map((src, idx) => (
                 <div
                   key={idx}
-                  className="bg-white border border-black/10 overflow-hidden shadow-sm hover:border-[#75182d] transition-all group"
+                  className="bg-white border border-black/10 overflow-hidden shadow-sm hover:border-[#75182d] hover:shadow-md transition-all group rounded-sm"
                 >
-                  <div className="aspect-[4/3] overflow-hidden relative">
+                  <div className="aspect-[4/3] overflow-hidden">
                     <img
-                      src={item.src}
-                      alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      src={src}
+                      alt={`Hình ảnh thực tế du lịch Nhật Bản ${idx + 1}`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-4">
-                      <div className="text-white">
-                        <h4 className="font-title text-base font-medium">{item.title}</h4>
-                        <p className="text-[11px] text-[#f1e2c8] font-mono mt-0.5">{item.sub}</p>
-                      </div>
-                    </div>
                   </div>
                 </div>
               ))}

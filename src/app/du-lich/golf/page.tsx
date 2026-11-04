@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import { ContactShinsei } from "@/components/ContactShinsei";
 import { Footer } from "@/components/Footer";
-import { Flag, Sparkles, Award, CheckCircle2, ArrowRight, ShieldCheck, MapPin, HeartPulse, Trophy } from "lucide-react";
+import { Flag, Sparkles, Award, CheckCircle2, ArrowRight, ShieldCheck, MapPin, Trophy } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Du Lịch Golf Nhật Bản · Sân PGA Dưới Chân Núi Phú Sĩ | SHINSEI TRAVEL",
@@ -15,42 +15,42 @@ export default function DuLichGolfPage() {
     {
       name: "Sân Taiheiyo Club Gotemba Course",
       japanese: "太平洋クラブ 御殿場コース",
-      location: "Gotemba, Shizuoka (Chân núi Phú Sĩ)",
+      location: "Gotemba, Shizuoka · Chân núi Phú Sĩ",
       img: "/images/Golf/golf_3.jpg",
       tag: "PGA Tour Venue",
       desc: "Nơi đăng cai giải đấu danh giá Mitsui Sumitomo VISA Taiheiyo Masters và World Cup Golf. Tầm nhìn thẳng lên đỉnh núi Phú Sĩ tuyết phủ hùng vĩ, fairway uốn lượn giữa rừng thông bạt ngàn.",
       features: ["18 hố tiêu chuẩn Championship", "Par 72 · Chiều dài 7.327 yards", "Thiết kế bởi huyền thoại Robert Trent Jones Jr."],
     },
     {
-      name: "Sân Kawana Hotel Golf Course (Fuji Course)",
+      name: "Sân Kawana Hotel Golf Course · Fuji Course",
       japanese: "川奈ホテルゴルフコース 富士コース",
-      location: "Ito, Shizuoka (Bán đảo Izu ven biển)",
+      location: "Ito, Shizuoka · Bán đảo Izu ven biển",
       img: "/images/Golf/golf_4.jpg",
       tag: "Top 100 Sân Golf Đẹp Nhất Thế Giới",
-      desc: "Được mệnh danh là 'Pebble Beach của châu Á'. Sân nằm trên vách đá nhìn ra biển Thái Bình Dương với gió biển và địa hình thách thức mọi golfer đẳng cấp.",
-      features: ["Xếp hạng Top 100 Thế giới (Golf Magazine)", "Par 72 · Khung cảnh biển tuyệt mỹ", "Dịch vụ caddy đi bộ truyền thống chuẩn Nhật"],
+      desc: "Được mệnh danh là Pebble Beach của châu Á. Sân nằm trên vách đá nhìn ra biển Thái Bình Dương với gió biển và địa hình thách thức mọi golfer đẳng cấp.",
+      features: ["Xếp hạng Top 100 Thế giới do Golf Magazine bình chọn", "Par 72 · Khung cảnh biển tuyệt mỹ", "Dịch vụ caddy đi bộ truyền thống chuẩn Nhật"],
     },
     {
       name: "Sân Narita Golf Club",
       japanese: "成田ゴルフ倶楽部",
-      location: "Narita, Chiba (Gần thủ đô Tokyo)",
+      location: "Narita, Chiba · Thuận tiện từ thủ đô Tokyo",
       img: "/images/Golf/golf_8.jpg",
       tag: "Câu Lạc Bộ Độc Quyền Thành Viên",
       desc: "Câu lạc bộ golf thượng lưu hàng đầu vùng Kanto với nhà câu lạc bộ tráng lệ và mặt cỏ nhung mượt mà được chăm sóc tỉ mỉ từng milimet theo tiêu chuẩn Nhật Bản.",
-      features: ["Chỉ tiếp khách hội viên & khách VIP quốc tế", "Dịch vụ ẩm thực nhà hàng 5 sao tại sân", "Thuận tiện di chuyển từ sân bay quốc tế Narita"],
+      features: ["Chỉ tiếp khách hội viên và khách VIP quốc tế", "Dịch vụ ẩm thực nhà hàng 5 sao tại sân", "Thuận tiện di chuyển từ sân bay quốc tế Narita"],
     },
   ];
 
-  const golfGallery = [
-    { src: "/images/Golf/golf_1.jpg", title: "Cú swing chuẩn xác trên green", sub: "Khung cảnh thiên nhiên Nhật Bản nguyên sơ" },
-    { src: "/images/Golf/golf_2.jpg", title: "Sân golf dưới tán lá đỏ", sub: "Mùa thu thi đấu lý tưởng nhất trong năm" },
-    { src: "/images/Golf/golf_3.jpg", title: "Fairway hướng đỉnh Phú Sĩ", sub: "Trải nghiệm tầm nhìn ngoạn mục" },
-    { src: "/images/Golf/golf_4.jpg", title: "Địa hình thách thức PGA", sub: "Hố cát & bẫy nước thiết kế thông minh" },
-    { src: "/images/Golf/golf_5.jpg", title: "Khoảnh khắc thi đấu tập trung", sub: "Không khí trong lành, mặt cỏ hoàn hảo" },
-    { src: "/images/Golf/golf_6.jpg", title: "Cú gạt bóng quyết định", sub: "Đội ngũ caddy bản xứ hỗ trợ chuyên nghiệp" },
-    { src: "/images/Golf/golf_7.jpg", title: "Khởi động và tập luyện", sub: "Khu vực driving range hiện đại" },
-    { src: "/images/Golf/golf_8.jpg", title: "Góc nhìn toàn cảnh hố số 18", sub: "Câu lạc bộ đẳng cấp quốc tế" },
-    { src: "/images/Golf/golf_9.jpg", title: "Nghỉ ngơi sau trận đánh", sub: "Thưởng trà và ngắm cảnh sân golf" },
+  const golfPhotos = [
+    "/images/Golf/golf_1.jpg",
+    "/images/Golf/golf_2.jpg",
+    "/images/Golf/golf_3.jpg",
+    "/images/Golf/golf_4.jpg",
+    "/images/Golf/golf_5.jpg",
+    "/images/Golf/golf_6.jpg",
+    "/images/Golf/golf_7.jpg",
+    "/images/Golf/golf_8.jpg",
+    "/images/Golf/golf_9.jpg",
   ];
 
   return (
@@ -63,9 +63,9 @@ export default function DuLichGolfPage() {
           <div className="absolute inset-0 opacity-15 mix-blend-overlay pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] font-bold text-[#f1e2c8] bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 mb-6">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-bold text-[#f1e2c8] bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 mb-6">
               <Trophy className="w-3.5 h-3.5" />
-              <span>Japan Golf Experience · ゴルフツアー</span>
+              <span>Shinsei Travel · Du Lịch Golf Đẳng Cấp</span>
             </div>
 
             <h1 className="font-title text-4xl sm:text-5xl lg:text-6xl font-light text-white leading-[1.08]">
@@ -167,7 +167,7 @@ export default function DuLichGolfPage() {
           </div>
         </section>
 
-        {/* Gallery Trọn Bộ 9 Ảnh Thực Tế Sân Golf */}
+        {/* Gallery Trọn Bộ 9 Ảnh Thực Tế Sân Golf (No text overlay) */}
         <section className="py-24 bg-[#fbf7ef] border-b border-black/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -175,31 +175,25 @@ export default function DuLichGolfPage() {
                 Bộ Sưu Tập Hình Ảnh
               </span>
               <h2 className="font-title text-3xl sm:text-4xl lg:text-5xl font-light text-[#222222]">
-                Hình Ảnh Thực Tế Sân Golf Shinsei Travel
+                Hình Ảnh Thực Tế Sân Golf Shinsei
               </h2>
               <p className="text-sm sm:text-base text-[#222222]/75 mt-3">
-                Ghi lại những khoảnh khắc thăng hoa trên sân cỏ Nhật Bản cùng đoàn golfer Shinsei.
+                Ghi lại những góc máy thực tế trên sân cỏ Nhật Bản cùng đoàn golfer Shinsei.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {golfGallery.map((item, idx) => (
+              {golfPhotos.map((src, idx) => (
                 <div
                   key={idx}
-                  className="bg-white border border-black/10 overflow-hidden shadow-sm hover:border-[#75182d] transition-all group"
+                  className="bg-white border border-black/10 overflow-hidden shadow-sm hover:border-[#75182d] hover:shadow-md transition-all group rounded-sm"
                 >
-                  <div className="aspect-[4/3] overflow-hidden relative">
+                  <div className="aspect-[4/3] overflow-hidden">
                     <img
-                      src={item.src}
-                      alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      src={src}
+                      alt={`Hình ảnh thực tế sân golf Nhật Bản ${idx + 1}`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-4">
-                      <div className="text-white">
-                        <h4 className="font-title text-base font-medium">{item.title}</h4>
-                        <p className="text-[11px] text-[#f1e2c8] font-mono mt-0.5">{item.sub}</p>
-                      </div>
-                    </div>
                   </div>
                 </div>
               ))}

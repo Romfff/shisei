@@ -87,13 +87,13 @@ export default function BepAnThucDonPage() {
       points: ["Giao nóng tận bàn", "Thực đơn thay đổi theo ngày", "Đóng gói vệ sinh tuyệt đối"],
     },
     {
-      title: "Tiệc Bàn Doanh Nghiệp (6-8-10 người)",
+      title: "Tiệc Bàn Doanh Nghiệp 6 - 8 - 10 Người",
       desc: "Phục vụ các sự kiện kỷ niệm thành lập, tiệc tất niên, đón tiếp đối tác, liên hoan công đoàn với thực đơn tiệc bàn sang trọng, phục vụ chuyên nghiệp.",
       img: "/images/japan-banquet-table.jpg",
       points: ["Đội ngũ phục vụ tận tâm", "Dụng cụ bàn tiệc cao cấp", "Thiết kế món theo ngân sách"],
     },
     {
-      title: "Cơm Hộp Mang Đi (Takeaway Bento)",
+      title: "Cơm Hộp Mang Đi · Takeaway Bento",
       desc: "Hộp bento đóng gói thân thiện môi trường, nhỏ gọn, kín mùi, chuyên dùng cho các đoàn công tác, tour du lịch, hội thảo dã ngoại.",
       img: "/images/japan-takeaway-bento.jpg",
       points: ["Hộp bento sinh học cao cấp", "Giữ ấm liên tục", "Kèm đầy đủ dụng cụ tiện lợi"],
@@ -280,7 +280,7 @@ export default function BepAnThucDonPage() {
 
             <div className="mt-12 text-center">
               <p className="text-xs text-[#222222]/70 font-mono">
-                * Doanh nghiệp có thể yêu cầu thiết kế thực đơn riêng biệt (Ăn chay, kiêng mặn, chế độ dinh dưỡng đặc thù cho trường học hoặc vận động viên).
+                * Doanh nghiệp có thể yêu cầu thiết kế thực đơn riêng biệt: Ăn chay, kiêng mặn hoặc chế độ dinh dưỡng đặc thù cho trường học và vận động viên.
               </p>
             </div>
           </div>

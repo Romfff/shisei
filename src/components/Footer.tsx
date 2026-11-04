@@ -65,23 +65,23 @@ export function Footer() {
                 ✦ Đồ uống & Kiosk Café
               </Link>
               <Link href="/ve-chung-toi" className="hover:text-[#f1e2c8] transition-colors">
-                ✦ Về chúng tôi (Hồ sơ năng lực)
+                ✦ Về chúng tôi · Hồ sơ năng lực
               </Link>
               <Link href="/du-toan-chi-phi" className="hover:text-[#f1e2c8] transition-colors">
                 ✦ Dự toán chi phí B2B
               </Link>
               <Link href="/du-lich" className="hover:text-[#f1e2c8] transition-colors font-semibold text-white">
-                ✦ Shinsei Travel (Tổng quan)
+                ✦ Shinsei Travel · Du lịch Nhật Bản
               </Link>
               <div className="pl-3 space-y-1.5 border-l border-white/15 text-[11px] text-stone-400">
                 <Link href="/du-lich/y-te" className="hover:text-white block">
-                  • Du lịch Y tế (6 bệnh viện top đầu)
+                  • Du lịch Y tế · 6 bệnh viện top đầu
                 </Link>
                 <Link href="/du-lich/golf" className="hover:text-white block">
-                  • Du lịch Golf (Sân PGA Phú Sĩ)
+                  • Du lịch Golf · Sân PGA Phú Sĩ
                 </Link>
                 <Link href="/du-lich/trai-nghiem" className="hover:text-white block">
-                  • Du lịch Trải nghiệm văn hóa & ẩm thực
+                  • Du lịch Trải nghiệm văn hóa và ẩm thực
                 </Link>
               </div>
             </div>
@@ -98,7 +98,7 @@ export function Footer() {
                 <div>
                   <div className="font-semibold text-white">Trụ sở Hà Nội:</div>
                   <div className="text-stone-300">A19 Geleximco A, Tây Mỗ, Nam Từ Liêm, Hà Nội</div>
-                  <div className="text-stone-400 text-[11px] mt-0.5">(A19-32 NV8 Khu A - Geleximco Lê Trọng Tấn)</div>
+                  <div className="text-stone-400 text-[11px] mt-0.5">A19-32 NV8 Khu A, Geleximco Lê Trọng Tấn</div>
                 </div>
               </div>
 
@@ -106,7 +106,7 @@ export function Footer() {
                 <Globe className="w-4 h-4 text-[#f1e2c8] shrink-0 mt-0.5" />
                 <div>
                   <div className="font-semibold text-white">Văn phòng đại diện Nhật Bản:</div>
-                  <div className="text-stone-300">Hotline: 080.2392.2268 (Kết nối dịch vụ y tế & golf)</div>
+                  <div className="text-stone-300">Hotline: 080.2392.2268 · Kết nối dịch vụ y tế và golf</div>
                 </div>
               </div>
             </div>

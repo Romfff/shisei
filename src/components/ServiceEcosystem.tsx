@@ -29,7 +29,7 @@ export function ServiceEcosystem() {
     },
     {
       num: "03",
-      title: "Về Chúng Tôi (Hồ Sơ Năng Lực)",
+      title: "Về Chúng Tôi · Hồ Sơ Năng Lực",
       japanese: "会社概要 & 5S基準",
       desc: "Thông điệp Chủ tịch Đỗ Thị Trang, tiêu chuẩn quản lý 5S Nhật Bản, quy chuẩn đồng phục và đội xe bán tải bảo ôn giao hàng.",
       img: "/images/shinsei-truck.jpg",
@@ -53,7 +53,7 @@ export function ServiceEcosystem() {
       num: "05",
       title: "Shinsei Travel · Du Lịch Nhật Bản",
       japanese: "日本医療・ゴルフ・文化ツアー",
-      desc: "Tour chuyên sâu y tế (liên kết 6 bệnh viện hàng đầu), Tour Golf PGA chân núi Phú Sĩ và trải nghiệm văn hóa Onsen - Kaiseki.",
+      desc: "Tour chuyên sâu y tế liên kết 6 bệnh viện hàng đầu, Tour Golf PGA chân núi Phú Sĩ và trải nghiệm văn hóa Onsen - Kaiseki.",
       img: "/images/Hospital/fujita-univ-hospital.png",
       href: "/du-lich",
       cta: "Khám phá Shinsei Travel",

@@ -1,30 +1,47 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Utensils, Plane } from "lucide-react";
+import { Utensils, Coffee, Compass, Plane, ArrowRight } from "lucide-react";
 
 export function Hero() {
   const showcaseRef = useRef<HTMLDivElement>(null);
 
-  // Pinned scroll animation: Left and Right cards peek out initially, then smoothly slide out full width
+  // Pinned scroll animation: Cards peek out initially, then smoothly fan out into 4 directions
   const { scrollYProgress } = useScroll({
     target: showcaseRef,
     offset: ["start start", "end end"],
   });
 
-  // Pre-peek: -24vw and +24vw initially, expanding to -46vw and +46vw for full-screen showcase
-  const leftX = useTransform(scrollYProgress, [0, 0.85], ["-24vw", "-46vw"]);
-  const leftRotate = useTransform(scrollYProgress, [0, 0.85], [-3, -6]);
+  // 1. Left Card: Thức uống Shinsei
+  const leftX = useTransform(scrollYProgress, [0, 0.85], ["-18vw", "-45vw"]);
+  const leftRotate = useTransform(scrollYProgress, [0, 0.85], [-2, -6]);
   const leftOpacity = useTransform(scrollYProgress, [0, 0.25], [0.92, 1]);
-  const leftScale = useTransform(scrollYProgress, [0, 0.85], [0.96, 1.04]);
+  const leftScale = useTransform(scrollYProgress, [0, 0.85], [0.95, 1.02]);
 
-  const rightX = useTransform(scrollYProgress, [0, 0.85], ["24vw", "46vw"]);
-  const rightRotate = useTransform(scrollYProgress, [0, 0.85], [3, 6]);
+  // 2. Right Card: Bao bì quà tặng Shinsei
+  const rightX = useTransform(scrollYProgress, [0, 0.85], ["18vw", "45vw"]);
+  const rightRotate = useTransform(scrollYProgress, [0, 0.85], [2, 6]);
   const rightOpacity = useTransform(scrollYProgress, [0, 0.25], [0.92, 1]);
-  const rightScale = useTransform(scrollYProgress, [0, 0.85], [0.96, 1.04]);
+  const rightScale = useTransform(scrollYProgress, [0, 0.85], [0.95, 1.02]);
 
-  const centerScale = useTransform(scrollYProgress, [0, 0.85], [1, 1.12]);
+  // 3. Top-Right Card: Du lịch Golf Phú Sĩ
+  const topY = useTransform(scrollYProgress, [0, 0.85], ["-6vh", "-28vh"]);
+  const topX = useTransform(scrollYProgress, [0, 0.85], ["10vw", "24vw"]);
+  const topRotate = useTransform(scrollYProgress, [0, 0.85], [1, 5]);
+  const topOpacity = useTransform(scrollYProgress, [0, 0.3], [0.75, 0.98]);
+  const topScale = useTransform(scrollYProgress, [0, 0.85], [0.9, 1.0]);
+
+  // 4. Bottom-Left Card: Du lịch Trải nghiệm Kyoto
+  const bottomY = useTransform(scrollYProgress, [0, 0.85], ["6vh", "28vh"]);
+  const bottomX = useTransform(scrollYProgress, [0, 0.85], ["-10vw", "-24vw"]);
+  const bottomRotate = useTransform(scrollYProgress, [0, 0.85], [-1, -5]);
+  const bottomOpacity = useTransform(scrollYProgress, [0, 0.3], [0.75, 0.98]);
+  const bottomScale = useTransform(scrollYProgress, [0, 0.85], [0.9, 1.0]);
+
+  // 5. Center Card: Suất ăn Bento & Bếp 5S
+  const centerScale = useTransform(scrollYProgress, [0, 0.85], [1, 1.1]);
 
   return (
     <section className="relative bg-[#fbf7ef] border-b border-black/10">
@@ -37,7 +54,7 @@ export function Hero() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.22em] font-semibold text-[#75182d] mb-3 bg-[#f1e2c8]/60 px-4 py-1.5 rounded-full border border-[#75182d]/20"
+          className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] font-semibold text-[#75182d] mb-3 bg-[#f1e2c8]/60 px-4 py-1.5 rounded-full border border-[#75182d]/20"
         >
           <span>株式会社 SHINSEI</span>
           <span className="w-1.5 h-1.5 rounded-full bg-[#75182d]/40"></span>
@@ -68,36 +85,96 @@ export function Hero() {
           An tâm trong từng bữa ăn · Tận tâm trong từng trải nghiệm.
         </motion.h2>
 
-        {/* Action pills */}
+        {/* 3 Action Buttons: Bếp ăn, Đồ uống, Du lịch */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.35 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4"
+          className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-4"
         >
-          <a href="#food-coffee" className="shushi-btn shushi-btn-primary">
+          <Link href="/bep-an-thuc-don" className="shushi-btn shushi-btn-primary shadow-sm">
             <span className="flex items-center gap-2">
               <Utensils className="w-4 h-4" />
-              <span>Khám phá Food & Coffee</span>
+              <span>Khám phá Bếp ăn · Thực đơn</span>
             </span>
-          </a>
-          <a href="#travel" className="shushi-btn shushi-btn-outline">
+          </Link>
+          <Link href="/do-uong" className="shushi-btn shushi-btn-outline shadow-2xs">
+            <span className="flex items-center gap-2">
+              <Coffee className="w-4 h-4 text-[#75182d]" />
+              <span>Menu Đồ uống & Kiosk Café</span>
+            </span>
+          </Link>
+          <Link href="/du-lich" className="shushi-btn shushi-btn-outline shadow-2xs">
             <span className="flex items-center gap-2">
               <Plane className="w-4 h-4 text-[#75182d]" />
               <span>Dịch vụ Shinsei Travel</span>
             </span>
-          </a>
+          </Link>
         </motion.div>
       </div>
 
-      {/* Pinned Scroll Track: 3 Extra Large Authentic Images with perfectly legible typography */}
-      <div ref={showcaseRef} className="relative h-[220vh] w-full">
+      {/* Pinned Scroll Track: 5 Cards fanning out into 4 directions */}
+      <div ref={showcaseRef} className="relative h-[240vh] w-full">
         
         <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden pointer-events-none">
           
           <div className="relative w-full h-full flex items-center justify-center pointer-events-auto">
             
-            {/* Left Card: Shinsei Café & Thức uống độc quyền */}
+            {/* Card 4 (Top-Right): Du lịch Golf PGA núi Phú Sĩ */}
+            <motion.div
+              style={{
+                y: topY,
+                x: topX,
+                rotate: topRotate,
+                opacity: topOpacity,
+                scale: topScale,
+              }}
+              className="absolute w-[68vw] sm:w-[48vw] md:w-[38vw] lg:w-[32vw] max-w-[480px] aspect-[16/10] bg-[#222222] border border-black/30 shadow-2xl overflow-hidden z-10 group cursor-pointer"
+            >
+              <img
+                src="/images/Golf/golf_3.jpg"
+                alt="Shinsei Travel · Sân Golf PGA núi Phú Sĩ"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-0.5">
+                  Shinsei Travel · Golf PGA
+                </span>
+                <p className="font-title text-base sm:text-lg font-light text-white leading-snug">
+                  Sân golf đẳng cấp dưới chân núi Phú Sĩ
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Card 5 (Bottom-Left): Du lịch Trải nghiệm & Văn hóa Kyoto */}
+            <motion.div
+              style={{
+                y: bottomY,
+                x: bottomX,
+                rotate: bottomRotate,
+                opacity: bottomOpacity,
+                scale: bottomScale,
+              }}
+              className="absolute w-[68vw] sm:w-[48vw] md:w-[38vw] lg:w-[32vw] max-w-[480px] aspect-[16/10] bg-[#222222] border border-black/30 shadow-2xl overflow-hidden z-10 group cursor-pointer"
+            >
+              <img
+                src="/images/Travel/travel_1.jpg"
+                alt="Shinsei Travel · Cố đô Kyoto và Trà đạo Chado"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-0.5">
+                  Shinsei Travel · Văn hóa & Ẩm thực
+                </span>
+                <p className="font-title text-base sm:text-lg font-light text-white leading-snug">
+                  Cố đô Kyoto, trà đạo Chado và suối nước nóng Onsen
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Card 1 (Left): Cốc & Thức uống thương hiệu Shinsei */}
             <motion.div
               style={{
                 x: leftX,
@@ -105,38 +182,65 @@ export function Hero() {
                 opacity: leftOpacity,
                 scale: leftScale,
               }}
-              className="absolute w-[84vw] sm:w-[64vw] md:w-[54vw] lg:w-[48vw] max-w-[720px] aspect-[16/10] bg-[#222222] border border-black/30 shadow-2xl overflow-hidden z-10 group cursor-pointer"
+              className="absolute w-[82vw] sm:w-[62vw] md:w-[50vw] lg:w-[44vw] max-w-[660px] aspect-[16/10] bg-[#222222] border border-black/30 shadow-2xl overflow-hidden z-20 group cursor-pointer"
             >
               <img
                 src="/images/shinsei-hero-cups.jpg"
-                alt="Bộ cốc giữ nhiệt & thức uống thương hiệu Shinsei"
+                alt="Bộ cốc giữ nhiệt và thức uống thương hiệu Shinsei"
                 className="w-full h-full object-cover object-center opacity-92 group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent"></div>
               
-              <div className="absolute bottom-6 left-6 right-6 text-white">
-                <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
-                  Food & Coffee · Cốc & Thức uống Shinsei
+              <div className="absolute bottom-5 left-5 right-5 text-white">
+                <span className="text-[10.5px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
+                  Food & Coffee · Cốc và Thức uống Shinsei
                 </span>
-                <p className="font-title text-lg sm:text-xl md:text-2xl font-light text-white leading-snug">
-                  Menu cà phê pha máy & thức uống nhận diện thương hiệu Shinsei
+                <p className="font-title text-base sm:text-lg md:text-xl font-light text-white leading-snug">
+                  Menu cà phê pha máy và thức uống nhận diện thương hiệu
                 </p>
               </div>
             </motion.div>
 
-            {/* Center Card: Khay bento & Bếp 5S Shinsei */}
+            {/* Card 2 (Right): Hộp bánh quà tặng & Bao bì Shinsei */}
+            <motion.div
+              style={{
+                x: rightX,
+                rotate: rightRotate,
+                opacity: rightOpacity,
+                scale: rightScale,
+              }}
+              className="absolute w-[82vw] sm:w-[62vw] md:w-[50vw] lg:w-[44vw] max-w-[660px] aspect-[16/10] bg-[#222222] border border-black/30 shadow-2xl overflow-hidden z-20 group cursor-pointer"
+            >
+              <img
+                src="/images/shinsei-hero-packaging.jpg"
+                alt="Bao bì túi giấy và Hộp bánh quà tặng Shinsei"
+                className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent"></div>
+
+              <div className="absolute bottom-5 left-5 right-5 text-white">
+                <span className="text-[10.5px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
+                  Bao bì và Nhận diện thương hiệu Shinsei
+                </span>
+                <p className="font-title text-base sm:text-lg md:text-xl font-light text-white leading-snug">
+                  Hộp bánh cao cấp và bao bì đóng gói thân thiện môi trường
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Card 3 (Center): Suất ăn Bento & Bếp 5S Shinsei (Z-index 30, stays on top) */}
             <motion.div
               style={{ scale: centerScale }}
-              className="relative w-[88vw] sm:w-[68vw] md:w-[58vw] lg:w-[52vw] max-w-[800px] aspect-[16/10] bg-[#222222] border border-black/35 shadow-2xl overflow-hidden z-20 group"
+              className="relative w-[86vw] sm:w-[66vw] md:w-[54vw] lg:w-[48vw] max-w-[750px] aspect-[16/10] bg-[#222222] border border-black/35 shadow-2xl overflow-hidden z-30 group"
             >
               <img
                 src="/images/shinsei-hero-bento-kitchen.jpg"
-                alt="Suất ăn bento dinh dưỡng & Bếp chế biến 5S Shinsei"
+                alt="Suất ăn bento dinh dưỡng và Bếp chế biến 5S Shinsei"
                 className="w-full h-full object-cover object-center opacity-92 group-hover:scale-104 transition-transform duration-1000 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
-              {/* Bottom Info: Clean, spacious layout with no text overflow */}
+              {/* Bottom Info: Clean, spacious layout */}
               <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-white">
                 <div className="max-w-lg">
                   <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
@@ -160,33 +264,6 @@ export function Hero() {
               </div>
             </motion.div>
 
-            {/* Right Card: Hộp bánh & Túi quà tặng Shinsei */}
-            <motion.div
-              style={{
-                x: rightX,
-                rotate: rightRotate,
-                opacity: rightOpacity,
-                scale: rightScale,
-              }}
-              className="absolute w-[84vw] sm:w-[64vw] md:w-[54vw] lg:w-[48vw] max-w-[720px] aspect-[16/10] bg-[#222222] border border-black/30 shadow-2xl overflow-hidden z-10 group cursor-pointer"
-            >
-              <img
-                src="/images/shinsei-hero-packaging.jpg"
-                alt="Bao bì túi giấy & Hộp bánh quà tặng Shinsei"
-                className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent"></div>
-
-              <div className="absolute bottom-6 left-6 right-6 text-white">
-                <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#f1e2c8] font-bold block mb-1">
-                  Bao bì & Nhận diện thương hiệu Shinsei
-                </span>
-                <p className="font-title text-lg sm:text-xl md:text-2xl font-light text-white leading-snug">
-                  Hộp bánh cao cấp & bao bì đóng gói thân thiện môi trường
-                </p>
-              </div>
-            </motion.div>
-
           </div>
         </div>
       </div>
@@ -198,30 +275,11 @@ export function Hero() {
           <span className="text-white">✦</span>
           <span>Suất ăn công nghiệp: 30k – 35k – 40k</span>
           <span className="text-white">✦</span>
-          <span>Suất ăn phổ thông: 35k – 40k – 45k – 50k</span>
+          <span>Shinsei Travel: Du lịch Y tế · Golf PGA · Trải nghiệm văn hóa</span>
           <span className="text-white">✦</span>
-          <span>Suất ăn cao cấp: 60k – 80k – 100k – 120k</span>
+          <span>Tiêu chuẩn 5S Nhật Bản & HACCP</span>
           <span className="text-white">✦</span>
-          <span>Đặt tiệc bàn 6 – 8 – 10 người (từ 120k/người)</span>
-          <span className="text-white">✦</span>
-          <span>Shinsei Travel: Du lịch y tế · Du lịch Golf · Trải nghiệm</span>
-          <span className="text-white">✦</span>
-          <span>Vận hành bếp 5S chuẩn Nhật Bản</span>
-          <span className="text-white">✦</span>
-          {/* Duplicate loop */}
-          <span>~ Công ty Cổ phần Thương Mại Shinsei</span>
-          <span className="text-white">✦</span>
-          <span>Suất ăn công nghiệp: 30k – 35k – 40k</span>
-          <span className="text-white">✦</span>
-          <span>Suất ăn phổ thông: 35k – 40k – 45k – 50k</span>
-          <span className="text-white">✦</span>
-          <span>Suất ăn cao cấp: 60k – 80k – 100k – 120k</span>
-          <span className="text-white">✦</span>
-          <span>Đặt tiệc bàn 6 – 8 – 10 người (từ 120k/người)</span>
-          <span className="text-white">✦</span>
-          <span>Shinsei Travel: Du lịch y tế · Du lịch Golf · Trải nghiệm</span>
-          <span className="text-white">✦</span>
-          <span>Vận hành bếp 5S chuẩn Nhật Bản</span>
+          <span>Hotline: 0981.365.391</span>
           <span className="text-white">✦</span>
         </div>
       </div>

@@ -22,7 +22,7 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Trang chủ", href: "/" },
-    { label: "Bếp ăn • Thực đơn", href: "/bep-an-thuc-don" },
+    { label: "Bếp ăn · Thực đơn", href: "/bep-an-thuc-don" },
     { label: "Đồ uống & Café", href: "/do-uong" },
     { label: "Về chúng tôi", href: "/ve-chung-toi" },
     { label: "Dự toán B2B", href: "/du-toan-chi-phi" },
@@ -30,9 +30,9 @@ export function Navbar() {
 
   const travelSubLinks = [
     { label: "Tổng quan Du lịch Shinsei", href: "/du-lich", desc: "Hành trình tinh hoa Nhật Bản", icon: Compass },
-    { label: "Du lịch Y tế (Medical)", href: "/du-lich/y-te", desc: "Khám chuyên sâu, tế bào gốc & 6 bệnh viện top đầu", icon: Activity },
-    { label: "Du lịch Golf (PGA)", href: "/du-lich/golf", desc: "Sân golf chân núi Phú Sĩ & nghỉ dưỡng Onsen", icon: Flag },
-    { label: "Du lịch Trải nghiệm", href: "/du-lich/trai-nghiem", desc: "Trà đạo, cố đô Kyoto, Kaiseki & ẩm thực", icon: Sparkles },
+    { label: "Du lịch Y tế chuyên sâu", href: "/du-lich/y-te", desc: "Khám chuyên sâu, tế bào gốc và 6 bệnh viện top đầu", icon: Activity },
+    { label: "Du lịch Golf tiêu chuẩn PGA", href: "/du-lich/golf", desc: "Sân golf chân núi Phú Sĩ và nghỉ dưỡng Onsen", icon: Flag },
+    { label: "Du lịch Trải nghiệm văn hóa", href: "/du-lich/trai-nghiem", desc: "Trà đạo, cố đô Kyoto, Kaiseki và ẩm thực", icon: Sparkles },
   ];
 
   const isTravelActive = pathname.startsWith("/du-lich");
@@ -40,7 +40,7 @@ export function Navbar() {
   return (
     <>
       {/* Top Bar: Hotlines & Official Address */}
-      <div className="bg-[#75182d] text-[#f1e2c8] text-[11px] sm:text-[11.5px] tracking-[0.08em] uppercase py-2 px-4 border-b border-white/10 relative z-40">
+      <div className="bg-[#75182d] text-[#f1e2c8] text-[11px] sm:text-[11.5px] tracking-[0.06em] uppercase py-2 px-4 border-b border-white/10 relative z-40">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2 truncate pr-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#f1e2c8] animate-ping shrink-0"></span>
@@ -65,45 +65,45 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Main Navbar */}
+      {/* Main Navbar: Strict single-line layout with whitespace-nowrap */}
       <header
         className={`sticky top-0 z-40 transition-all duration-300 border-b border-black/10 ${
           isScrolled ? "bg-[#fbf7ef]/98 backdrop-blur-md py-2.5 shadow-sm" : "bg-[#fbf7ef] py-3.5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center justify-between gap-3 sm:gap-6">
             
             {/* Left: Shinsei Brand Logo */}
-            <Link href="/" className="inline-flex items-center gap-2.5 group shrink-0">
+            <Link href="/" className="inline-flex items-center gap-2 sm:gap-2.5 group shrink-0">
               <img
                 src="/images/shinsei-mark-red.png"
                 alt="SHINSEI Emblem"
                 className="h-7 sm:h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
               <div className="flex flex-col">
-                <span className="font-title text-2xl sm:text-2xl lg:text-3xl font-light tracking-[0.14em] text-[#75182d] uppercase transition-colors group-hover:text-[#222222] leading-none">
+                <span className="font-title text-2xl sm:text-2xl lg:text-[28px] font-light tracking-[0.14em] text-[#75182d] uppercase transition-colors group-hover:text-[#222222] leading-none whitespace-nowrap">
                   SHINSEI
                 </span>
-                <span className="text-[8.5px] sm:text-[9px] tracking-[0.24em] text-[#222222]/80 font-semibold uppercase mt-1">
+                <span className="text-[8px] sm:text-[8.5px] tracking-[0.2em] text-[#222222]/80 font-semibold uppercase mt-1 whitespace-nowrap">
                   Food & Coffee · Travel
                 </span>
               </div>
             </Link>
 
-            {/* Center: Desktop Navigation Links (Visible on XL screens >= 1200px) */}
-            <nav className="hidden xl:flex items-center gap-6 2xl:gap-7 text-xs uppercase tracking-[0.12em] font-semibold text-[#222222]">
+            {/* Center: Desktop Navigation Links (Strict single line, no wrapping) */}
+            <nav className="hidden xl:flex items-center gap-4 2xl:gap-7 text-[11.5px] 2xl:text-xs uppercase tracking-[0.06em] 2xl:tracking-[0.08em] font-semibold text-[#222222] shrink-0">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`relative py-1 transition-colors hover:text-[#75182d] ${
+                    className={`relative py-1.5 whitespace-nowrap transition-colors hover:text-[#75182d] ${
                       isActive ? "text-[#75182d] font-bold" : "text-[#222222]"
                     }`}
                   >
-                    <span>{link.label}</span>
+                    <span className="whitespace-nowrap">{link.label}</span>
                     {isActive && (
                       <motion.span
                         layoutId="activeNavIndicator"
@@ -122,11 +122,11 @@ export function Navbar() {
               >
                 <Link
                   href="/du-lich"
-                  className={`inline-flex items-center gap-1.5 py-1 transition-colors hover:text-[#75182d] ${
+                  className={`inline-flex items-center gap-1.5 py-1.5 whitespace-nowrap transition-colors hover:text-[#75182d] ${
                     isTravelActive ? "text-[#75182d] font-bold" : "text-[#222222]"
                   }`}
                 >
-                  <span>Du lịch Nhật Bản</span>
+                  <span className="whitespace-nowrap">Du lịch Nhật Bản</span>
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${travelDropdown ? "rotate-180 text-[#75182d]" : ""}`} />
                   {isTravelActive && (
                     <motion.span
@@ -164,7 +164,7 @@ export function Navbar() {
                                 <SubIcon className="w-3.5 h-3.5" />
                               </div>
                               <div>
-                                <div className="text-xs font-semibold text-[#222222] group-hover:text-[#75182d] transition-colors leading-tight">
+                                <div className="text-xs font-semibold text-[#222222] group-hover:text-[#75182d] transition-colors leading-tight whitespace-nowrap">
                                   {sub.label}
                                 </div>
                                 <div className="text-[10.5px] text-[#222222]/60 mt-0.5 normal-case font-normal leading-snug">
@@ -182,7 +182,7 @@ export function Navbar() {
             </nav>
 
             {/* Right: Phone Hotline + Contact Button + Mobile Menu Drawer Trigger */}
-            <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+            <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
               <a
                 href="tel:0981365391"
                 className="hidden lg:flex items-center gap-1.5 text-xs font-semibold tracking-wider text-[#222222] hover:text-[#75182d] transition-colors whitespace-nowrap bg-white/80 px-3 py-1.5 border border-black/10 rounded-sm shrink-0 shadow-2xs"
@@ -193,7 +193,7 @@ export function Navbar() {
 
               <a
                 href="#contact"
-                className="shushi-btn shushi-btn-primary whitespace-nowrap !py-2 !px-3.5 sm:!py-2.5 sm:!px-4 text-xs shadow-sm shrink-0"
+                className="shushi-btn shushi-btn-primary whitespace-nowrap !py-2 !px-3 sm:!py-2.5 sm:!px-4.5 text-xs shadow-sm shrink-0"
               >
                 <span className="flex items-center gap-1.5">
                   <span className="hidden sm:inline">Liên hệ ngay</span>
@@ -205,7 +205,7 @@ export function Navbar() {
               {/* Mobile / Tablet Menu Button */}
               <button
                 onClick={() => setDrawerOpen(true)}
-                className="xl:hidden group flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 hover:border-[#75182d] text-[#222222] hover:text-[#75182d] bg-white/70 transition-all cursor-pointer shadow-2xs"
+                className="xl:hidden group flex items-center gap-2 px-3 py-1.5 rounded-full border border-black/10 hover:border-[#75182d] text-[#222222] hover:text-[#75182d] bg-white/70 transition-all cursor-pointer shadow-2xs shrink-0"
                 aria-label="Mở menu"
               >
                 <div className="space-y-1 w-4">
@@ -213,7 +213,7 @@ export function Navbar() {
                   <span className="block h-[1.5px] w-3 bg-current transition-all group-hover:w-4"></span>
                   <span className="block h-[1.5px] w-3.5 bg-current transition-all group-hover:w-3"></span>
                 </div>
-                <span className="text-xs uppercase tracking-[0.14em] font-semibold">
+                <span className="text-xs uppercase tracking-[0.12em] font-semibold">
                   Menu
                 </span>
               </button>
@@ -223,7 +223,7 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Slide-out Fullscreen/Drawer Menu (Multi-page comprehensive navigation) */}
+      {/* Slide-out Fullscreen/Drawer Menu (No parentheses in labels) */}
       <AnimatePresence>
         {drawerOpen && (
           <motion.div
@@ -277,15 +277,15 @@ export function Navbar() {
                 {/* Multi-page Nav Links */}
                 <div className="py-5 space-y-4">
                   <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#75182d] font-bold">
-                    Trang & Dịch vụ chính
+                    Trang và Dịch vụ chính
                   </div>
 
                   <nav className="space-y-1">
                     {[
                       { label: "Trang chủ", href: "/", num: "01", icon: Sparkles },
-                      { label: "Bếp ăn • Thực đơn", href: "/bep-an-thuc-don", num: "02", icon: Utensils },
+                      { label: "Bếp ăn · Thực đơn", href: "/bep-an-thuc-don", num: "02", icon: Utensils },
                       { label: "Đồ uống & Kiosk Café", href: "/do-uong", num: "03", icon: Coffee },
-                      { label: "Về chúng tôi (Hồ sơ năng lực)", href: "/ve-chung-toi", num: "04", icon: Users },
+                      { label: "Về chúng tôi · Hồ sơ năng lực", href: "/ve-chung-toi", num: "04", icon: Users },
                       { label: "Dự toán chi phí B2B", href: "/du-toan-chi-phi", num: "05", icon: Calculator },
                     ].map((link) => {
                       const Icon = link.icon;
@@ -366,7 +366,7 @@ export function Navbar() {
                     onClick={() => setDrawerOpen(false)}
                     className="shushi-btn shushi-btn-primary w-full text-center"
                   >
-                    <span>Liên hệ & Nhận báo giá</span>
+                    <span>Liên hệ và Nhận báo giá</span>
                   </a>
                 </div>
               </div>

@@ -168,7 +168,7 @@ export function Standards5S() {
                 Mô hình triển khai 5 bước chặt chẽ
               </h3>
               <p className="text-xs sm:text-sm text-[#222222]/70 mt-2">
-                Chỉ tiêu chất lượng và cam kết SLA (thời gian phục vụ, tỷ lệ hài lòng, báo cáo) được xác lập rõ ràng trong từng hợp đồng.
+                Chỉ tiêu chất lượng và cam kết SLA về thời gian phục vụ, tỷ lệ hài lòng và báo cáo định kỳ được xác lập rõ ràng trong từng hợp đồng.
               </p>
             </div>
             <div className="text-xs font-mono text-[#75182d] bg-[#f1e2c8]/60 px-4 py-2 rounded-full border border-[#75182d]/20 shrink-0">
@@ -263,7 +263,7 @@ export function Standards5S() {
               <div className="lg:col-span-8 overflow-hidden bg-white">
                 <img
                   src="/images/shinsei-uniform-chef-full.jpg"
-                  alt="Bảng quy chuẩn chi tiết Đồng phục Bếp 5S Shinsei (mặt trước, mặt sau, nón bếp)"
+                  alt="Bảng quy chuẩn chi tiết Đồng phục Bếp 5S Shinsei mặt trước, mặt sau và nón bếp"
                   className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.01]"
                 />
               </div>

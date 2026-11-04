@@ -15,7 +15,7 @@ export default function DuLichYTePage() {
   const fields = [
     { title: "Khám Tổng Quát Chuyên Sâu", desc: "Gói Ningen Dock toàn diện phát hiện sớm bệnh lý tim mạch, mạch máu não và các nguy cơ tiềm ẩn từ giai đoạn chưa có triệu chứng." },
     { title: "Điều Trị Chuyên Khoa Kỹ Thuật Cao", desc: "Ứng dụng phẫu thuật nội soi robot da Vinci, xạ trị proton/ion nặng và phác đồ điều trị đa mô thức hiện đại nhất thế giới." },
-    { title: "Y Học Tái Tạo & Tế Bào Gốc (iPS)", desc: "Trị liệu tế bào gốc tự thân tái tạo sụn khớp, trẻ hóa tế bào, hỗ trợ tim mạch và hệ thần kinh theo phát minh Nobel Y học 2012." },
+    { title: "Y Học Tái Tạo & Tế Bào Gốc iPS", desc: "Trị liệu tế bào gốc tự thân tái tạo sụn khớp, trẻ hóa tế bào, hỗ trợ tim mạch và hệ thần kinh theo phát minh Nobel Y học 2012." },
     { title: "Tầm Soát & Điều Trị Ung Thư Sớm", desc: "Công nghệ sinh thiết lỏng ctDNA, chụp PET/CT độ phân giải siêu cao và liệu pháp miễn dịch nhắm trúng đích." },
     { title: "Thẩm Mỹ & Chống Lão Hóa Chuẩn Y Khoa", desc: "Quy chuẩn y khoa khắt khe, công nghệ trẻ hóa tế bào sinh học an toàn tuyệt đối, duy trì vẻ đẹp tự nhiên lâu bền." },
     { title: "Phục Hồi Chức Năng & Dưỡng Sinh Dài Hạn", desc: "Phục hồi vận động sau tai biến, kết hợp nghỉ dưỡng suối khoáng nóng Onsen và chế độ ăn dinh dưỡng phục hồi." },
@@ -69,7 +69,7 @@ export default function DuLichYTePage() {
       address: "9-1 Akashicho, Chuo City, Tokyo",
       img: "/images/Hospital/st-lukes-hospital.png",
       tag: "Chăm sóc Hoàng Gia & Lãnh đạo chính phủ",
-      desc: "Bệnh viện Quốc tế St. Luke’s được thành lập từ năm 1901 tại thủ đô Tokyo bởi bác sĩ công giáo người Mỹ Rudolf Roesler, mang tên vị Thánh LUCA. Đây là bệnh viện đầu tiên thể hiện sự kết hợp của 2 nền y học bậc nhất thế giới là Nhật và Mỹ (thiết bị của Nhật – kỹ thuật của Mỹ). Bệnh viện là nơi chăm sóc sức khỏe và điều trị bệnh tin cậy cho Hoàng Gia Nhật Bản cũng như các vị lãnh đạo cao cấp trong chính phủ Nhật Bản từ trước đến nay.",
+      desc: "Bệnh viện Quốc tế St. Luke’s được thành lập từ năm 1901 tại thủ đô Tokyo bởi bác sĩ công giáo người Mỹ Rudolf Roesler, mang tên vị Thánh LUCA. Đây là bệnh viện đầu tiên thể hiện sự kết hợp của hai nền y học bậc nhất thế giới là Nhật Bản và Hoa Kỳ, thiết bị Nhật Bản và kỹ thuật y khoa Hoa Kỳ. Bệnh viện là nơi chăm sóc sức khỏe và điều trị bệnh tin cậy cho Hoàng Gia Nhật Bản cũng như các vị lãnh đạo cao cấp trong chính phủ Nhật Bản từ trước đến nay.",
       highlights: [
         "Nơi chăm sóc sức khỏe tin cậy của Hoàng Gia Nhật Bản và lãnh đạo chính phủ",
         "Sự kết hợp hoàn hảo giữa kỹ thuật Mỹ tiên tiến và thiết bị y tế Nhật Bản",
@@ -82,23 +82,23 @@ export default function DuLichYTePage() {
       address: "1370-1 Okamoto, Kamakura, Kanagawa",
       img: "/images/Hospital/shonan-kamakura-hospital.png",
       tag: "Bệnh viện của năm · Châu Á 2025",
-      desc: "Bệnh viện Đa khoa Shonan Kamakura được thành lập vào tháng 11 năm 1988 tại thành phố Kamakura, tỉnh Kanagawa. Bệnh viện được công nhận là 'Bệnh viện của năm' tại giải thưởng Chăm sóc sức khỏe Châu Á năm 2025.",
+      desc: "Bệnh viện Đa khoa Shonan Kamakura được thành lập vào tháng 11 năm 1988 tại thành phố Kamakura, tỉnh Kanagawa. Bệnh viện được công nhận là Bệnh viện của năm tại giải thưởng Chăm sóc sức khỏe Châu Á năm 2025.",
       highlights: [
-        "Được vinh danh 'Bệnh viện của năm' tại Asian Healthcare Awards 2025",
+        "Được vinh danh Bệnh viện của năm tại Asian Healthcare Awards 2025",
         "Trung tâm can thiệp tim mạch và xạ trị proton hàng đầu châu lục",
         "Hệ thống cấp cứu và điều trị nội trú đẳng cấp thế giới",
       ],
     },
     {
-      name: "Trung tâm Nghiên Cứu Tế Bào CIRA (Đại học Kyoto)",
+      name: "Trung tâm Nghiên Cứu Tế Bào CIRA · Đại học Kyoto",
       japanese: "京都大学iPS細胞研究所",
       address: "53 Kawahara-cho, Shogoin, Sakyo-ku, Kyoto 606-8507",
       img: "/images/Hospital/cira-stem-cell-center.png",
       tag: "Nobel Y Học 2012 · Giáo sư Shinya Yamanaka",
-      desc: "Đây là trung tâm hàng đầu thế giới chuyên nghiên cứu iPS cell (tế bào gốc đa năng cảm ứng), được thành lập bởi Đại học Kyoto và dẫn dắt bởi Giáo sư Shinya Yamanaka — người đoạt Giải Nobel Y học 2012 với phát hiện ra phương pháp tạo iPS cells từ tế bào trưởng thành.",
+      desc: "Đây là trung tâm hàng đầu thế giới chuyên nghiên cứu iPS cell, tế bào gốc đa năng cảm ứng, được thành lập bởi Đại học Kyoto và dẫn dắt bởi Giáo sư Shinya Yamanaka — người đoạt Giải Nobel Y học 2012 với phát hiện ra phương pháp tạo iPS cells từ tế bào trưởng thành.",
       highlights: [
         "Viện nghiên cứu tế bào gốc iPS danh tiếng số 1 thế giới",
-        "Dẫn dắt trực tiếp bởi GS Shinya Yamanaka (Nobel Y học 2012)",
+        "Dẫn dắt trực tiếp bởi GS Shinya Yamanaka · Nobel Y học 2012",
         "Tiên phong trong liệu pháp y học tái tạo và tế bào trị liệu thế hệ mới",
       ],
     },
@@ -307,7 +307,7 @@ export default function DuLichYTePage() {
               {[
                 { step: "01", title: "Hồ Sơ Bệnh Án", desc: "Tiếp nhận hồ sơ, dịch thuật bệnh án sang tiếng Nhật y khoa và xin ý kiến chuyên môn hội chẩn từ bác sĩ Nhật." },
                 { step: "02", title: "Xác Nhận & Lên Lộ Trình", desc: "Bệnh viện tại Tokyo/Kyoto gửi thư tiếp nhận chính thức và lịch hẹn khám, phác đồ điều trị dự kiến." },
-                { step: "03", title: "Xin Visa Y Tế Chính Thức", desc: "Bảo lãnh và xin cấp Visa Y tế (Medical Stay Visa) cho bệnh nhân và người nhà đi cùng." },
+                { step: "03", title: "Xin Visa Y Tế Chính Thức", desc: "Bảo lãnh và xin cấp Visa Y tế Medical Stay Visa cho bệnh nhân và người nhà đi cùng." },
                 { step: "04", title: "Đồng Hành Tại Nhật", desc: "Xe đưa đón riêng, phiên dịch viên y tế có chứng chỉ quốc tế đồng hành 1:1 trong suốt quá trình thăm khám." },
                 { step: "05", title: "Hậu Phẫu & Theo Dõi", desc: "Bàn giao hồ sơ bệnh án song ngữ, hướng dẫn dùng thuốc và kết nối hội chẩn từ xa định kỳ sau khi về nước." },
               ].map((s, idx) => (

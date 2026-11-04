@@ -87,7 +87,7 @@ export function ContactShinsei() {
                     Lô 6, A19 Thiên Khôi, Geleximco A, Tây Mỗ, Hà Nội
                   </div>
                   <div className="text-xs text-[#222222]/65 mt-0.5">
-                    (A19-32 NV8 Khu A - KĐT Geleximco Lê Trọng Tấn, Hà Nội)
+                    A19-32 NV8 Khu A, KĐT Geleximco Lê Trọng Tấn, Hà Nội
                   </div>
                 </div>
               </div>
@@ -112,7 +112,7 @@ export function ContactShinsei() {
                       href="mailto:ddcjp.ceo@gmail.com"
                       className="text-xs text-[#222222]/70 hover:text-[#75182d] transition-colors font-mono block"
                     >
-                      ddcjp.ceo@gmail.com (Ban điều hành)
+                      ddcjp.ceo@gmail.com · Ban điều hành
                     </a>
                   </div>
                 </div>
