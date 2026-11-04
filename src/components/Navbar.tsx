@@ -181,16 +181,8 @@ export function Navbar() {
               </div>
             </nav>
 
-            {/* Right: Phone Hotline + Contact Button + Mobile Menu Drawer Trigger */}
+            {/* Right: Contact Button + Mobile Menu Drawer Trigger */}
             <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
-              <a
-                href="tel:0981365391"
-                className="hidden lg:flex items-center gap-1.5 text-xs font-semibold tracking-wider text-[#222222] hover:text-[#75182d] transition-colors whitespace-nowrap bg-white/80 px-3 py-1.5 border border-black/10 rounded-sm shrink-0 shadow-2xs"
-              >
-                <Phone className="w-3.5 h-3.5 text-[#75182d]" />
-                <span className="font-mono">0981.365.391</span>
-              </a>
-
               <a
                 href="#contact"
                 className="shushi-btn shushi-btn-primary whitespace-nowrap !py-2 !px-3 sm:!py-2.5 sm:!px-4.5 text-xs shadow-sm shrink-0"
