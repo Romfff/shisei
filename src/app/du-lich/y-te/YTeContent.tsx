@@ -473,12 +473,34 @@ export function YTeContent() {
               <div className="lg:col-span-5 space-y-4">
                 <div className="rounded overflow-hidden border border-black/10 shadow-md">
                   <img
-                    src="/images/Medical/stem-cell-lab.jpg"
-                    alt="Stem cell lab"
+                    src="/images/Medical/stem-cell-clean-lab.jpg"
+                    alt="Stem cell clean lab CPC"
                     className="w-full h-auto object-cover"
                   />
                   <div className="p-3 bg-[#fbf7ef] text-xs font-mono text-[#75182d] text-center border-t border-black/10">
-                    ✦ {isJa ? "厚生労働省認可の高度細胞培養加工施設 (CPC)" : "Phòng nuôi cấy tế bào gốc vô trùng chuẩn quốc tế"}
+                    ✦ {isJa ? "厚生労働省認可の高度細胞培養加工施設 (CPC)" : "Phòng nuôi cấy tế bào gốc vô trùng chuẩn quốc tế (CPC)"}
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="rounded overflow-hidden border border-black/10 shadow-sm">
+                    <img
+                      src="/images/Medical/stem-cell-technician.png"
+                      alt="Chuyên viên nuôi cấy tế bào"
+                      className="w-full h-32 object-cover"
+                    />
+                    <div className="p-1.5 bg-[#fbf7ef] text-[10px] font-mono text-center text-[#222]/80">
+                      {isJa ? "培養専門技術者" : "Kỹ thuật viên nuôi cấy"}
+                    </div>
+                  </div>
+                  <div className="rounded overflow-hidden border border-black/10 shadow-sm">
+                    <img
+                      src="/images/Medical/stem-cell-certificate.jpg"
+                      alt="Chứng nhận chuẩn CPC"
+                      className="w-full h-32 object-cover"
+                    />
+                    <div className="p-1.5 bg-[#fbf7ef] text-[10px] font-mono text-center text-[#222]/80">
+                      {isJa ? "厚生労働省特定細胞加工物認証" : "Chứng nhận Bộ Y Tế Nhật"}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -520,11 +542,17 @@ export function YTeContent() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5">
+              <div className="lg:col-span-5 space-y-4">
                 <div className="rounded overflow-hidden border border-black/10 shadow-md bg-white">
-                  <img src="/images/Medical/nk-cell-microscope.jpg" alt="NK Cells" className="w-full h-auto object-cover" />
+                  <img src="/images/Medical/nk-cell-attack.jpg" alt="NK Cells" className="w-full h-auto object-cover" />
                   <div className="p-3 text-xs font-mono text-[#75182d] text-center border-t border-black/10">
                     ✦ {isJa ? "顕微鏡下でがん細胞を攻撃する高活性NK細胞" : "Tế bào NK tấn công tiêu diệt tế bào ung thư dưới kính hiển vi"}
+                  </div>
+                </div>
+                <div className="rounded overflow-hidden border border-black/10 shadow-sm bg-white">
+                  <img src="/images/Medical/nk-cell-diagram.jpg" alt="Cơ chế tế bào NK" className="w-full h-auto object-cover" />
+                  <div className="p-2 text-[11px] font-mono text-[#222]/80 text-center border-t border-black/10">
+                    {isJa ? "NK細胞による標的細胞認識・直接殺傷メカニズム" : "Cơ chế nhận diện và tiêu diệt trực tiếp mục tiêu của tế bào NK"}
                   </div>
                 </div>
               </div>
@@ -553,11 +581,17 @@ export function YTeContent() {
                 </p>
               </div>
 
-              <div className="lg:col-span-5">
+              <div className="lg:col-span-5 space-y-4">
                 <div className="rounded overflow-hidden border border-black/10 shadow-md bg-white">
-                  <img src="/images/Medical/stemsup-vials.jpg" alt="StemSup Vials" className="w-full h-auto object-cover" />
+                  <img src="/images/Medical/stemsup-exosome.jpg" alt="StemSup Vials" className="w-full h-auto object-cover" />
                   <div className="p-3 text-xs font-mono text-[#75182d] text-center border-t border-black/10">
                     ✦ {isJa ? "医療用StemSup高純度エクソソーム凍結乾燥アンプル" : "Lọ StemSup Exosomes đông khô chuẩn phòng thí nghiệm Nhật Bản"}
+                  </div>
+                </div>
+                <div className="rounded overflow-hidden border border-black/10 shadow-sm bg-white">
+                  <img src="/images/Medical/stemsup-body-organs.jpg" alt="StemSup tác động cơ quan nội tạng" className="w-full h-auto object-cover" />
+                  <div className="p-2 text-[11px] font-mono text-[#222]/80 text-center border-t border-black/10">
+                    {isJa ? "全身臓器・血管・免疫の総合若返り作用" : "Tác dụng phục hồi tế bào trẻ hóa toàn diện các cơ quan nội tạng"}
                   </div>
                 </div>
               </div>

@@ -1,48 +1,38 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import { Send, CheckCircle2, Phone, MapPin, Mail, Globe, Clock, Building, Loader2, Utensils, Compass, Plane, ShieldCheck, HeartHandshake, Calendar } from "lucide-react";
+import { useState } from "react";
+import { 
+  Building2, Phone, Mail, MapPin, Send, CheckCircle2, Clock, 
+  Utensils, Compass, Plane, HeartPulse, Trophy, Loader2 
+} from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/lib/translations";
 
 export function ContactShinsei() {
-  const pathname = usePathname();
-  const [formType, setFormType] = useState<"food" | "travel">("food");
   const { language, isJa } = useLanguage();
   const dict = translations[language];
-
-  // Sync initial tab based on route
-  useEffect(() => {
-    if (pathname?.startsWith("/du-lich")) {
-      setFormType("travel");
-    } else {
-      setFormType("food");
-    }
-  }, [pathname]);
-
-  const [submitted, setSubmitted] = useState(false);
+  const [formType, setFormType] = useState<"food" | "travel">("food");
   const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
-  // Food Form State
+  // Form 1 State: Food & Coffee B2B
   const [foodData, setFoodData] = useState({
     companyName: "",
     contactName: "",
     phone: "",
-    email: "",
     serviceType: "suat-an",
     quantity: "100 – 300 suất / ngày",
     notes: "",
   });
 
-  // Travel Form State
+  // Form 2 State: Shinsei Travel Japan
   const [travelData, setTravelData] = useState({
     contactName: "",
     phone: "",
     email: "",
     travelType: "y-te",
-    groupSize: "1 – 2 người",
+    groupSize: "1 – 2 người (Cá nhân / Cặp đôi)",
     departureTime: "Trong 1 – 2 tháng tới",
     notes: "",
   });
@@ -58,7 +48,7 @@ export function ContactShinsei() {
       : { formType: "food", ...foodData };
 
     if (!payload.contactName || !payload.phone) {
-      setErrorMsg("Vui lòng điền họ tên và số điện thoại liên hệ.");
+      setErrorMsg(isJa ? "お名前とお電話番号をご入力ください。" : "Vui lòng điền họ tên và số điện thoại liên hệ.");
       setLoading(false);
       return;
     }
@@ -76,7 +66,7 @@ export function ContactShinsei() {
       if (data.success) {
         setSubmitted(true);
       } else {
-        setErrorMsg(data.error || "Có lỗi xảy ra, vui lòng thử lại hoặc gọi Hotline.");
+        setErrorMsg(data.error || (isJa ? "送信エラーが発生しました。お電話にてご連絡ください。" : "Có lỗi xảy ra, vui lòng thử lại hoặc gọi Hotline."));
       }
     } catch (err) {
       console.error("Form submission failed:", err);
@@ -85,6 +75,42 @@ export function ContactShinsei() {
       setLoading(false);
     }
   };
+
+  const foodServices = isJa
+    ? [
+        { id: "suat-an", label: "産業給食 / 5S社員食堂" },
+        { id: "cafe", label: "オフィス向けカフェ・ドリンク" },
+        { id: "tiec-ban", label: "企業円卓宴会・ケータリング" },
+        { id: "com-hop", label: "テイクアウト弁当・仕出し" },
+        { id: "khac", label: "厨房5S設計・衛生管理指導" },
+      ]
+    : [
+        { id: "suat-an", label: "Suất ăn công nghiệp / Bếp ăn 5S" },
+        { id: "cafe", label: "Đồ uống & Café doanh nghiệp" },
+        { id: "tiec-ban", label: "Đặt tiệc bàn 6-8-10 người" },
+        { id: "com-hop", label: "Cơm hộp bento – Mang đi" },
+        { id: "khac", label: "Tư vấn & Đào tạo 5S bếp ăn" },
+      ];
+
+  const travelServices = isJa
+    ? [
+        { id: "y-te", label: "総合人間ドック & がん検診" },
+        { id: "dfpp", label: "DFPP二重濾過血漿浄化療法" },
+        { id: "stem-cell", label: "自己脂肪由来幹細胞治療" },
+        { id: "nk-cell", label: "高活性NK細胞 / StemSup" },
+        { id: "golf", label: "富士山麓PGA基準ゴルフ" },
+        { id: "trai-nghiem", label: "京都伝統文化 & 名湯温泉" },
+        { id: "custom-tour", label: "完全オーダーメイド個別手配" },
+      ]
+    : [
+        { id: "y-te", label: "Tầm soát Ung thư & Ningen Dock" },
+        { id: "dfpp", label: "Liệu pháp lọc máu DFPP Nhật" },
+        { id: "stem-cell", label: "Trị liệu Tế bào gốc tự thân" },
+        { id: "nk-cell", label: "Tế bào miễn dịch NK / StemSup" },
+        { id: "golf", label: "Tour Golf PGA chân núi Phú Sĩ" },
+        { id: "trai-nghiem", label: "Văn hóa Kyoto & Onsen Kaiseki" },
+        { id: "custom-tour", label: "Tour riêng thiết kế theo yêu cầu" },
+      ];
 
   return (
     <section id="contact" className="py-24 bg-[#ffffff] border-b border-black/10">
@@ -163,7 +189,7 @@ export function ContactShinsei() {
 
                 <div className="p-4 bg-[#fbf7ef] border border-black/10">
                   <div className="flex items-center gap-2 text-[#75182d] mb-1">
-                    <Globe className="w-4 h-4" />
+                    <Phone className="w-4 h-4" />
                     <span className="text-xs font-mono uppercase font-bold">{dict.hotlineJp}</span>
                   </div>
                   <a href="tel:08023922268" className="text-lg font-bold text-[#222222] hover:text-[#75182d] transition-colors font-mono">
@@ -243,17 +269,21 @@ export function ContactShinsei() {
                     <CheckCircle2 className="w-8 h-8 text-[#f1e2c8]" />
                   </div>
                   <h3 className="font-title text-3xl font-light text-[#222222]">
-                    Đã Gửi Thông Tin Thành Công
+                    {isJa ? "送信が完了いたしました" : "Đã Gửi Thông Tin Thành Công"}
                   </h3>
                   <div className="text-sm text-[#222222]/85 max-w-md mx-auto space-y-2">
                     <p>
-                      Yêu cầu của quý khách đã được chuyển trực tiếp tới hòm thư ban điều hành:
+                      {isJa
+                        ? "ご入力いただいた内容は担当窓口へ直接送信されました。"
+                        : "Yêu cầu của quý khách đã được chuyển trực tiếp tới hòm thư ban điều hành:"}
                     </p>
                     <div className="py-2 px-4 bg-white border border-[#75182d]/20 font-mono font-bold text-[#75182d] text-base inline-block">
                       info.shinseivn@gmail.com
                     </div>
                     <p className="text-xs text-[#222222]/70 pt-2">
-                      Đội ngũ chuyên viên Shinsei sẽ chủ động liên hệ qua số điện thoại đã đăng ký trong vòng <strong>2 giờ làm việc</strong>.
+                      {isJa
+                        ? "専任担当者より、2営業時間以内に折り返しご連絡申し上げます。"
+                        : "Đội ngũ chuyên viên Shinsei sẽ chủ động liên hệ qua số điện thoại đã đăng ký trong vòng 2 giờ làm việc."}
                     </p>
                   </div>
                   <button
@@ -262,7 +292,7 @@ export function ContactShinsei() {
                     }}
                     className="text-xs font-mono uppercase tracking-wider text-[#75182d] hover:underline pt-4 cursor-pointer block mx-auto"
                   >
-                    Gửi yêu cầu hợp tác khác
+                    {isJa ? "別のご相談・お問い合わせを送信する" : "Gửi yêu cầu hợp tác khác"}
                   </button>
                 </div>
               ) : formType === "food" ? (
@@ -270,13 +300,20 @@ export function ContactShinsei() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="border-b border-black/10 pb-4 mb-2">
                     <span className="text-[10.5px] font-mono uppercase tracking-widest text-[#75182d] font-bold block mb-1">
-                      Shinsei Food & Coffee · Dành cho Doanh Nghiệp, KCN, Trường Học
+                      {isJa
+                        ? "SHINSEI フード & カフェ · 法人・工場・学校向け給食相談"
+                        : "Shinsei Food & Coffee · Dành cho Doanh Nghiệp, KCN, Trường Học"}
                     </span>
                     <h3 className="font-title text-2xl font-light text-[#222222]">
-                      Phiếu Yêu Cầu Tư Vấn & Nếm Thử Suất Ăn Doanh Nghiệp
+                      {isJa
+                        ? "無料ご試食・給食運営に関するご相談フォーム"
+                        : "Phiếu Yêu Cầu Tư Vấn & Nếm Thử Suất Ăn Doanh Nghiệp"}
                     </h3>
                     <p className="text-xs text-[#222222]/70 mt-1">
-                      Thông tin sẽ được chuyển tiếp trực tiếp đến email: <strong>info.shinseivn@gmail.com</strong>
+                      {isJa
+                        ? "受付窓口専用メールアドレス："
+                        : "Thông tin sẽ được chuyển tiếp trực tiếp đến email: "}
+                      <strong>info.shinseivn@gmail.com</strong>
                     </p>
                   </div>
 
@@ -289,16 +326,10 @@ export function ContactShinsei() {
                   {/* Food Service Selector */}
                   <div>
                     <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-2">
-                      Dịch vụ ẩm thực bạn đang quan tâm:
+                      {isJa ? "ご関心のある給食サービス分野：" : "Dịch vụ ẩm thực bạn đang quan tâm:"}
                     </label>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                      {[
-                        { id: "suat-an", label: "Suất ăn công nghiệp / Bếp ăn 5S" },
-                        { id: "cafe", label: "Đồ uống & Café doanh nghiệp" },
-                        { id: "tiec-ban", label: "Đặt tiệc bàn 6-8-10 người" },
-                        { id: "com-hop", label: "Cơm hộp bento – Mang đi" },
-                        { id: "khac", label: "Tư vấn & Đào tạo 5S bếp ăn" },
-                      ].map((item) => (
+                      {foodServices.map((item) => (
                         <button
                           key={item.id}
                           type="button"
@@ -318,12 +349,12 @@ export function ContactShinsei() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-1.5">
-                        Tên doanh nghiệp / Đơn vị *
+                        {isJa ? "貴社名 / 団体名 *" : "Tên doanh nghiệp / Đơn vị *"}
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="Công ty, Nhà máy, Trường học..."
+                        placeholder={isJa ? "会社名、工場名、教育施設名など" : "Công ty, Nhà máy, Trường học..."}
                         value={foodData.companyName}
                         onChange={(e) =>
                           setFoodData({ ...foodData, companyName: e.target.value })
@@ -334,12 +365,12 @@ export function ContactShinsei() {
 
                     <div>
                       <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-1.5">
-                        Người phụ trách / Chức vụ *
+                        {isJa ? "ご担当者様氏名 / お役職 *" : "Người phụ trách / Chức vụ *"}
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="Họ tên (HR / Mua hàng / Ban giám đốc)"
+                        placeholder={isJa ? "氏名（人事、総務、購買、経営陣など）" : "Họ tên (HR / Mua hàng / Ban giám đốc)"}
                         value={foodData.contactName}
                         onChange={(e) =>
                           setFoodData({ ...foodData, contactName: e.target.value })
@@ -352,12 +383,12 @@ export function ContactShinsei() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-1.5">
-                        Số điện thoại / Zalo *
+                        {isJa ? "お電話番号 / 連絡先 *" : "Số điện thoại / Zalo *"}
                       </label>
                       <input
                         type="tel"
                         required
-                        placeholder="09xx xxx xxx"
+                        placeholder={isJa ? "09xx xxx xxx または 080-xxxx-xxxx" : "09xx xxx xxx"}
                         value={foodData.phone}
                         onChange={(e) =>
                           setFoodData({ ...foodData, phone: e.target.value })
@@ -368,7 +399,7 @@ export function ContactShinsei() {
 
                     <div>
                       <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-1.5">
-                        Quy mô suất ăn dự kiến / ngày
+                        {isJa ? "想定給食規模（1日あたり）" : "Quy mô suất ăn dự kiến / ngày"}
                       </label>
                       <select
                         value={foodData.quantity}
@@ -377,22 +408,28 @@ export function ContactShinsei() {
                         }
                         className="w-full px-4 py-3 bg-white border border-black/15 text-sm text-[#222222] focus:outline-none focus:border-[#75182d]"
                       >
-                        <option>Dưới 100 suất / ngày</option>
-                        <option>100 – 300 suất / ngày</option>
-                        <option>300 – 800 suất / ngày</option>
-                        <option>Trên 1.000 suất / ngày</option>
-                        <option>Đặt tiệc bàn / Sự kiện định kỳ</option>
+                        <option value="Dưới 100 suất / ngày">{isJa ? "100食未満 / 日" : "Dưới 100 suất / ngày"}</option>
+                        <option value="100 – 300 suất / ngày">{isJa ? "100 〜 300食 / 日" : "100 – 300 suất / ngày"}</option>
+                        <option value="300 – 800 suất / ngày">{isJa ? "300 〜 800食 / 日" : "300 – 800 suất / ngày"}</option>
+                        <option value="Trên 1.000 suất / ngày">{isJa ? "1,000食以上 / 日" : "Trên 1.000 suất / ngày"}</option>
+                        <option value="Đặt tiệc bàn / Sự kiện định kỳ">{isJa ? "円卓宴会・定期イベント" : "Đặt tiệc bàn / Sự kiện định kỳ"}</option>
                       </select>
                     </div>
                   </div>
 
                   <div>
                     <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-1.5">
-                      Ghi chú thêm (địa điểm giao, khẩu vị vùng miền, ngân sách)
+                      {isJa
+                        ? "追加のご要望（納品先住所、ご予算、味付けのご希望など）"
+                        : "Ghi chú thêm (địa điểm giao, khẩu vị vùng miền, ngân sách)"}
                     </label>
                     <textarea
                       rows={3}
-                      placeholder="Chia sẻ thêm thông tin để Shinsei chuẩn bị thực đơn phù hợp nhất..."
+                      placeholder={
+                        isJa
+                          ? "ご希望のメニューや詳細条件がございましたらご記入ください..."
+                          : "Chia sẻ thêm thông tin để Shinsei chuẩn bị thực đơn phù hợp nhất..."
+                      }
                       value={foodData.notes}
                       onChange={(e) =>
                         setFoodData({ ...foodData, notes: e.target.value })
@@ -410,12 +447,12 @@ export function ContactShinsei() {
                       {loading ? (
                         <>
                           <Loader2 className="w-4 h-4 animate-spin" />
-                          <span>Đang gửi thông tin...</span>
+                          <span>{isJa ? "送信中..." : "Đang gửi thông tin..."}</span>
                         </>
                       ) : (
                         <>
                           <Send className="w-4 h-4" />
-                          <span>Gửi yêu cầu tư vấn & Đăng ký nếm thử</span>
+                          <span>{isJa ? "無料試食・運営相談を申し込む" : "Gửi yêu cầu tư vấn & Đăng ký nếm thử"}</span>
                         </>
                       )}
                     </span>
@@ -426,13 +463,19 @@ export function ContactShinsei() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="border-b border-black/10 pb-4 mb-2">
                     <span className="text-[10.5px] font-mono uppercase tracking-widest text-[#75182d] font-bold block mb-1">
-                      Shinsei Travel · Tour Chuyên Sâu Y Tế, Golf PGA & Trải Nghiệm Văn Hóa
+                      {isJa
+                        ? "SHINSEI トラベル · 先端医療 · PGA名門ゴルフ · 伝統文化専門ツアー"
+                        : "Shinsei Travel · Tour Chuyên Sâu Y Tế, Golf PGA & Trải Nghiệm Văn Hóa"}
                     </span>
                     <h3 className="font-title text-2xl font-light text-[#222222]">
-                      Phiếu Đăng Ký Tư Vấn Du Lịch Nhật Bản
+                      {isJa
+                        ? "訪日専門ツアー ご相談・日程作成フォーム"
+                        : "Phiếu Đăng Ký Tư Vấn Du Lịch Nhật Bản"}
                     </h3>
                     <p className="text-xs text-[#222222]/70 mt-1">
-                      Chuyên viên Shinsei Travel sẽ liên hệ tư vấn lịch trình chi tiết và hỗ trợ hồ sơ Visa Y tế.
+                      {isJa
+                        ? "専任コンシェルジュが詳細な旅程をご提案し、医療ビザ申請をサポートします。"
+                        : "Chuyên viên Shinsei Travel sẽ liên hệ tư vấn lịch trình chi tiết và hỗ trợ hồ sơ Visa Y tế."}
                     </p>
                   </div>
 
@@ -445,18 +488,10 @@ export function ContactShinsei() {
                   {/* Travel Service Selector */}
                   <div>
                     <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-2">
-                      Hành trình tour bạn đang quan tâm:
+                      {isJa ? "ご関心のあるツアー分野：" : "Hành trình tour bạn đang quan tâm:"}
                     </label>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                      {[
-                        { id: "y-te", label: "Tầm soát Ung thư & Ningen Dock" },
-                        { id: "dfpp", label: "Liệu pháp lọc máu DFPP Nhật" },
-                        { id: "stem-cell", label: "Trị liệu Tế bào gốc tự thân" },
-                        { id: "nk-cell", label: "Tế bào miễn dịch NK / StemSup" },
-                        { id: "golf", label: "Tour Golf PGA chân núi Phú Sĩ" },
-                        { id: "trai-nghiem", label: "Văn hóa Kyoto & Onsen Kaiseki" },
-                        { id: "custom-tour", label: "Tour riêng thiết kế theo yêu cầu" },
-                      ].map((item) => (
+                      {travelServices.map((item) => (
                         <button
                           key={item.id}
                           type="button"
@@ -476,12 +511,12 @@ export function ContactShinsei() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-1.5">
-                        Họ và tên khách hàng / Trưởng đoàn *
+                        {isJa ? "代表者様氏名 / ご同行代表者 *" : "Họ và tên khách hàng / Trưởng đoàn *"}
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="Họ và tên của bạn"
+                        placeholder={isJa ? "お名前をご入力ください" : "Họ và tên của bạn"}
                         value={travelData.contactName}
                         onChange={(e) =>
                           setTravelData({ ...travelData, contactName: e.target.value })
@@ -492,12 +527,12 @@ export function ContactShinsei() {
 
                     <div>
                       <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-1.5">
-                        Số điện thoại / Zalo nhận tư vấn *
+                        {isJa ? "ご連絡先お電話番号 *" : "Số điện thoại / Zalo nhận tư vấn *"}
                       </label>
                       <input
                         type="tel"
                         required
-                        placeholder="09xx xxx xxx"
+                        placeholder={isJa ? "09xx xxx xxx または 080-xxxx-xxxx" : "09xx xxx xxx"}
                         value={travelData.phone}
                         onChange={(e) =>
                           setTravelData({ ...travelData, phone: e.target.value })
@@ -510,7 +545,7 @@ export function ContactShinsei() {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div>
                       <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-1.5">
-                        Email nhận lịch trình & chi phí
+                        {isJa ? "日程表・概算送付用メール" : "Email nhận lịch trình & chi phí"}
                       </label>
                       <input
                         type="email"
@@ -525,7 +560,7 @@ export function ContactShinsei() {
 
                     <div>
                       <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-1.5">
-                        Số lượng người dự kiến
+                        {isJa ? "ご参加予定人数" : "Số lượng người dự kiến"}
                       </label>
                       <select
                         value={travelData.groupSize}
@@ -534,16 +569,16 @@ export function ContactShinsei() {
                         }
                         className="w-full px-4 py-3 bg-white border border-black/15 text-sm text-[#222222] focus:outline-none focus:border-[#75182d]"
                       >
-                        <option>1 – 2 người (Cá nhân / Cặp đôi)</option>
-                        <option>3 – 5 người (Gia đình)</option>
-                        <option>6 – 10 người (Nhóm bạn / CLB)</option>
-                        <option>Đoàn trên 10 người (Doanh nghiệp)</option>
+                        <option value="1 – 2 người (Cá nhân / Cặp đôi)">{isJa ? "1〜2名（個人 / ご夫婦）" : "1 – 2 người (Cá nhân / Cặp đôi)"}</option>
+                        <option value="3 – 5 người (Gia đình)">{isJa ? "3〜5名（ご家族）" : "3 – 5 người (Gia đình)"}</option>
+                        <option value="6 – 10 người (Nhóm bạn / CLB)">{isJa ? "6〜10名（ご友人 / クラブ）" : "6 – 10 người (Nhóm bạn / CLB)"}</option>
+                        <option value="Đoàn trên 10 người (Doanh nghiệp)">{isJa ? "10名以上（企業・団体視察）" : "Đoàn trên 10 người (Doanh nghiệp)"}</option>
                       </select>
                     </div>
 
                     <div>
                       <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-1.5">
-                        Thời gian dự kiến khởi hành
+                        {isJa ? "ご出発希望時期" : "Thời gian dự kiến khởi hành"}
                       </label>
                       <select
                         value={travelData.departureTime}
@@ -552,22 +587,28 @@ export function ContactShinsei() {
                         }
                         className="w-full px-4 py-3 bg-white border border-black/15 text-sm text-[#222222] focus:outline-none focus:border-[#75182d]"
                       >
-                        <option>Trong 1 – 2 tháng tới</option>
-                        <option>Quý này</option>
-                        <option>Mùa thu lá đỏ Nhật Bản</option>
-                        <option>Mùa hoa anh đào Nhật Bản</option>
-                        <option>Linh hoạt theo chỉ định bác sĩ</option>
+                        <option value="Trong 1 – 2 tháng tới">{isJa ? "1〜2ヶ月以内" : "Trong 1 – 2 tháng tới"}</option>
+                        <option value="Quý này">{isJa ? "今四半期中" : "Quý này"}</option>
+                        <option value="Mùa thu lá đỏ Nhật Bản">{isJa ? "秋（日本の紅葉シーズン）" : "Mùa thu lá đỏ Nhật Bản"}</option>
+                        <option value="Mùa hoa anh đào Nhật Bản">{isJa ? "春（日本の桜シーズン）" : "Mùa hoa anh đào Nhật Bản"}</option>
+                        <option value="Linh hoạt theo chỉ định bác sĩ">{isJa ? "医師の受診指示に合わせて柔軟に決定" : "Linh hoạt theo chỉ định bác sĩ"}</option>
                       </select>
                     </div>
                   </div>
 
                   <div>
                     <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-1.5">
-                      Nhu cầu chi tiết (Tình trạng sức khỏe, bệnh án cần dịch thuật, handicap golf, số ngày mong muốn)
+                      {isJa
+                        ? "詳しいご要望（健康状態、病歴翻訳の有無、ゴルフHDCP、希望滞在日数など）"
+                        : "Nhu cầu chi tiết (Tình trạng sức khỏe, bệnh án cần dịch thuật, handicap golf, số ngày mong muốn)"}
                     </label>
                     <textarea
                       rows={3}
-                      placeholder="Chia sẻ cụ thể nhu cầu của bạn để chuyên viên Shinsei Travel thiết kế lộ trình phù hợp nhất..."
+                      placeholder={
+                        isJa
+                          ? "ご相談内容や特別なご配慮が必要な点がございましたらご記入ください..."
+                          : "Chia sẻ cụ thể nhu cầu của bạn để chuyên viên Shinsei Travel thiết kế lộ trình phù hợp nhất..."
+                      }
                       value={travelData.notes}
                       onChange={(e) =>
                         setTravelData({ ...travelData, notes: e.target.value })
@@ -585,12 +626,12 @@ export function ContactShinsei() {
                       {loading ? (
                         <>
                           <Loader2 className="w-4 h-4 animate-spin" />
-                          <span>Đang gửi thông tin...</span>
+                          <span>{isJa ? "送信中..." : "Đang gửi thông tin..."}</span>
                         </>
                       ) : (
                         <>
                           <Plane className="w-4 h-4" />
-                          <span>Gửi yêu cầu tư vấn lộ trình & Báo giá tour</span>
+                          <span>{isJa ? "旅程のご提案 & お見積りを請求する" : "Gửi yêu cầu tư vấn lộ trình & Báo giá tour"}</span>
                         </>
                       )}
                     </span>
@@ -599,7 +640,10 @@ export function ContactShinsei() {
               )}
 
               <p className="text-[11px] text-center text-[#222222]/60 font-mono mt-4">
-                Thông tin được mã hóa bảo mật và gửi trực tiếp tới email ban điều hành: <strong>info.shinseivn@gmail.com</strong>
+                {isJa
+                  ? "ご入力内容は安全に暗号化され、専用窓口（info.shinseivn@gmail.com）へ直接送信されます。"
+                  : "Thông tin được mã hóa bảo mật và gửi trực tiếp tới email ban điều hành: "}
+                {!isJa && <strong>info.shinseivn@gmail.com</strong>}
               </p>
 
             </div>

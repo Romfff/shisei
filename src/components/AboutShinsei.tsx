@@ -170,10 +170,10 @@ export function AboutShinsei() {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="shrink-0">
               <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#75182d] font-bold block mb-1">
-                Phương châm hành động
+                {isJa ? "行動指針" : "Phương châm hành động"}
               </span>
               <h4 className="font-title text-xl sm:text-2xl font-light text-[#222222]">
-                3 Nguyên Tắc Phục Vụ Cốt Lõi
+                {isJa ? "サービス提供の3大原則" : "3 Nguyên Tắc Phục Vụ Cốt Lõi"}
               </h4>
             </div>
 
@@ -192,10 +192,10 @@ export function AboutShinsei() {
         <div className="border-t border-black/10 pt-12">
           <div className="text-center max-w-xl mx-auto mb-10">
             <span className="font-mono text-xs uppercase tracking-widest text-[#75182d] font-bold block mb-1">
-              Giá trị cốt lõi
+              {isJa ? "コアバリュー" : "Giá trị cốt lõi"}
             </span>
             <h3 className="font-title text-2xl sm:text-3xl font-light text-[#222222]">
-              5 Cam kết chuẩn mực của Shinsei
+              {isJa ? "SHINSEIが掲げる5つの誓約" : "5 Cam kết chuẩn mực của Shinsei"}
             </h3>
           </div>
 
