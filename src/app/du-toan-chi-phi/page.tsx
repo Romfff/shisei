@@ -11,7 +11,7 @@ export default function DuToanChiPhiPage() {
   const { isJa } = useLanguage();
 
   const [quantity, setQuantity] = useState(250);
-  const [pricePerMeal, setPricePerMeal] = useState(35000);
+  const [pricePerMeal, setPricePerMeal] = useState(40000);
   const [daysPerMonth, setDaysPerMonth] = useState(26);
   const [includeCoffee, setIncludeCoffee] = useState(false);
   const [includeSnack, setIncludeSnack] = useState(false);
@@ -113,10 +113,10 @@ export default function DuToanChiPhiPage() {
                   </label>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                     {[
-                      { price: 30000, label: "30.000đ", note: isJa ? "標準" : "Tiêu chuẩn" },
-                      { price: 35000, label: "35.000đ", note: isJa ? "アドバンス" : "Nâng cao" },
-                      { price: 40000, label: "40.000đ", note: isJa ? "プレミアム" : "Chất lượng" },
-                      { price: 50000, label: "50.000đ", note: isJa ? "和食弁当" : "Bento Nhật" },
+                      { price: 30000, label: "30.000đ", note: isJa ? "学生・生徒" : "Học sinh, sinh viên" },
+                      { price: 40000, label: "40.000đ", note: isJa ? "標準" : "Tiêu chuẩn" },
+                      { price: 60000, label: "60.000đ", note: isJa ? "アドバンス" : "Nâng cao" },
+                      { price: 80000, label: "80.000đ", note: isJa ? "プレミアム品質" : "Chất lượng" },
                     ].map((item) => (
                       <button
                         key={item.price}

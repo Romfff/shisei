@@ -173,10 +173,10 @@ export function TastingForm() {
                         }
                         className="w-full px-4 py-3 bg-white border border-black/15 text-sm text-[#0d1717] focus:outline-none focus:border-[#0d1717]"
                       >
-                        <option>28.000đ - 30.000đ / suất</option>
-                        <option>32.000đ - 35.000đ / suất</option>
-                        <option>38.000đ - 45.000đ / suất</option>
-                        <option>Trên 50.000đ / suất (chuyên gia)</option>
+                        <option>30.000đ / suất (Học sinh, sinh viên)</option>
+                        <option>40.000đ / suất (Tiêu chuẩn)</option>
+                        <option>60.000đ / suất (Nâng cao)</option>
+                        <option>80.000đ / suất (Chất lượng / Chuyên gia)</option>
                       </select>
                     </div>
                   </div>

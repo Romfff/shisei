@@ -72,32 +72,6 @@ export function Navbar() {
 
   return (
     <>
-      {/* Top Bar: Hotlines & Official Address */}
-      <div className="bg-[#75182d] text-[#f1e2c8] text-[11px] sm:text-[11.5px] tracking-[0.06em] uppercase py-2 px-4 border-b border-white/10 relative z-40">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2 truncate pr-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#f1e2c8] animate-ping shrink-0"></span>
-            <span className="font-medium truncate">
-              {dict.topBarAddress}
-            </span>
-          </div>
-          <div className="hidden lg:flex items-center gap-5 font-mono text-[11px] text-[#f1e2c8]/85 shrink-0">
-            <a href="tel:0981365391" className="flex items-center gap-1.5 hover:text-white transition-colors">
-              <span>{dict.hotlineVn}</span>
-              <strong className="text-white">0981.365.391</strong>
-            </a>
-            <span>·</span>
-            <a href="tel:08023922268" className="flex items-center gap-1.5 hover:text-white transition-colors">
-              <Globe className="w-3 h-3 text-[#f1e2c8]" />
-              <span>{dict.hotlineJp}</span>
-              <strong className="text-white">080.2392.2268</strong>
-            </a>
-            <span>·</span>
-            <span className="text-white font-serif">{dict.topBarSlogan}</span>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navbar: Strict single-line layout with whitespace-nowrap */}
       <header
         className={`sticky top-0 z-40 transition-all duration-300 border-b border-black/10 ${

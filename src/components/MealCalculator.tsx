@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export function MealCalculator() {
   const [workers, setWorkers] = useState<number>(350);
-  const [pricePerMeal, setPricePerMeal] = useState<number>(35000);
+  const [pricePerMeal, setPricePerMeal] = useState<number>(40000);
   const [shifts, setShifts] = useState<number>(1);
   const [workingDays, setWorkingDays] = useState<number>(26);
 
@@ -71,21 +71,27 @@ export function MealCalculator() {
             {/* Price Tiers based on Shinsei options */}
             <div>
               <label className="block text-xs font-mono uppercase tracking-wider font-bold text-[#222222] mb-3">
-                Mức đơn giá dự kiến / suất (30k – 35k – 40k – 45k – 50k – 80k)
+                Mức đơn giá dự kiến / suất (30k – 40k – 60k – 80k)
               </label>
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
-                {[30000, 35000, 40000, 45000, 50000, 80000].map((tier) => (
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {[
+                  { price: 30000, label: "30k", note: "Học sinh, SV" },
+                  { price: 40000, label: "40k", note: "Tiêu chuẩn" },
+                  { price: 60000, label: "60k", note: "Nâng cao" },
+                  { price: 80000, label: "80k", note: "Chất lượng" },
+                ].map((item) => (
                   <button
-                    key={tier}
+                    key={item.price}
                     type="button"
-                    onClick={() => setPricePerMeal(tier)}
-                    className={`py-3 px-2 text-center text-xs font-mono font-bold tracking-wider transition-all cursor-pointer border ${
-                      pricePerMeal === tier
-                        ? "bg-[#75182d] text-white border-[#75182d]"
+                    onClick={() => setPricePerMeal(item.price)}
+                    className={`py-3 px-2 text-center text-xs font-mono tracking-wider transition-all cursor-pointer border ${
+                      pricePerMeal === item.price
+                        ? "bg-[#75182d] text-white border-[#75182d] font-bold"
                         : "bg-white text-[#222222] border-black/15 hover:border-[#75182d]"
                     }`}
                   >
-                    {tier / 1000}k
+                    <div className="font-bold text-sm">{item.label}</div>
+                    <div className="text-[10px] opacity-80 mt-0.5">{item.note}</div>
                   </button>
                 ))}
               </div>
