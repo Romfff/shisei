@@ -481,25 +481,25 @@ export function YTeContent() {
                     ✦ {isJa ? "厚生労働省認可の高度細胞培養加工施設 (CPC)" : "Phòng nuôi cấy tế bào gốc vô trùng chuẩn quốc tế (CPC)"}
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="rounded overflow-hidden border border-black/10 shadow-sm">
+                <div className="grid grid-cols-2 gap-3 items-start">
+                  <div className="rounded overflow-hidden border border-black/10 shadow-sm bg-white">
                     <img
-                      src="/images/Medical/stem-cell-technician.png"
-                      alt="Chuyên viên nuôi cấy tế bào"
-                      className="w-full h-32 object-cover"
+                      src="/images/Medical/stem-cell-technician.jpg"
+                      alt={isJa ? "培養専門技術者" : "Kỹ thuật viên nuôi cấy"}
+                      className="w-full h-auto object-contain"
                     />
-                    <div className="p-1.5 bg-[#fbf7ef] text-[10px] font-mono text-center text-[#222]/80">
-                      {isJa ? "培養専門技術者" : "Kỹ thuật viên nuôi cấy"}
+                    <div className="p-2 bg-[#fbf7ef] text-[11px] font-mono text-center text-[#75182d] font-semibold border-t border-black/10">
+                      ✦ {isJa ? "培養専門技術者" : "Kỹ thuật viên nuôi cấy"}
                     </div>
                   </div>
-                  <div className="rounded overflow-hidden border border-black/10 shadow-sm">
+                  <div className="rounded overflow-hidden border border-black/10 shadow-sm bg-white">
                     <img
-                      src="/images/Medical/stem-cell-certificate.jpg"
-                      alt="Chứng nhận chuẩn CPC"
-                      className="w-full h-32 object-cover"
+                      src="/images/Medical/stem-cell-certificate.png"
+                      alt={isJa ? "厚生労働省特定細胞加工物認証" : "Chứng nhận Bộ Y Tế Nhật"}
+                      className="w-full h-auto object-contain"
                     />
-                    <div className="p-1.5 bg-[#fbf7ef] text-[10px] font-mono text-center text-[#222]/80">
-                      {isJa ? "厚生労働省特定細胞加工物認証" : "Chứng nhận Bộ Y Tế Nhật"}
+                    <div className="p-2 bg-[#fbf7ef] text-[11px] font-mono text-center text-[#75182d] font-semibold border-t border-black/10">
+                      ✦ {isJa ? "厚生労働省特定細胞加工物認証" : "Chứng nhận Bộ Y Tế Nhật"}
                     </div>
                   </div>
                 </div>
